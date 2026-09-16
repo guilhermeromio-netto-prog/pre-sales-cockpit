@@ -94,3 +94,12 @@ Há **um único** projeto Nilko. O payload operacional enriquecido (BoM, pricing
 
 Arquivos brutos do OneDrive **não** entram no repositório.
 
+## Regra: mesmo cliente, vários projetos
+
+O Cockpit trata **cliente ≠ projeto**. Um cliente (ex.: Grupo GPS) pode ter várias oportunidades ao mesmo tempo — por exemplo:
+
+- `TC - DIA - GRUPO GPS PARA AZUL LINHAS AÉREAS`
+- `PoC Locomotiva — Grupo GPS / MRS (Trem de Carga Conectado)`
+
+Ao sincronizar memórias diárias, atualizar **somente o card do projeto citado**, nunca fundir frentes diferentes no mesmo registro.
+

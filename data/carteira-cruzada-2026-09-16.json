@@ -1155,12 +1155,12 @@
     },
     {
       "id": "p_od_882a2c7a2b",
-      "nome": "TC - DIA - GRUPO GPS PARA AZUL LINHAS AREAS",
+      "nome": "TC - DIA - GRUPO GPS PARA AZUL LINHAS AÉREAS",
       "cliente": "GRUPO GPS",
-      "objetivo": "Link + SDWAN",
-      "etapa": "Descoberta",
-      "status": "Em andamento",
-      "prioridade": "Alta",
+      "objetivo": "Oportunidade de link DIA para Azul Linhas Aéreas via Grupo GPS. Projeto distinto da PoC de locomotiva (MRS).",
+      "etapa": "Em execução",
+      "status": "Em análise",
+      "prioridade": "Média",
       "responsavel": "Donadio, Bruno",
       "ops": {
         "tasks": [],
@@ -1235,18 +1235,18 @@
           ]
         ],
         "checks": {},
-        "lastProgress": "10/09: pendências técnicas da POC Trem de Carga acompanhadas. 11/09: reunião com cliente sobre PoC de locomotiva Grupo GPS → cliente final MRS; contexto discutido.",
-        "blocker": "Encaminhamentos da reunião ainda em acompanhamento; disponibilidade/specs de antena e infraestrutura.",
-        "nextGate": "Executar encaminhamentos da PoC GPS/MRS e registrar decisões/pendências.",
+        "lastProgress": "Carteira: oportunidade DIA Grupo GPS → Azul. Não misturar com PoC locomotiva/MRS.",
+        "blocker": "Validar status atual no Planner/pasta (frente separada da PoC Trem/MRS).",
+        "nextGate": "Confirmar etapa comercial atual da frente DIA×Azul e pendências específicas deste projeto.",
         "workDate": "2026-09-14",
         "checkpoint": "",
-        "dayNotes": "Atualizado a partir de Memórias 10/11/14-09-2026. Nota: pasta OneDrive/Planner também referencia DIA GPS×Azul — validar se é a mesma frente ou oportunidade irmã.",
+        "dayNotes": "Corrigido em 16/09/2026: Grupo GPS tem múltiplos projetos. Este card = DIA Azul apenas.",
         "client": "GRUPO GPS",
         "cnpj": "",
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "Link + SDWAN",
+        "need": "Oportunidade de link DIA para Azul Linhas Aéreas via Grupo GPS. Projeto distinto da PoC de locomotiva (MRS).",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -1287,7 +1287,7 @@
         "validity": 30,
         "leadTime": "",
         "termination": "",
-        "riskNotes": "Confirmar se o card do Cockpit cobre PoC locomotiva MRS além do histórico Azul.",
+        "riskNotes": "Risco de misturar com PoC Trem de Carga / MRS — são projetos diferentes do mesmo cliente.",
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/GRUPO GPS",
         "plannerTaskId": "pEmSuuwX9kufAcynUMlcSJgAA1Gc",
@@ -1321,15 +1321,14 @@
         "sourceFolder": "GRUPO GPS",
         "diarioSync": {
           "fontes": [
-            "2026-09-10.md",
-            "2026-09-11.md",
-            "2026-09-14.md"
+            "correção estrutural 16/09/2026"
           ],
-          "syncedAt": "2026-09-16T17:28:04Z"
+          "syncedAt": "2026-09-16T17:31:16Z",
+          "nota": "Removidas anotações da PoC MRS que tinham sido aplicadas por engano neste card."
         }
       },
       "createdAt": "2026-09-16T15:00:00.000Z",
-      "updatedAt": "2026-09-16T17:28:04Z",
+      "updatedAt": "2026-09-16T17:31:16Z",
       "_sourcePasta": "GRUPO GPS"
     },
     {
@@ -8477,6 +8476,116 @@
       "createdAt": "2026-09-16T15:00:00.000Z",
       "updatedAt": "2026-09-16T15:00:00.000Z",
       "_sourcePasta": "VIVAVETORIAL"
+    },
+    {
+      "id": "p_od_gps_poc_mrs_001",
+      "nome": "PoC Locomotiva — Grupo GPS / MRS (Trem de Carga Conectado)",
+      "cliente": "GRUPO GPS",
+      "objetivo": "PoC de conectividade Starlink em locomotiva para o cliente final MRS (Trem de Carga Conectado). Projeto distinto da oportunidade DIA Azul Linhas Aéreas.",
+      "etapa": "Descoberta",
+      "status": "Em andamento",
+      "prioridade": "Alta",
+      "responsavel": "Romio Netto, Guilherme",
+      "createdAt": "2026-09-16T17:31:16Z",
+      "updatedAt": "2026-09-16T17:31:16Z",
+      "_sourcePasta": "GRUPO GPS",
+      "ops": {
+        "tasks": [],
+        "bom": [],
+        "quotes": [],
+        "prices": [],
+        "rules": [
+          [
+            "Plano de dados",
+            true,
+            "Declarar se a franquia é individual ou pool, tratamento no limite, upgrade, top-up e momento de eficácia."
+          ],
+          [
+            "Plataforma",
+            true,
+            "Declarar se está incluída, opcional ou fora do escopo; listar somente funcionalidades confirmadas."
+          ],
+          [
+            "Suporte",
+            true,
+            "Definir janela, canais, níveis, responsabilidades e escalonamento."
+          ],
+          [
+            "SLA",
+            true,
+            "Usar apenas percentual, métrica, exclusões, apuração e créditos formalmente aplicáveis à oferta."
+          ],
+          [
+            "Garantia e RMA",
+            true,
+            "Distinguir garantia do fabricante, triagem, logística reversa, spare e substituição."
+          ],
+          [
+            "Faturamento",
+            true,
+            "Definir início do OTC e MRC, pro rata, vencimento e aceite."
+          ],
+          [
+            "Reajuste",
+            true,
+            "Incluir índice, periodicidade e marco conforme aprovação contratual."
+          ],
+          [
+            "Tributos",
+            true,
+            "Separar telecom, outsourcing e revenda; validar UF e impostos."
+          ],
+          [
+            "Rescisão e multa",
+            true,
+            "Usar somente cláusula validada."
+          ],
+          [
+            "Validade, vigência e prazo",
+            true,
+            "Separar validade da proposta, duração contratual e dependências."
+          ],
+          [
+            "Confidencialidade",
+            true,
+            "Manter redação padrão do template aprovado."
+          ],
+          [
+            "Limitações técnicas",
+            true,
+            "Desempenho depende de cobertura, visada e políticas do fornecedor."
+          ],
+          [
+            "Exclusões",
+            true,
+            "Listar itens não precificados."
+          ]
+        ],
+        "checks": {},
+        "lastProgress": "10/09: pendências técnicas da POC Trem de Carga acompanhadas (equipamento, alimentação, fixação/proteção da antena). 11/09: reunião com cliente — PoC locomotiva Grupo GPS para cliente final MRS; contexto discutido.",
+        "blocker": "Encaminhamentos da reunião em acompanhamento; confirmar disponibilidade/specs de antena (Standard/Mini) e infraestrutura.",
+        "nextGate": "Executar encaminhamentos da PoC GPS/MRS e registrar decisões/pendências.",
+        "workDate": "2026-09-11",
+        "dayNotes": "Atualizado a partir das memórias 10/11-09-2026. Cliente comercial: Grupo GPS | Cliente final PoC: MRS.",
+        "riskNotes": "Projeto distinto do card DIA×Azul do mesmo cliente Grupo GPS.",
+        "client": "GRUPO GPS",
+        "need": "PoC de conectividade Starlink em locomotiva (Trem de Carga Conectado) para o cliente final MRS, via Grupo GPS.",
+        "diarioSync": {
+          "fontes": [
+            "2026-09-10.md",
+            "2026-09-11.md"
+          ],
+          "syncedAt": "2026-09-16T17:31:16Z"
+        },
+        "artefatos": [
+          "poc",
+          "starlink",
+          "reunião cliente"
+        ],
+        "fileCount": 0,
+        "matchStatus": "diario",
+        "decision": "PENDING VALIDATION"
+      }
     }
   ],
   "projetoAtivoId": "p_od_6224920db2",
@@ -8510,7 +8619,26 @@
         "OWENS - ILLINOIS - DIA",
         "WABTEC",
         "DAHRUJ",
-        "TBG"
+        "TBG",
+        "TC - DIA - GRUPO GPS PARA AZUL LINHAS AÉREAS",
+        "PoC Locomotiva — Grupo GPS / MRS (Trem de Carga Conectado)"
+      ],
+      "gpsNota": "Separados DIA×Azul e PoC locomotiva/MRS (mesmo cliente Grupo GPS)."
+    },
+    "gpsSeparacao": {
+      "at": "2026-09-16T17:31:16Z",
+      "regra": "Grupo GPS pode ter múltiplos projetos distintos no Cockpit (mesmo cliente ≠ mesmo projeto).",
+      "projetos": [
+        {
+          "id": "p_od_882a2c7a2b",
+          "nome": "TC - DIA - GRUPO GPS PARA AZUL LINHAS AÉREAS",
+          "papel": "DIA × Azul Linhas Aéreas"
+        },
+        {
+          "id": "p_od_gps_poc_mrs_001",
+          "nome": "PoC Locomotiva — Grupo GPS / MRS (Trem de Carga Conectado)",
+          "papel": "PoC locomotiva / MRS"
+        }
       ]
     }
   }
