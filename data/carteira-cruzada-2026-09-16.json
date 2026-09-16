@@ -5,7 +5,7 @@
       "id": "p_od_ae6cdb04b1",
       "nome": "ELECTROLUX",
       "cliente": "ELECTROLUX",
-      "objetivo": "",
+      "objetivo": "Reunião com o Marcelo da quecktel",
       "etapa": "Negociação",
       "status": "Em andamento",
       "prioridade": "Média",
@@ -94,7 +94,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "Reunião com o Marcelo da quecktel",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -139,24 +139,36 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/1ELECTROLUX",
         "plannerTaskId": "EgIsHvy8N0-jENeFc6YHqJgAGLcb",
+        "plannerTaskIds": [
+          "EgIsHvy8N0-jENeFc6YHqJgAGLcb"
+        ],
         "artefatos": [
           "cotação",
           "apresentação"
-        ]
+        ],
+        "fileCount": 23,
+        "checklistResumo": "",
+        "notasResumo": "Reunião com o Marcelo da quecktel",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "electrolux"
+        ],
+        "sourceFolder": "1ELECTROLUX"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "1ELECTROLUX",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "1ELECTROLUX"
     },
     {
       "id": "p_od_6224920db2",
       "nome": "Nilko — Starlink Mobile",
       "cliente": "Nilko Tecnologia Ltda.",
-      "objetivo": "",
+      "objetivo": "PRECIFICAR - | Cadastro CRM – Nilko Tecnologia Razão Social: Nilko Tecnologia Ltda. CNPJ: 75.086.785/0001-66 Segmento: Fabricação de equipamentos para telecomu…",
       "etapa": "Precificação",
       "status": "Em andamento",
-      "prioridade": "Média",
+      "prioridade": "Alta",
       "responsavel": "Dyrjawoj, Henrique",
       "ops": {
         "tasks": [],
@@ -238,11 +250,11 @@
         "checkpoint": "",
         "dayNotes": "",
         "client": "Nilko Tecnologia Ltda.",
-        "cnpj": "75.086.785/0001-66",
+        "cnpj": "",
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "PRECIFICAR - | Cadastro CRM – Nilko Tecnologia Razão Social: Nilko Tecnologia Ltda. CNPJ: 75.086.785/0001-66 Segmento: Fabricação de equipamentos para telecomunicações, cabines telecom, racks, armári...",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -287,22 +299,34 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/1 NILKO",
         "plannerTaskId": "p3SoXeVMbk-Me3jJhys76ZgAFORT",
+        "plannerTaskIds": [
+          "p3SoXeVMbk-Me3jJhys76ZgAFORT"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 5,
+        "checklistResumo": "",
+        "notasResumo": "PRECIFICAR - | Cadastro CRM – Nilko Tecnologia Razão Social: Nilko Tecnologia Ltda. CNPJ: 75.086.785/0001-66 Segmento: Fabricação de equipamentos para telecomunicações, cabines telecom, racks, armári...",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "nilko"
+        ],
+        "sourceFolder": "1 NILKO"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "1 NILKO",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "1 NILKO"
     },
     {
       "id": "p_od_7393a8f51e",
       "nome": "TC - SATELITE - LET'S CAR",
       "cliente": "LET'S CAR",
-      "objetivo": "",
+      "objetivo": "Pessoal, Necessito de 20 kit veiculares com 20 Starlink MINI de 500 GB. Proposta de 24 meses com e sem instalacao. | Responsável (3): Arthur Lima, Henrique Dyr…",
       "etapa": "Perdido",
       "status": "Em andamento",
       "prioridade": "Média",
@@ -391,7 +415,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "Pessoal, Necessito de 20 kit veiculares com 20 Starlink MINI de 500 GB. Proposta de 24 meses com e sem instalacao. | Responsável (3): Arthur Lima, Henrique Dyrjawoj, Guilherme Netto | -----------------...",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -436,23 +460,37 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/LET'S CAR",
         "plannerTaskId": "waL8ziYSE0yC8z3aZBiGzZgAFbYN",
+        "plannerTaskIds": [
+          "waL8ziYSE0yC8z3aZBiGzZgAFbYN"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 5,
+        "checklistResumo": "",
+        "notasResumo": "Pessoal, Necessito de 20 kit veiculares com 20 Starlink MINI de 500 GB. Proposta de 24 meses com e sem instalacao. | Responsável (3): Arthur Lima, Henrique Dyrjawoj, Guilherme Netto | -----------------...",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "alta",
+        "matchHits": [
+          "car",
+          "let",
+          "let s car"
+        ],
+        "sourceFolder": "LET'S CAR"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "LET'S CAR",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "LET'S CAR"
     },
     {
       "id": "p_od_179ba77c46",
       "nome": "Minebea do Brasil - DIA 150MB - Manaus",
       "cliente": "Minebea do Brasil Manaus",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "cotaçao link de internet 150MB para manaus | Proposta de DIA de 150 mb para o CEP 69.036-790 n. 490 Manaus prazo de 36 meses a de Satelite mando via fast track…",
+      "etapa": "Em execução",
       "status": "Em andamento",
       "prioridade": "Média",
       "responsavel": "Dyrjawoj, Henrique",
@@ -540,7 +578,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "cotaçao link de internet 150MB para manaus | Proposta de DIA de 150 mb para o CEP 69.036-790 n. 490 Manaus prazo de 36 meses a de Satelite mando via fast track | Responsável (4): Vagner Moraes , Bruno ...",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -585,22 +623,36 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/1 Minebea do Brasil Manaus",
         "plannerTaskId": "4hcyp5-u_U-415jhYfZJLpgAIpaE",
+        "plannerTaskIds": [
+          "4hcyp5-u_U-415jhYfZJLpgAIpaE"
+        ],
         "artefatos": [
           "proposta",
           "pricing"
-        ]
+        ],
+        "fileCount": 2,
+        "checklistResumo": "",
+        "notasResumo": "cotaçao link de internet 150MB para manaus | Proposta de DIA de 150 mb para o CEP 69.036-790 n. 490 Manaus prazo de 36 meses a de Satelite mando via fast track | Responsável (4): Vagner Moraes , Bruno ...",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "alta",
+        "matchHits": [
+          "manaus",
+          "minebea",
+          "brasil"
+        ],
+        "sourceFolder": "1 Minebea do Brasil Manaus"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "1 Minebea do Brasil Manaus",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "1 Minebea do Brasil Manaus"
     },
     {
       "id": "p_od_934acec98d",
       "nome": "02974668 TC - STIHL - DIA",
       "cliente": "STIHL",
       "objetivo": "",
-      "etapa": "Escopo",
+      "etapa": "Qualificação",
       "status": "Em andamento",
       "prioridade": "Média",
       "responsavel": "Dyrjawoj, Henrique",
@@ -677,7 +729,7 @@
           ]
         ],
         "checks": {},
-        "lastProgress": "Importado em 16/09/2026 · pasta com 1 arquivos · artefatos: cotação",
+        "lastProgress": "Importado em 16/09/2026 · pasta com 1 arquivo · artefatos: cotação",
         "blocker": "",
         "nextGate": "",
         "workDate": "",
@@ -733,14 +785,26 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/1 STIHL",
         "plannerTaskId": "rKpTwAx7R0SUMBXDvSFm9ZgAOzGj",
+        "plannerTaskIds": [
+          "rKpTwAx7R0SUMBXDvSFm9ZgAOzGj"
+        ],
         "artefatos": [
           "cotação"
-        ]
+        ],
+        "fileCount": 1,
+        "checklistResumo": "",
+        "notasResumo": "",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "stihl"
+        ],
+        "sourceFolder": "1 STIHL"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "1 STIHL",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "1 STIHL"
     },
     {
       "id": "p_od_50d09511b7",
@@ -824,7 +888,7 @@
           ]
         ],
         "checks": {},
-        "lastProgress": "Importado em 16/09/2026 · pasta com 1 arquivos · artefatos: apresentação",
+        "lastProgress": "Importado em 16/09/2026 · pasta com 1 arquivo · artefatos: apresentação",
         "blocker": "",
         "nextGate": "",
         "workDate": "",
@@ -880,24 +944,36 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/1AMBEV",
         "plannerTaskId": "xBw-TXLRNECk-wNpu_kKm5gAJFnS",
+        "plannerTaskIds": [
+          "xBw-TXLRNECk-wNpu_kKm5gAJFnS"
+        ],
         "artefatos": [
           "apresentação"
-        ]
+        ],
+        "fileCount": 1,
+        "checklistResumo": "",
+        "notasResumo": "",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "ambev"
+        ],
+        "sourceFolder": "1AMBEV"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "1AMBEV",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "1AMBEV"
     },
     {
       "id": "p_od_90d2e121b4",
       "nome": "RUFF CJ Distribuidora de Petroleo Lta",
       "cliente": "RUFF CJ Distribuidora de Petroleo Lta",
       "objetivo": "Pasta OneDrive importada; match automático com Planner foi descartado por inconsistência.",
-      "etapa": "Descoberta",
+      "etapa": "Qualificação",
       "status": "Em análise",
       "prioridade": "Média",
-      "responsavel": "Guilherme Netto",
+      "responsavel": "",
       "ops": {
         "tasks": [],
         "bom": [],
@@ -982,7 +1058,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "Importado da pasta OneDrive (sem match confiável no Planner).",
+        "need": "",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -1023,26 +1099,34 @@
         "validity": 30,
         "leadTime": "",
         "termination": "",
-        "riskNotes": "Match Planner descartado (possível falso positivo). Revisar manualmente.",
+        "riskNotes": "",
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/RUFF CJ Distribuidora de Petroleo Lta",
         "plannerTaskId": "",
+        "plannerTaskIds": [],
         "artefatos": [
           "proposta",
           "pricing"
-        ]
+        ],
+        "fileCount": 5,
+        "checklistResumo": "",
+        "notasResumo": "",
+        "matchStatus": "sem_match",
+        "revisarMatch": true,
+        "matchConfianca": "baixa",
+        "matchHits": [],
+        "sourceFolder": "RUFF CJ Distribuidora de Petroleo Lta"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "RUFF CJ Distribuidora de Petroleo Lta",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "RUFF CJ Distribuidora de Petroleo Lta"
     },
     {
       "id": "p_od_882a2c7a2b",
       "nome": "TC - DIA - GRUPO GPS PARA AZUL LINHAS AREAS",
       "cliente": "GRUPO GPS",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "Link + SDWAN",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Donadio, Bruno",
@@ -1130,7 +1214,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "Link + SDWAN",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -1171,10 +1255,18 @@
         "validity": 30,
         "leadTime": "",
         "termination": "",
-        "riskNotes": "Outras tarefas Planner ligadas: [APRESENTAÇÃO EXECUTIVA] GRUPO GPS - 2x LINKS DIA 1GB (Concluída) | [APRESENTAÇÃO EXECUTIVA] Grupo GPS 7Antenas Starlink (Concluída) | [APRESENTAÇÃO EXECUTIVA] HW- RESSEL - GRUPO GPS (Concluída) | [PROCESSO DE COTAÇÃO] TC- SDWAN - VISEL ( GRUPO GPS) 2 FW. - RESSEL (Não iniciado) | [APRESENTAÇÃO EXECUTIVA] POC - GRUPO GPS STARLINK (Concluída)",
+        "riskNotes": "",
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/GRUPO GPS",
         "plannerTaskId": "pEmSuuwX9kufAcynUMlcSJgAA1Gc",
+        "plannerTaskIds": [
+          "pEmSuuwX9kufAcynUMlcSJgAA1Gc",
+          "F-aSV8WHzEyKIAGiPQrdPZgAIWlV",
+          "20H9_WTNak2tVjUjXxamCJgANwYa",
+          "I1vxa_KKfk2RlWgOqw84dZgAJWVX",
+          "2FEH1QxJhEyFTi_PeQgufZgAFIl3",
+          "B2GgaClDJUKHeNwjljpoFpgAC-2i"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
@@ -1182,19 +1274,30 @@
           "bom/escopo",
           "handover",
           "apresentação"
-        ]
+        ],
+        "fileCount": 66,
+        "checklistResumo": "Aguardando cotação de links, equipamentos e serviços",
+        "notasResumo": "Link + SDWAN",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "alta",
+        "matchHits": [
+          "gps",
+          "grupo gps",
+          "grupo"
+        ],
+        "sourceFolder": "GRUPO GPS"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "GRUPO GPS",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "GRUPO GPS"
     },
     {
       "id": "p_od_18ddf55489",
       "nome": "BRISKCOM",
       "cliente": "BRISKCOM",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "PROJETO APENAS POOL DE DADOS STARLINK 24 e 36meses 500 e 1000 linhas",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Dyrjawoj, Henrique",
@@ -1282,7 +1385,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "PROJETO APENAS POOL DE DADOS STARLINK 24 e 36meses 500 e 1000 linhas",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -1323,27 +1426,40 @@
         "validity": 30,
         "leadTime": "",
         "termination": "",
-        "riskNotes": "Outras tarefas Planner ligadas: [APRESENTAÇÃO EXECUTIVA] BRISKCOM 16–06-2026 (Concluída)",
+        "riskNotes": "",
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/BRISKCOM",
         "plannerTaskId": "td3-cUQFg0O8yVIPc43k3pgAD3jI",
+        "plannerTaskIds": [
+          "td3-cUQFg0O8yVIPc43k3pgAD3jI",
+          "sBjMJDogiEiWjAJI4bNGYZgAOUDz"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "apresentação"
-        ]
+        ],
+        "fileCount": 63,
+        "checklistResumo": "Pool 8TB na etapa aprovação precificação 14/04/2026;cobrando a aprovação da precificação 16/04/2026;desenvolvendo proposta comercial POOL 15/04/2026;apresentação da plataforma par…",
+        "notasResumo": "PROJETO APENAS POOL DE DADOS STARLINK 24 e 36meses 500 e 1000 linhas",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "briskcom"
+        ],
+        "sourceFolder": "BRISKCOM"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "BRISKCOM",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "BRISKCOM"
     },
     {
       "id": "p_od_9470273f85",
       "nome": "RFP Starlink RD Saúde - 17 CD's",
       "cliente": "RD SAUDE",
       "objetivo": "",
-      "etapa": "Proposta enviada",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Dyrjawoj, Henrique",
@@ -1476,24 +1592,37 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/RD SAUDE",
         "plannerTaskId": "xAAua9Y-4E2M9zFvrVSY4pgAO9G9",
+        "plannerTaskIds": [
+          "xAAua9Y-4E2M9zFvrVSY4pgAO9G9"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "bom/escopo",
           "memória/notas"
-        ]
+        ],
+        "fileCount": 38,
+        "checklistResumo": "",
+        "notasResumo": "",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "rd saude",
+          "saude"
+        ],
+        "sourceFolder": "RD SAUDE"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "RD SAUDE",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "RD SAUDE"
     },
     {
       "id": "p_od_7c2e811515",
-      "nome": "Norsk Hydro – Parent",
+      "nome": "Norsk Hydro – Parent ",
       "cliente": "Norsk Hydro – Parent",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "Norsk Hydro – Parent",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Crítica",
       "responsavel": "Romio Netto, Guilherme",
@@ -1581,7 +1710,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "Norsk Hydro – Parent",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -1626,23 +1755,38 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/Norsk Hydro – Parent",
         "plannerTaskId": "HlC64qdjMEevXT6F5x9K75gALyOI",
+        "plannerTaskIds": [
+          "HlC64qdjMEevXT6F5x9K75gALyOI"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 34,
+        "checklistResumo": "Fazer o payback do projeto;aguardando nova cotação das 3 starliink (Questão da Michele sobre aumento de preço frete) - 10/06/26;Precificador enviado para aprovação 13/04/26;E-mail…",
+        "notasResumo": "Norsk Hydro – Parent",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "alta",
+        "matchHits": [
+          "norsk",
+          "hydro",
+          "norsk hydro parent",
+          "parent"
+        ],
+        "sourceFolder": "Norsk Hydro – Parent"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "Norsk Hydro – Parent",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "Norsk Hydro – Parent"
     },
     {
       "id": "p_od_905286bacc",
       "nome": "TC - STARLINKS - MOTIVA Motiva Infraestrutura de Mobilidade S.A.",
       "cliente": "MOTIVA",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "Processo: RFQ-001/2026 – Solução de Conectividade Satelital Starlink | Solicitante: Concessionária Motiva Pantanal | Data: 12 de abril de 2026 | Responsáveis T…",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Romio Netto, Guilherme",
@@ -1730,7 +1874,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "Processo: RFQ-001/2026 – Solução de Conectividade Satelital Starlink | Solicitante: Concessionária Motiva Pantanal | Data: 12 de abril de 2026 | Responsáveis Técnicos/Comerciais: | Arthur Lima, Bruno Menta...",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -1771,28 +1915,42 @@
         "validity": 30,
         "leadTime": "",
         "termination": "",
-        "riskNotes": "Outras tarefas Planner ligadas: [APRESENTAÇÃO EXECUTIVA] MOTIVA - IOT: SENSOR DE TALUDE (Concluída) | [APRESENTAÇÃO EXECUTIVA] 2944500 - TC- MOTIVA MINAS - 92 SATELITES (Concluída)",
+        "riskNotes": "",
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/1 MOTIVA",
         "plannerTaskId": "chNphz92KUi_r3DJAhmyyZgAK6TU",
+        "plannerTaskIds": [
+          "chNphz92KUi_r3DJAhmyyZgAK6TU",
+          "qPh_F8obs0CodUL9GMjRE5gABbvh",
+          "ZC-AFTZdKEKwF1H-YwdQQZgAKOVa"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação",
           "apresentação"
-        ]
+        ],
+        "fileCount": 32,
+        "checklistResumo": "",
+        "notasResumo": "Processo: RFQ-001/2026 – Solução de Conectividade Satelital Starlink | Solicitante: Concessionária Motiva Pantanal | Data: 12 de abril de 2026 | Responsáveis Técnicos/Comerciais: | Arthur Lima, Bruno Menta...",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "motiva"
+        ],
+        "sourceFolder": "1 MOTIVA"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "1 MOTIVA",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "1 MOTIVA"
     },
     {
       "id": "p_od_f2263c1203",
       "nome": "PRECIFICAR - APERAM STARLINK",
       "cliente": "APERAM",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "Precisamos as definicoes claras para saber se vamos seguir ou se vamos fechar a atividade",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Dyrjawoj, Henrique",
@@ -1880,7 +2038,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "Precisamos as definicoes claras para saber se vamos seguir ou se vamos fechar a atividade",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -1921,29 +2079,44 @@
         "validity": 30,
         "leadTime": "",
         "termination": "",
-        "riskNotes": "Outras tarefas Planner ligadas: [RECEBIMENTO DO PROJETO] IOT - REDE PRIVATIVA - APERAM (Não iniciado) | [APRESENTAÇÃO EXECUTIVA] 2940102 - TC- SD-WAN - APERAM - BIO ENERGIA (Concluída) | [PROCESSO DE COTAÇÃO] TC- SD-WAN - APERAM - BIO ENERGIA (Não iniciado)",
+        "riskNotes": "",
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/APERAM",
         "plannerTaskId": "0LfCCKbeUEObliYTeZJzLpgAA3oE",
+        "plannerTaskIds": [
+          "0LfCCKbeUEObliYTeZJzLpgAA3oE",
+          "2rhjNQElHUKIZ7xxgMTR5JgADAov",
+          "5vl0MBKpC0GuQkXkUP1nOZgAJbu_",
+          "JQzJEL1OtkOklOh0EmoFZZgAArfC"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação",
           "bom/escopo",
           "apresentação"
-        ]
+        ],
+        "fileCount": 30,
+        "checklistResumo": "Garantir que o cliente tenha atualizado a proposta com as quantidades, se nao atualizar, fechar o ca",
+        "notasResumo": "Precisamos as definicoes claras para saber se vamos seguir ou se vamos fechar a atividade",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "aperam"
+        ],
+        "sourceFolder": "APERAM"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "APERAM",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "APERAM"
     },
     {
       "id": "p_od_5c6ebb00bd",
       "nome": "Lithustech - Satelite - 1200 Planos",
       "cliente": "LITHUSTECH",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "cliente tem 1200 planos e quer uma oferta de pool de dados pra este numero e pediu uma camada simples de seguranca pra fazer gestao e uma melhor otimizacao da …",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Dyrjawoj, Henrique",
@@ -2031,7 +2204,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "cliente tem 1200 planos e quer uma oferta de pool de dados pra este numero e pediu uma camada simples de seguranca pra fazer gestao e uma melhor otimizacao da franquia , pode se um microtik",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -2072,29 +2245,42 @@
         "validity": 30,
         "leadTime": "",
         "termination": "",
-        "riskNotes": "Outras tarefas Planner ligadas: [APRESENTAÇÃO EXECUTIVA] 2960651 - TC-Lithustech- 80 Starlink -Kla Lithustech Sistemas Eletronicos LTDA (Concluída)",
+        "riskNotes": "",
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/LITHUSTECH",
         "plannerTaskId": "doE-seL3BEWt4bM1OG5imJgAPTR2",
+        "plannerTaskIds": [
+          "doE-seL3BEWt4bM1OG5imJgAPTR2",
+          "A4llQU4nkkKtqYpXh0DP-pgAEdfP"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação",
           "apresentação",
           "contrato"
-        ]
+        ],
+        "fileCount": 20,
+        "checklistResumo": "",
+        "notasResumo": "cliente tem 1200 planos e quer uma oferta de pool de dados pra este numero e pediu uma camada simples de seguranca pra fazer gestao e uma melhor otimizacao da franquia , pode se um microtik",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "lithustech"
+        ],
+        "sourceFolder": "LITHUSTECH"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "LITHUSTECH",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "LITHUSTECH"
     },
     {
       "id": "p_od_9af6be76ce",
       "nome": "OWENS - ILLINOIS - DIA",
       "cliente": "OWENS",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "Olá, pessoal, Gostaria do apoio para elaboração de proposta comercial de links dedicados de internet (DIA) com as seguintes características: Velocidades: 100 M…",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Romio Netto, Guilherme",
@@ -2182,7 +2368,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "Olá, pessoal, Gostaria do apoio para elaboração de proposta comercial de links dedicados de internet (DIA) com as seguintes características: Velocidades: 100 Mbps, 300 Mbps e 500 Mbps Bloco de IP: ...",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -2223,28 +2409,41 @@
         "validity": 30,
         "leadTime": "",
         "termination": "",
-        "riskNotes": "Outras tarefas Planner ligadas: [PROCESSO APROVAÇÃO PRECIFICAÇÃO] OWENS ILLINOIS (ASSESSMENT)  REDE PRIVATIVA- REDE (Concluída)",
+        "riskNotes": "",
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/OWENS",
         "plannerTaskId": "I91K75-IeEinrr0UC7G2ZZgACslD",
+        "plannerTaskIds": [
+          "I91K75-IeEinrr0UC7G2ZZgACslD",
+          "o0xLxhT-40WS1LTXgyjKtZgADu4K"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação",
           "apresentação"
-        ]
+        ],
+        "fileCount": 15,
+        "checklistResumo": "Aguardando cotação dos 4 endereços para DIA",
+        "notasResumo": "Olá, pessoal, Gostaria do apoio para elaboração de proposta comercial de links dedicados de internet (DIA) com as seguintes características: Velocidades: 100 Mbps, 300 Mbps e 500 Mbps Bloco de IP: ...",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "owens"
+        ],
+        "sourceFolder": "OWENS"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "OWENS",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "OWENS"
     },
     {
       "id": "p_od_e3077e54f0",
       "nome": "SECMON SERVICOS EM TECNOLOGIA LTDA - TC - L2L",
       "cliente": "SECMON",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "LAN2LAN - 100 MB VIGENCIA DE 12 MESES | Ponto 01 Faculdade de Medicina da USP Av. Dr. Arnaldo, 455 Cerqueira César CEP 01246 903 São Paulo – SP | Ponto 02 Hosp…",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Romio Netto, Guilherme",
@@ -2332,7 +2531,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "LAN2LAN - 100 MB VIGENCIA DE 12 MESES | Ponto 01 Faculdade de Medicina da USP Av. Dr. Arnaldo, 455 Cerqueira César CEP 01246 903 São Paulo – SP | Ponto 02 Hospital Universitário da USP Av. Prof. Lineu ...",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -2373,27 +2572,41 @@
         "validity": 30,
         "leadTime": "",
         "termination": "",
-        "riskNotes": "Outras tarefas Planner ligadas: [APRESENTAÇÃO EXECUTIVA] SECMON 2 (Concluída) | [APRESENTAÇÃO EXECUTIVA] SECMON 3 26_5_2026 (Concluída)",
+        "riskNotes": "",
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/SECMON",
         "plannerTaskId": "hrrJZrl4CkmG_v3LSRthapgAA7aG",
+        "plannerTaskIds": [
+          "hrrJZrl4CkmG_v3LSRthapgAA7aG",
+          "5ggRx_YuKkS3U18L5miKf5gADQ1w",
+          "F_vQCHwiDEWvXfWMgB8EYZgAEq3Y"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 15,
+        "checklistResumo": "Pri - o custo do 60F UTP ela encaminhou por e-mail e os links aguardando - 9/04/26;Links da SECMON aguardando cotação dia 16/04/2026 cobrando por email;Solicitação de cotação dia …",
+        "notasResumo": "LAN2LAN - 100 MB VIGENCIA DE 12 MESES | Ponto 01 Faculdade de Medicina da USP Av. Dr. Arnaldo, 455 Cerqueira César CEP 01246 903 São Paulo – SP | Ponto 02 Hospital Universitário da USP Av. Prof. Lineu ...",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "secmon"
+        ],
+        "sourceFolder": "SECMON"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "SECMON",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "SECMON"
     },
     {
       "id": "p_od_3b971c5aa8",
       "nome": "EUROFARMA RJ",
       "cliente": "EUROFARMA RJ",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "cotar a instalação de um Starlink no cliente Eurofarma Rio de Janeiro: | Avenida Canal do Anil, 1263 – Lado A – Bairro Anil – Rio de Janeiro/RJ - CEP: 22765-43…",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Romio Netto, Guilherme",
@@ -2481,7 +2694,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "cotar a instalação de um Starlink no cliente Eurofarma Rio de Janeiro: | Avenida Canal do Anil, 1263 – Lado A – Bairro Anil – Rio de Janeiro/RJ - CEP: 22765-430 | Anexo a proposta que eu mandei para el...",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -2526,23 +2739,36 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/EUROFARMA RJ",
         "plannerTaskId": "pqwgseeWiU2B2YcC5eiMHZgAFGgm",
+        "plannerTaskIds": [
+          "pqwgseeWiU2B2YcC5eiMHZgAFGgm"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 10,
+        "checklistResumo": "montei o precificador esta na pasta com frete RJ antena std;Aguardando cotação de instalação com NR pedido numero 61 de compras 9/6/26",
+        "notasResumo": "cotar a instalação de um Starlink no cliente Eurofarma Rio de Janeiro: | Avenida Canal do Anil, 1263 – Lado A – Bairro Anil – Rio de Janeiro/RJ - CEP: 22765-430 | Anexo a proposta que eu mandei para el...",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "alta",
+        "matchHits": [
+          "eurofarma rj",
+          "eurofarma"
+        ],
+        "sourceFolder": "EUROFARMA RJ"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "EUROFARMA RJ",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "EUROFARMA RJ"
     },
     {
       "id": "p_od_517cdd89a0",
       "nome": "02928539 - AGUAS DO BRASIL RESSEL",
       "cliente": "AGUAS DO BRASIL",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "REVENDA DESSA LICENCA/EQUIPAMENTO DA FORTINET: PartNumber: FN-FAP-831F-N | | Descrição: FortiAP-831F Indoor Wireless AP - Tri radio 802.11 b/g/n/ax 4x4, MU-MIM…",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Dyrjawoj, Henrique",
@@ -2630,7 +2856,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "REVENDA DESSA LICENCA/EQUIPAMENTO DA FORTINET: PartNumber: FN-FAP-831F-N | | Descrição: FortiAP-831F Indoor Wireless AP - Tri radio 802.11 b/g/n/ax 4x4, MU-MIMO 802.11 a/n/ac/ax 8x8 + 1x 802.11 a/b/...",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -2675,23 +2901,37 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/AGUAS DO BRASIL",
         "plannerTaskId": "ELJ9PsK64E2EH1KtFK86KpgACoJG",
+        "plannerTaskIds": [
+          "ELJ9PsK64E2EH1KtFK86KpgACoJG"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 9,
+        "checklistResumo": "",
+        "notasResumo": "REVENDA DESSA LICENCA/EQUIPAMENTO DA FORTINET: PartNumber: FN-FAP-831F-N | | Descrição: FortiAP-831F Indoor Wireless AP - Tri radio 802.11 b/g/n/ax 4x4, MU-MIMO 802.11 a/n/ac/ax 8x8 + 1x 802.11 a/b/...",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "alta",
+        "matchHits": [
+          "aguas do brasil",
+          "aguas",
+          "brasil"
+        ],
+        "sourceFolder": "AGUAS DO BRASIL"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "AGUAS DO BRASIL",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "AGUAS DO BRASIL"
     },
     {
       "id": "p_od_ab41ede0f6",
       "nome": "2930541- TC - Fabril Mascarenhas - 2 X DIA",
       "cliente": "FABRIL MASCARENHAS",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "Link 1 - DIA 500Mbps c/ roteador | Endereço instalação: Praça Coronel Aristides Mascarenhas 169 CEP 35950-000 Alvinópolis - MG | Link 2 - DIA 500Mbps c/ rotead…",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Dyrjawoj, Henrique",
@@ -2779,7 +3019,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "Link 1 - DIA 500Mbps c/ roteador | Endereço instalação: Praça Coronel Aristides Mascarenhas 169 CEP 35950-000 Alvinópolis - MG | Link 2 - DIA 500Mbps c/ roteador | Endereço instalação: Rua Paraíba 1323, ...",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -2824,23 +3064,37 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/FABRIL MASCARENHAS",
         "plannerTaskId": "eLKwRANlIECjPjdNpaGUs5gAPZBk",
+        "plannerTaskIds": [
+          "eLKwRANlIECjPjdNpaGUs5gAPZBk"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 9,
+        "checklistResumo": "",
+        "notasResumo": "Link 1 - DIA 500Mbps c/ roteador | Endereço instalação: Praça Coronel Aristides Mascarenhas 169 CEP 35950-000 Alvinópolis - MG | Link 2 - DIA 500Mbps c/ roteador | Endereço instalação: Rua Paraíba 1323, ...",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "alta",
+        "matchHits": [
+          "fabril",
+          "fabril mascarenhas",
+          "mascarenhas"
+        ],
+        "sourceFolder": "FABRIL MASCARENHAS"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "FABRIL MASCARENHAS",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "FABRIL MASCARENHAS"
     },
     {
       "id": "p_od_ece76980ed",
       "nome": "SEBRAE SC",
       "cliente": "SEBRAE SC",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "OPORTUNIDADE RD STATION — SEBRAE SC | Starlink Modelo 4 (mini) + Kit Veicular | Dados da Oportunidade | Starlink SEBRAE SC — Modelo 4 (mini) 500GB + Kit Veicul…",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Romio Netto, Guilherme",
@@ -2928,7 +3182,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "OPORTUNIDADE RD STATION — SEBRAE SC | Starlink Modelo 4 (mini) + Kit Veicular | Dados da Oportunidade | Starlink SEBRAE SC — Modelo 4 (mini) 500GB + Kit Veicular + Instalação | • Probabilidade: 70% | Context...",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -2969,27 +3223,41 @@
         "validity": 30,
         "leadTime": "",
         "termination": "",
-        "riskNotes": "Outras tarefas Planner ligadas: [APRESENTAÇÃO EXECUTIVA] SEBRAE - SC - STARLINK 50GB VEICULAR (Concluída)",
+        "riskNotes": "",
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/SEBRAE SC",
         "plannerTaskId": "8XTD_XWpX0yjVls3MwPZKpgAGgkI",
+        "plannerTaskIds": [
+          "8XTD_XWpX0yjVls3MwPZKpgAGgkI",
+          "8cYeyXaqaUeOAnHHgcw9pJgABhTb"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 9,
+        "checklistResumo": "",
+        "notasResumo": "OPORTUNIDADE RD STATION — SEBRAE SC | Starlink Modelo 4 (mini) + Kit Veicular | Dados da Oportunidade | Starlink SEBRAE SC — Modelo 4 (mini) 500GB + Kit Veicular + Instalação | • Probabilidade: 70% | Context...",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "alta",
+        "matchHits": [
+          "sebrae",
+          "sebrae sc"
+        ],
+        "sourceFolder": "SEBRAE SC"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "SEBRAE SC",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "SEBRAE SC"
     },
     {
       "id": "p_od_825813f02c",
       "nome": "Sem Parar - Bienal das Rodovias 13 Starlinks e 2 Maletas",
       "cliente": "SEM PARAR",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "PROPOSTA ENTREGUE - | oposta Técnico-Comercial para implementação de 13 planos Starlink Enterprise integrados à Plataforma de Gestão de Conectividade da Deutsc…",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Dyrjawoj, Henrique",
@@ -3077,7 +3345,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "PROPOSTA ENTREGUE - | oposta Técnico-Comercial para implementação de 13 planos Starlink Enterprise integrados à Plataforma de Gestão de Conectividade da Deutsche Telekom e somamos também a implantaçã...",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -3122,24 +3390,38 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/SEM PARAR",
         "plannerTaskId": "Jwx79xhiuUq4tTiBGTvwNpgAMgB5",
+        "plannerTaskIds": [
+          "Jwx79xhiuUq4tTiBGTvwNpgAMgB5"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação",
           "apresentação"
-        ]
+        ],
+        "fileCount": 9,
+        "checklistResumo": "",
+        "notasResumo": "PROPOSTA ENTREGUE - | oposta Técnico-Comercial para implementação de 13 planos Starlink Enterprise integrados à Plataforma de Gestão de Conectividade da Deutsche Telekom e somamos também a implantaçã...",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "alta",
+        "matchHits": [
+          "sem",
+          "parar",
+          "sem parar"
+        ],
+        "sourceFolder": "SEM PARAR"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "SEM PARAR",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "SEM PARAR"
     },
     {
       "id": "p_od_098a216d87",
       "nome": "TC - SDWAN - SERENA ENERGIA",
       "cliente": "SERENA ENERGIA",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "Solicitação de viabilidade técnica para o fornecimento de Internet Dedicada (DIA) em três novas localidades de infraestrutura crítica (Usinas). Produto: Intern…",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Romio Netto, Guilherme",
@@ -3227,7 +3509,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "Solicitação de viabilidade técnica para o fornecimento de Internet Dedicada (DIA) em três novas localidades de infraestrutura crítica (Usinas). Produto: Internet Dedicada (DIA) Banda: 300 Mbps (Sim...",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -3268,26 +3550,41 @@
         "validity": 30,
         "leadTime": "",
         "termination": "",
-        "riskNotes": "Outras tarefas Planner ligadas: [APRESENTAÇÃO EXECUTIVA] TC - SDWAN - SERENA ENERGIA (Concluída)",
+        "riskNotes": "",
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/SERENA ENERGIA",
         "plannerTaskId": "SZYPT4oFzkiUQ3OtkgLvrpgAOXMx",
+        "plannerTaskIds": [
+          "SZYPT4oFzkiUQ3OtkgLvrpgAOXMx",
+          "6pdL2-Tkc0qC9Nvmpf3QHpgAAjcJ"
+        ],
         "artefatos": [
           "proposta",
           "pricing"
-        ]
+        ],
+        "fileCount": 9,
+        "checklistResumo": "cobrando cotação 17/04/2026;Solicitação de cotação 7/4/26;desenvolvendo proposta comercial - 22/04/2026",
+        "notasResumo": "Solicitação de viabilidade técnica para o fornecimento de Internet Dedicada (DIA) em três novas localidades de infraestrutura crítica (Usinas). Produto: Internet Dedicada (DIA) Banda: 300 Mbps (Sim...",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "alta",
+        "matchHits": [
+          "serena",
+          "energia",
+          "serena energia"
+        ],
+        "sourceFolder": "SERENA ENERGIA"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "SERENA ENERGIA",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "SERENA ENERGIA"
     },
     {
       "id": "p_od_e20d96d57a",
       "nome": "WABTEC",
       "cliente": "WABTEC",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "03 antenas com 3 planos opção de 50G e 500G + Acessórios. | Razão Social: Wabtec Brasil Fabricacao e Manutencao de Equipamentos Ltda. | Logradouro: Avenida Gen…",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Romio Netto, Guilherme",
@@ -3375,7 +3672,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "03 antenas com 3 planos opção de 50G e 500G + Acessórios. | Razão Social: Wabtec Brasil Fabricacao e Manutencao de Equipamentos Ltda. | Logradouro: Avenida General David Sarnoff, 4600Clique para copiar...",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -3416,27 +3713,41 @@
         "validity": 30,
         "leadTime": "",
         "termination": "",
-        "riskNotes": "Outras tarefas Planner ligadas: [APRESENTAÇÃO EXECUTIVA] WABTEC CAPEX (Concluída) | [APRESENTAÇÃO EXECUTIVA] 02860863 - TC - WABTEC - SATELITE MOVEL (Em andamento)",
+        "riskNotes": "",
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/1 WABTEC",
         "plannerTaskId": "-125usCcjkutAXzLnqBgIpgAOxpP",
+        "plannerTaskIds": [
+          "-125usCcjkutAXzLnqBgIpgAOxpP",
+          "Lt7-29ddEEm8IBq5IcIlsJgANbD_",
+          "HmkRW6Du1023kO6D3EWKhpgADz0x"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 8,
+        "checklistResumo": "",
+        "notasResumo": "03 antenas com 3 planos opção de 50G e 500G + Acessórios. | Razão Social: Wabtec Brasil Fabricacao e Manutencao de Equipamentos Ltda. | Logradouro: Avenida General David Sarnoff, 4600Clique para copiar...",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "wabtec"
+        ],
+        "sourceFolder": "1 WABTEC"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "1 WABTEC",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "1 WABTEC"
     },
     {
       "id": "p_od_5ca8826cc7",
       "nome": "POLIMIX - SDWAN",
       "cliente": "POLIMIX",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "Cliente quer uma proposta de REVENDA sd-wan Fortinet em tres cenários | Caixas | 40 F | 60 F | 50 G | Cotar com licença UTP | 12meses de vigencia",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Romio Netto, Guilherme",
@@ -3524,7 +3835,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "Cliente quer uma proposta de REVENDA sd-wan Fortinet em tres cenários | Caixas | 40 F | 60 F | 50 G | Cotar com licença UTP | 12meses de vigencia",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -3569,23 +3880,35 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/POLIMIX",
         "plannerTaskId": "LKp0On1ufEmF7FuDFn7VMZgABBn7",
+        "plannerTaskIds": [
+          "LKp0On1ufEmF7FuDFn7VMZgABBn7"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 8,
+        "checklistResumo": "",
+        "notasResumo": "Cliente quer uma proposta de REVENDA sd-wan Fortinet em tres cenários | Caixas | 40 F | 60 F | 50 G | Cotar com licença UTP | 12meses de vigencia",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "polimix"
+        ],
+        "sourceFolder": "POLIMIX"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "POLIMIX",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "POLIMIX"
     },
     {
       "id": "p_od_a3afc31833",
       "nome": "2960651 - TC-Nova 364 -14 starlinks movel- RFP",
       "cliente": "TC-Nova 364 -14 starlinks movel- RFP 2960651",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "proposta de RFP prazo maximo dia 17 de agosto as 14 horas | estou enviando a rfp no email de vcs com o termo de referencia. considerar a franquia de 50Gbps por…",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Gouvea, Michael",
@@ -3673,7 +3996,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "proposta de RFP prazo maximo dia 17 de agosto as 14 horas | estou enviando a rfp no email de vcs com o termo de referencia. considerar a franquia de 50Gbps por unidade. | Responsável (3): Francisco Car...",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -3718,23 +4041,42 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/1 TC-Nova 364 -14 starlinks movel- RFP 2960651",
         "plannerTaskId": "09WX1f8Qb0KOir1nZRo6oJgAOzOA",
+        "plannerTaskIds": [
+          "09WX1f8Qb0KOir1nZRo6oJgAOzOA"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 7,
+        "checklistResumo": "Leitura RFP",
+        "notasResumo": "proposta de RFP prazo maximo dia 17 de agosto as 14 horas | estou enviando a rfp no email de vcs com o termo de referencia. considerar a franquia de 50Gbps por unidade. | Responsável (3): Francisco Car...",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "alta",
+        "matchHits": [
+          "rfp",
+          "2960651",
+          "364",
+          "movel",
+          "starlink",
+          "nova 364",
+          "nova",
+          "starlinks"
+        ],
+        "sourceFolder": "1 TC-Nova 364 -14 starlinks movel- RFP 2960651"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "1 TC-Nova 364 -14 starlinks movel- RFP 2960651",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "1 TC-Nova 364 -14 starlinks movel- RFP 2960651"
     },
     {
       "id": "p_od_ab6765714c",
       "nome": "2930487 - BAHIAGAS EMERGENCIAL - 11STARLINK + 1MÓVEL",
       "cliente": "BAHIAGAS",
       "objetivo": "",
-      "etapa": "Proposta enviada",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Dyrjawoj, Henrique",
@@ -3863,27 +4205,41 @@
         "validity": 30,
         "leadTime": "",
         "termination": "",
-        "riskNotes": "Outras tarefas Planner ligadas: [APRESENTAÇÃO EXECUTIVA] Revisar com Juridico a proposta da Bahiagas (Concluída) | [PROCESSO DE COTAÇÃO] TC-BAHIAGAS- 20 ANTENAS+14 SDWAN (Em andamento)",
+        "riskNotes": "",
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/BAHIAGAS",
         "plannerTaskId": "6gBmLfEscU60Ytx1dmX1JpgAArZ9",
+        "plannerTaskIds": [
+          "6gBmLfEscU60Ytx1dmX1JpgAArZ9",
+          "lAGuamKY1EaaO4FdQaj4uJgABgbY",
+          "cGGyIgc5bkK9T7vpw8npz5gANPjm"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 7,
+        "checklistResumo": "",
+        "notasResumo": "",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "bahiagas"
+        ],
+        "sourceFolder": "BAHIAGAS"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "BAHIAGAS",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "BAHIAGAS"
     },
     {
       "id": "p_od_f01d919faf",
       "nome": "TC - MOCOCA - 1 X DIA - 1 Gbps Mococa S/A Produtos Alimentícios",
       "cliente": "MOCOCA",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "Favor cotar link DIA em duas opções 500Mbps e 1 Gbps Endereço instalação: Rua Gabriel Pinheiro, 1030 - Centro, Mococa - SP, CEP 13730-090. Contrato de 24 ou 36…",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Romio Netto, Guilherme",
@@ -3971,7 +4327,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "Favor cotar link DIA em duas opções 500Mbps e 1 Gbps Endereço instalação: Rua Gabriel Pinheiro, 1030 - Centro, Mococa - SP, CEP 13730-090. Contrato de 24 ou 36 meses | Responsável (4): Alexandre Merh...",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -4016,23 +4372,35 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/MOCOCA",
         "plannerTaskId": "KVq7EUo1IkW9LFhjqKlY8JgAL0ef",
+        "plannerTaskIds": [
+          "KVq7EUo1IkW9LFhjqKlY8JgAL0ef"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 7,
+        "checklistResumo": "cobrando cotação 17/04/2026;Pri - Mococa - solicitação 28 - já encaminhada aos fornecedores 9/4/26;Solicitação de cotação 7/4/26",
+        "notasResumo": "Favor cotar link DIA em duas opções 500Mbps e 1 Gbps Endereço instalação: Rua Gabriel Pinheiro, 1030 - Centro, Mococa - SP, CEP 13730-090. Contrato de 24 ou 36 meses | Responsável (4): Alexandre Merh...",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "mococa"
+        ],
+        "sourceFolder": "MOCOCA"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "MOCOCA",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "MOCOCA"
     },
     {
       "id": "p_od_5013895a04",
       "nome": "DIGITAL BRASIL",
       "cliente": "DIGITAL BRASIL",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "Planos STARLINK Individual Estudos de precificadores. 20% 25% e 30% 50G, 100Gb e 500GB para 20 starlink DIGITAL BRASIL",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Romio Netto, Guilherme",
@@ -4120,7 +4488,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "Planos STARLINK Individual Estudos de precificadores. 20% 25% e 30% 50G, 100Gb e 500GB para 20 starlink DIGITAL BRASIL",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -4165,22 +4533,36 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/DIGITAL BRASIL",
         "plannerTaskId": "swcWPIVhPUizMWA9meni3ZgAFtBs",
+        "plannerTaskIds": [
+          "swcWPIVhPUizMWA9meni3ZgAFtBs"
+        ],
         "artefatos": [
           "proposta",
           "pricing"
-        ]
+        ],
+        "fileCount": 6,
+        "checklistResumo": "",
+        "notasResumo": "Planos STARLINK Individual Estudos de precificadores. 20% 25% e 30% 50G, 100Gb e 500GB para 20 starlink DIGITAL BRASIL",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "alta",
+        "matchHits": [
+          "digital",
+          "digital brasil",
+          "brasil"
+        ],
+        "sourceFolder": "DIGITAL BRASIL"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "DIGITAL BRASIL",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "DIGITAL BRASIL"
     },
     {
       "id": "p_od_80adc66f09",
       "nome": "TC - Tamoios - SD-WAN CONCESSIONARIA RODOVIA DOS TAMOIOS S.A.",
       "cliente": "TAMOIOS",
       "objetivo": "",
-      "etapa": "Proposta enviada",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Romio Netto, Guilherme",
@@ -4309,26 +4691,40 @@
         "validity": 30,
         "leadTime": "",
         "termination": "",
-        "riskNotes": "Outras tarefas Planner ligadas: [HOLD] TAMOIOS - SWITCH - FO190 (Em andamento) | [PROCESSO DE COTAÇÃO] 2903732 - IT Resell - Compra Switches 2 - TAMOIOS (Não iniciado)",
+        "riskNotes": "",
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/TAMOIOS",
         "plannerTaskId": "OP_bOErACEaMNmhQbum-pZgAGK1-",
+        "plannerTaskIds": [
+          "OP_bOErACEaMNmhQbum-pZgAGK1-",
+          "2-5vjD7jxkuMgaEWYZKvJJgAHInk",
+          "9pPEm_S35UyWWVau2AtYbpgAAi8a"
+        ],
         "artefatos": [
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 6,
+        "checklistResumo": "",
+        "notasResumo": "",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "tamoios"
+        ],
+        "sourceFolder": "TAMOIOS"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "TAMOIOS",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "TAMOIOS"
     },
     {
       "id": "p_od_33463631a7",
       "nome": "GPS SAT",
       "cliente": "GPS SAT",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "50Gb e 100Gb plano para100 dispositivos 24meses | cenario easymine e cenario padrao",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Romio Netto, Guilherme",
@@ -4416,7 +4812,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "50Gb e 100Gb plano para100 dispositivos 24meses | cenario easymine e cenario padrao",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -4461,21 +4857,35 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/GPS SAT",
         "plannerTaskId": "IuzlCMD78EOdnAZR4D5G5JgAMxGW",
+        "plannerTaskIds": [
+          "IuzlCMD78EOdnAZR4D5G5JgAMxGW"
+        ],
         "artefatos": [
           "proposta",
           "pricing"
-        ]
+        ],
+        "fileCount": 5,
+        "checklistResumo": "",
+        "notasResumo": "50Gb e 100Gb plano para100 dispositivos 24meses | cenario easymine e cenario padrao",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "gps sat",
+          "gps",
+          "sat"
+        ],
+        "sourceFolder": "GPS SAT"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "GPS SAT",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "GPS SAT"
     },
     {
       "id": "p_od_f1ab02d352",
       "nome": "TC - Vigilante Seg. - 40 x Starlink",
       "cliente": "VIGILANTE",
-      "objetivo": "",
+      "objetivo": "pool de dados de 12TB para 10 antenas e outro pool de dados de 6TB para 30 antenas | PRECIFICADOR --> VIGILANTE",
       "etapa": "Perdido",
       "status": "Concluído",
       "prioridade": "Média",
@@ -4564,7 +4974,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "pool de dados de 12TB para 10 antenas e outro pool de dados de 6TB para 30 antenas | PRECIFICADOR --> VIGILANTE",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -4609,21 +5019,33 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/VIGILANTE",
         "plannerTaskId": "LYQBR1JzMk-sSkib9w0CCZgAONWv",
+        "plannerTaskIds": [
+          "LYQBR1JzMk-sSkib9w0CCZgAONWv"
+        ],
         "artefatos": [
           "pricing"
-        ]
+        ],
+        "fileCount": 5,
+        "checklistResumo": "",
+        "notasResumo": "pool de dados de 12TB para 10 antenas e outro pool de dados de 6TB para 30 antenas | PRECIFICADOR --> VIGILANTE",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "vigilante"
+        ],
+        "sourceFolder": "VIGILANTE"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "VIGILANTE",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "VIGILANTE"
     },
     {
       "id": "p_od_2a84ea7d55",
       "nome": "BRASILTECPAR",
       "cliente": "BRASILTECPAR",
       "objetivo": "",
-      "etapa": "Qualificação",
+      "etapa": "Encerrado",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Romio Netto, Guilherme",
@@ -4756,22 +5178,34 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/BRASILTECPAR",
         "plannerTaskId": "Ob34vBgowEWFpExSiR9tLZgAEtRv",
+        "plannerTaskIds": [
+          "Ob34vBgowEWFpExSiR9tLZgAEtRv"
+        ],
         "artefatos": [
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 4,
+        "checklistResumo": "Montei os Cenários solicitados pelo cliente",
+        "notasResumo": "",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "brasiltecpar"
+        ],
+        "sourceFolder": "BRASILTECPAR"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "BRASILTECPAR",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "BRASILTECPAR"
     },
     {
       "id": "p_od_7c9ddd27dd",
       "nome": "TC - CASTROLANDA - 1 X DIA 200Mbps",
       "cliente": "CASTROLANDA",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "Endereço instalação: Rodovia BR-153, KM 233, s/n, Zona Rural, Colinas do Tocantins - TO, CEP: 77760-000. Banda: 200Mbps (/30) Contrato 24 e 36 meses | Roteador…",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Romio Netto, Guilherme",
@@ -4859,7 +5293,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "Endereço instalação: Rodovia BR-153, KM 233, s/n, Zona Rural, Colinas do Tocantins - TO, CEP: 77760-000. Banda: 200Mbps (/30) Contrato 24 e 36 meses | Roteador para gerência do cliente com custo sepa...",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -4904,23 +5338,35 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/CASTROLANDA",
         "plannerTaskId": "EFQRFxYgDkaN4qPIl_Glm5gAJo_8",
+        "plannerTaskIds": [
+          "EFQRFxYgDkaN4qPIl_Glm5gAJo_8"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 4,
+        "checklistResumo": "aguardando cotatação (nº35) 22/04/2026;Cobrei a Pri hj de manhã. 23/04;Solicitando a compras um STATUS dia 24/04/26",
+        "notasResumo": "Endereço instalação: Rodovia BR-153, KM 233, s/n, Zona Rural, Colinas do Tocantins - TO, CEP: 77760-000. Banda: 200Mbps (/30) Contrato 24 e 36 meses | Roteador para gerência do cliente com custo sepa...",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "castrolanda"
+        ],
+        "sourceFolder": "CASTROLANDA"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "CASTROLANDA",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "CASTROLANDA"
     },
     {
       "id": "p_od_474cd71b51",
       "nome": "TC - Metro BH / Grupo Comporte - Satélite + Plano ilimitado",
       "cliente": "METRO BH",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "RFP Starlink Comporte",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Donadio, Bruno",
@@ -5008,7 +5454,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "RFP Starlink Comporte",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -5049,27 +5495,41 @@
         "validity": 30,
         "leadTime": "",
         "termination": "",
-        "riskNotes": "Outras tarefas Planner ligadas: [APRESENTAÇÃO EXECUTIVA] TC - Metro BH / Grupo Comporte - Satélite + Plano ilimitado (Concluída)",
+        "riskNotes": "",
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/METRO BH",
         "plannerTaskId": "Wfc5HWPDzkW9UF2WQRkd7ZgAGRoZ",
+        "plannerTaskIds": [
+          "Wfc5HWPDzkW9UF2WQRkd7ZgAGRoZ",
+          "w7HOj1PX60WKdpv60Btqi5gAHg-K"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 4,
+        "checklistResumo": "",
+        "notasResumo": "RFP Starlink Comporte",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "metro bh",
+          "metro"
+        ],
+        "sourceFolder": "METRO BH"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "METRO BH",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "METRO BH"
     },
     {
       "id": "p_od_403e05c25a",
       "nome": "TC - SD-WAN - LINK BUSINESS SCHOOL Bravia Educação Holding S.A.",
       "cliente": "BRAVIA",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "Solicito uma proposta comercial de uma caixa 200 G com UTP na modalidade capex e opex 36 meses de vigencia | Responsável (4): Arthur Lima, Henrique Dyrjawoj, G…",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Romio Netto, Guilherme",
@@ -5157,7 +5617,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "Solicito uma proposta comercial de uma caixa 200 G com UTP na modalidade capex e opex 36 meses de vigencia | Responsável (4): Arthur Lima, Henrique Dyrjawoj, Guilherme Netto, Bruno Menta Donadio",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -5198,27 +5658,41 @@
         "validity": 30,
         "leadTime": "",
         "termination": "",
-        "riskNotes": "Outras tarefas Planner ligadas: [APRESENTAÇÃO EXECUTIVA] TC - SD-WAN - LINK BUSINESS SCHOOL  (Concluída)",
+        "riskNotes": "",
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/BRAVIA",
         "plannerTaskId": "j51cuTcOSU23HdB5_GngtpgAHsHg",
+        "plannerTaskIds": [
+          "j51cuTcOSU23HdB5_GngtpgAHsHg",
+          "0RA2T-hXfk2BBdQTDGuBdJgALdcq"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 3,
+        "checklistResumo": "Proposta enviada em 17/04;recebi a cotação 9/04/2026;solicitação de cotação 7/4/26",
+        "notasResumo": "Solicito uma proposta comercial de uma caixa 200 G com UTP na modalidade capex e opex 36 meses de vigencia | Responsável (4): Arthur Lima, Henrique Dyrjawoj, Guilherme Netto, Bruno Menta Donadio",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "alta",
+        "matchHits": [
+          "bravia",
+          "business school"
+        ],
+        "sourceFolder": "BRAVIA"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "BRAVIA",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "BRAVIA"
     },
     {
       "id": "p_od_c084e5bafe",
       "nome": "DAHRUJ",
       "cliente": "DAHRUJ",
       "objetivo": "",
-      "etapa": "Proposta enviada",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Romio Netto, Guilherme",
@@ -5347,27 +5821,40 @@
         "validity": 30,
         "leadTime": "",
         "termination": "",
-        "riskNotes": "Outras tarefas Planner ligadas: [PROCESSO DE COTAÇÃO] TC- SDWAN - GRUPO DAHRUJ - 02917079 (Concluída)",
+        "riskNotes": "",
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/DAHRUJ",
         "plannerTaskId": "_ormx9Tvv0GzHAKwpjsazJgAI0CQ",
+        "plannerTaskIds": [
+          "_ormx9Tvv0GzHAKwpjsazJgAI0CQ",
+          "rOfA1Fkez0udPSqZ64CLnpgAOTHM"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 3,
+        "checklistResumo": "",
+        "notasResumo": "",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "dahruj"
+        ],
+        "sourceFolder": "DAHRUJ"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "DAHRUJ",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "DAHRUJ"
     },
     {
       "id": "p_od_4b67ed5dc8",
       "nome": "Harbor IT Consultoria e Servicos LTDA",
       "cliente": "Harbor IT Consultoria e Servicos LTDA",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "Cliente solicitar um DIA de 300 MB / 29 vigencia 36 meses CM5M+5R Morro do Chapéu, BA.( Complexo Eólico Morro do Chapéu Sul - Enel Green power) -11.59248448169…",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Romio Netto, Guilherme",
@@ -5455,7 +5942,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "Cliente solicitar um DIA de 300 MB / 29 vigencia 36 meses CM5M+5R Morro do Chapéu, BA.( Complexo Eólico Morro do Chapéu Sul - Enel Green power) -11.592484481693548, -41.315468864754074 Trata-se de...",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -5500,23 +5987,39 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/Harbor IT Consultoria e Servicos LTDA",
         "plannerTaskId": "j8y7dNJx_kSCWSGz8SIJ8ZgAAMMB",
+        "plannerTaskIds": [
+          "j8y7dNJx_kSCWSGz8SIJ8ZgAAMMB"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 3,
+        "checklistResumo": "solicitação de cotação.",
+        "notasResumo": "Cliente solicitar um DIA de 300 MB / 29 vigencia 36 meses CM5M+5R Morro do Chapéu, BA.( Complexo Eólico Morro do Chapéu Sul - Enel Green power) -11.592484481693548, -41.315468864754074 Trata-se de...",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "alta",
+        "matchHits": [
+          "ltda",
+          "servicos",
+          "harbor",
+          "consultoria",
+          "harbor it consultoria e servicos ltda"
+        ],
+        "sourceFolder": "Harbor IT Consultoria e Servicos LTDA"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "Harbor IT Consultoria e Servicos LTDA",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "Harbor IT Consultoria e Servicos LTDA"
     },
     {
       "id": "p_od_1ff81d5033",
       "nome": "SEARA ALIMENTOS",
       "cliente": "SEARA ALIMENTOS",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "Cliente tem necessidade de conectar os tablets dos funcionários na planta da Seara em anexo. Pode ser com Starlink ou outra solução. Preciso do apoio de pré-ve…",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Romio Netto, Guilherme",
@@ -5604,7 +6107,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "Cliente tem necessidade de conectar os tablets dos funcionários na planta da Seara em anexo. Pode ser com Starlink ou outra solução. Preciso do apoio de pré-vendas para desenvolver a solução. | No an...",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -5649,23 +6152,37 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/SEARA ALIMENTOS",
         "plannerTaskId": "3OWLTIrRXEuRApJp8vkPE5gAI5VO",
+        "plannerTaskIds": [
+          "3OWLTIrRXEuRApJp8vkPE5gAI5VO"
+        ],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 3,
+        "checklistResumo": "@bruno fiz a precificação e a proposta. Favor Validar!!!! dia 9/4/26",
+        "notasResumo": "Cliente tem necessidade de conectar os tablets dos funcionários na planta da Seara em anexo. Pode ser com Starlink ou outra solução. Preciso do apoio de pré-vendas para desenvolver a solução. | No an...",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "alta",
+        "matchHits": [
+          "alimentos",
+          "seara",
+          "seara alimentos"
+        ],
+        "sourceFolder": "SEARA ALIMENTOS"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "SEARA ALIMENTOS",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "SEARA ALIMENTOS"
     },
     {
       "id": "p_od_6888d5b60f",
       "nome": "2949642 - TC - YSSY (PRODAM-SP) - 1 X DIA 20Mbps",
       "cliente": "YSY PRODAM - SP",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "viabilidade e cotação DIA 20Mbps | DIA | 20Mbps para PRODAM-SP | Endereço instalação: Rua Pedro De Toledo 983 - São Paulo - São Paulo, | 04039-032 | Informar v…",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Romio Netto, Guilherme",
@@ -5753,7 +6270,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "viabilidade e cotação DIA 20Mbps | DIA | 20Mbps para PRODAM-SP | Endereço instalação: Rua Pedro De Toledo 983 - São Paulo - São Paulo, | 04039-032 | Informar viabilidade de entrada de fibra no edifício pró...",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -5798,20 +6315,32 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/YSY PRODAM - SP",
         "plannerTaskId": "gWxIMzOp5UOA5hbGHbG4JpgAF7S4",
+        "plannerTaskIds": [
+          "gWxIMzOp5UOA5hbGHbG4JpgAF7S4"
+        ],
         "artefatos": [
           "pricing"
-        ]
+        ],
+        "fileCount": 3,
+        "checklistResumo": "",
+        "notasResumo": "viabilidade e cotação DIA 20Mbps | DIA | 20Mbps para PRODAM-SP | Endereço instalação: Rua Pedro De Toledo 983 - São Paulo - São Paulo, | 04039-032 | Informar viabilidade de entrada de fibra no edifício pró...",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "prodam"
+        ],
+        "sourceFolder": "YSY PRODAM - SP"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "YSY PRODAM - SP",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "YSY PRODAM - SP"
     },
     {
       "id": "p_od_472a0fa000",
       "nome": "AMBIPAR",
       "cliente": "AMBIPAR",
-      "objetivo": "",
+      "objetivo": "Dados da Oportunidade | Starlink Comodato 500GB — Planalto Paulista SP | Artur/Guilherme Romio Netto | Probabilidade: 25% (Novo, sem qualificação) | Tipo: Como…",
       "etapa": "Perdido",
       "status": "Concluído",
       "prioridade": "Média",
@@ -5900,7 +6429,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "Dados da Oportunidade | Starlink Comodato 500GB — Planalto Paulista SP | Artur/Guilherme Romio Netto | Probabilidade: 25% (Novo, sem qualificação) | Tipo: Comodato (equipamento DT, mensalidade pelo serviço...",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -5945,22 +6474,34 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/AMBIPAR",
         "plannerTaskId": "-WHy86Rmp0eR8vipGXtQfJgAB_kM",
+        "plannerTaskIds": [
+          "-WHy86Rmp0eR8vipGXtQfJgAB_kM"
+        ],
         "artefatos": [
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 2,
+        "checklistResumo": "",
+        "notasResumo": "Dados da Oportunidade | Starlink Comodato 500GB — Planalto Paulista SP | Artur/Guilherme Romio Netto | Probabilidade: 25% (Novo, sem qualificação) | Tipo: Comodato (equipamento DT, mensalidade pelo serviço...",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "ambipar"
+        ],
+        "sourceFolder": "AMBIPAR"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "AMBIPAR",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "AMBIPAR"
     },
     {
       "id": "p_od_0c944a295b",
       "nome": "2940101 - MASTERBOI - STARLINK + MALETAS",
       "cliente": "MASTERBOI",
-      "objetivo": "",
-      "etapa": "Qualificação",
+      "objetivo": "Precificar uma maleta e mochila com Starlink - Mini e Standart. com 500 GB e 1 TB. 24 meses de vigencia | CONFIRMEI COM ARTUR 14-7-2026 | 1x mochila com uma St…",
+      "etapa": "Encerrado",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Dyrjawoj, Henrique",
@@ -6048,7 +6589,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "Precificar uma maleta e mochila com Starlink - Mini e Standart. com 500 GB e 1 TB. 24 meses de vigencia | CONFIRMEI COM ARTUR 14-7-2026 | 1x mochila com uma Starlink std - 1TB | 1x Maleta (T-CASE) com an...",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -6093,22 +6634,34 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/MASTERBOI",
         "plannerTaskId": "aMUtGd8je0iqnHkKRfBtfJgAJg-r",
+        "plannerTaskIds": [
+          "aMUtGd8je0iqnHkKRfBtfJgAJg-r"
+        ],
         "artefatos": [
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 2,
+        "checklistResumo": "aguardando retorno de informações Artur 14–07-2026",
+        "notasResumo": "Precificar uma maleta e mochila com Starlink - Mini e Standart. com 500 GB e 1 TB. 24 meses de vigencia | CONFIRMEI COM ARTUR 14-7-2026 | 1x mochila com uma Starlink std - 1TB | 1x Maleta (T-CASE) com an...",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "masterboi"
+        ],
+        "sourceFolder": "MASTERBOI"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "MASTERBOI",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "MASTERBOI"
     },
     {
       "id": "p_od_2c80b663e4",
-      "nome": "STAUFF DIA 300mb Barueri",
+      "nome": "STAUFF DIA 300mb Barueri ",
       "cliente": "STAUFF",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "24 E 36M - 300MB - BARUERI | PRECIFICADOR",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Romio Netto, Guilherme",
@@ -6196,7 +6749,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "24 E 36M - 300MB - BARUERI | PRECIFICADOR",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -6241,21 +6794,33 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/STAUFF",
         "plannerTaskId": "mYOTcRN2JUGZ4BBXqP-H5ZgAAyDk",
+        "plannerTaskIds": [
+          "mYOTcRN2JUGZ4BBXqP-H5ZgAAyDk"
+        ],
         "artefatos": [
           "pricing"
-        ]
+        ],
+        "fileCount": 2,
+        "checklistResumo": "UTLIZEI PREÇO CLARO LPU ;ENVIANDO PREÇOS PARA O ALEXANDRE 23/04/2026",
+        "notasResumo": "24 E 36M - 300MB - BARUERI | PRECIFICADOR",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "stauff"
+        ],
+        "sourceFolder": "STAUFF"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "STAUFF",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "STAUFF"
     },
     {
       "id": "p_od_617c3508ec",
       "nome": "ZIGMA DIA 200Mbps",
       "cliente": "ZIGMA",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "Viabilidade/Cotação DIA 200Mbps | Viabilidade/cotação DIA 200Mbps - 24 meses (não cotar Algar) Endereço instalação: Rua Bernardo Figueiredo, 33 - 10° andar - C…",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Romio Netto, Guilherme",
@@ -6343,7 +6908,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "Viabilidade/Cotação DIA 200Mbps | Viabilidade/cotação DIA 200Mbps - 24 meses (não cotar Algar) Endereço instalação: Rua Bernardo Figueiredo, 33 - 10° andar - CEP 30220-140 - Belo Horizonte/MG | Respons...",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -6388,22 +6953,34 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/ZIGMA",
         "plannerTaskId": "N9X-5LOpX0-a_EnjTuHBipgAPwPT",
+        "plannerTaskIds": [
+          "N9X-5LOpX0-a_EnjTuHBipgAPwPT"
+        ],
         "artefatos": [
           "proposta",
           "pricing"
-        ]
+        ],
+        "fileCount": 2,
+        "checklistResumo": "",
+        "notasResumo": "Viabilidade/Cotação DIA 200Mbps | Viabilidade/cotação DIA 200Mbps - 24 meses (não cotar Algar) Endereço instalação: Rua Bernardo Figueiredo, 33 - 10° andar - CEP 30220-140 - Belo Horizonte/MG | Respons...",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "zigma"
+        ],
+        "sourceFolder": "ZIGMA"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "ZIGMA",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "ZIGMA"
     },
     {
       "id": "p_od_3cd401005e",
       "nome": "TC - Newport Steel - 1 X DIA 100Mbps",
       "cliente": "NEWPORT STEEL",
-      "objetivo": "",
-      "etapa": "Proposta enviada",
+      "objetivo": "Checklist anexado Target cliente R$500,00 link 100Mbps",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Dyrjawoj, Henrique",
@@ -6480,7 +7057,7 @@
           ]
         ],
         "checks": {},
-        "lastProgress": "Importado em 16/09/2026 · pasta com 1 arquivos · artefatos: pricing",
+        "lastProgress": "Importado em 16/09/2026 · pasta com 1 arquivo · artefatos: pricing",
         "blocker": "",
         "nextGate": "",
         "workDate": "",
@@ -6491,7 +7068,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "",
+        "need": "Checklist anexado Target cliente R$500,00 link 100Mbps",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -6536,21 +7113,35 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/NEWPORT STEEL",
         "plannerTaskId": "Tsc7VsDtBECDQ8RSVp4Nk5gAPq8p",
+        "plannerTaskIds": [
+          "Tsc7VsDtBECDQ8RSVp4Nk5gAPq8p"
+        ],
         "artefatos": [
           "pricing"
-        ]
+        ],
+        "fileCount": 1,
+        "checklistResumo": "",
+        "notasResumo": "Checklist anexado Target cliente R$500,00 link 100Mbps",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "alta",
+        "matchHits": [
+          "steel",
+          "newport",
+          "newport steel"
+        ],
+        "sourceFolder": "NEWPORT STEEL"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "NEWPORT STEEL",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "NEWPORT STEEL"
     },
     {
       "id": "p_od_9313e311b5",
       "nome": "SMARTCRED",
       "cliente": "SMARTCRED",
       "objetivo": "",
-      "etapa": "Proposta enviada",
+      "etapa": "Em execução",
       "status": "Concluído",
       "prioridade": "Média",
       "responsavel": "Romio Netto, Guilherme",
@@ -6627,7 +7218,7 @@
           ]
         ],
         "checks": {},
-        "lastProgress": "Importado em 16/09/2026 · pasta com 1 arquivos · artefatos: pricing",
+        "lastProgress": "Importado em 16/09/2026 · pasta com 1 arquivo · artefatos: pricing",
         "blocker": "",
         "nextGate": "",
         "workDate": "",
@@ -6683,24 +7274,36 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/SMARTCRED",
         "plannerTaskId": "LDAB9c9dYUipYl51c0oe35gAExxx",
+        "plannerTaskIds": [
+          "LDAB9c9dYUipYl51c0oe35gAExxx"
+        ],
         "artefatos": [
           "pricing"
-        ]
+        ],
+        "fileCount": 1,
+        "checklistResumo": "",
+        "notasResumo": "",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "smartcred"
+        ],
+        "sourceFolder": "SMARTCRED"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "SMARTCRED",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "SMARTCRED"
     },
     {
       "id": "p_od_7197b5a3ce",
       "nome": "TBG",
       "cliente": "TBG",
       "objetivo": "Importado da pasta OneDrive (sem match confiável no Planner).",
-      "etapa": "Descoberta",
+      "etapa": "Qualificação",
       "status": "Em análise",
       "prioridade": "Média",
-      "responsavel": "Guilherme Netto",
+      "responsavel": "",
       "ops": {
         "tasks": [],
         "bom": [],
@@ -6785,7 +7388,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "Importado da pasta OneDrive (sem match confiável no Planner).",
+        "need": "",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -6830,26 +7433,34 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/1 TBG",
         "plannerTaskId": "",
+        "plannerTaskIds": [],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 14,
+        "checklistResumo": "",
+        "notasResumo": "",
+        "matchStatus": "sem_match",
+        "revisarMatch": true,
+        "matchConfianca": "nenhuma",
+        "matchHits": [],
+        "sourceFolder": "1 TBG"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "1 TBG",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "1 TBG"
     },
     {
       "id": "p_od_843a3e08ce",
       "nome": "KPMG",
       "cliente": "KPMG",
       "objetivo": "Importado da pasta OneDrive (sem match confiável no Planner).",
-      "etapa": "Descoberta",
+      "etapa": "Qualificação",
       "status": "Em análise",
       "prioridade": "Média",
-      "responsavel": "Guilherme Netto",
+      "responsavel": "",
       "ops": {
         "tasks": [],
         "bom": [],
@@ -6934,7 +7545,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "Importado da pasta OneDrive (sem match confiável no Planner).",
+        "need": "",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -6979,26 +7590,34 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/KPMG",
         "plannerTaskId": "",
+        "plannerTaskIds": [],
         "artefatos": [
           "pricing",
           "handover",
           "apresentação"
-        ]
+        ],
+        "fileCount": 12,
+        "checklistResumo": "",
+        "notasResumo": "",
+        "matchStatus": "sem_match",
+        "revisarMatch": true,
+        "matchConfianca": "nenhuma",
+        "matchHits": [],
+        "sourceFolder": "KPMG"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "KPMG",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "KPMG"
     },
     {
       "id": "p_od_979fe91b55",
       "nome": "UPS",
       "cliente": "UPS",
       "objetivo": "Importado da pasta OneDrive (sem match confiável no Planner).",
-      "etapa": "Descoberta",
+      "etapa": "Qualificação",
       "status": "Em análise",
       "prioridade": "Média",
-      "responsavel": "Guilherme Netto",
+      "responsavel": "",
       "ops": {
         "tasks": [],
         "bom": [],
@@ -7083,7 +7702,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "Importado da pasta OneDrive (sem match confiável no Planner).",
+        "need": "",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -7128,26 +7747,34 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/UPS",
         "plannerTaskId": "",
+        "plannerTaskIds": [],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 8,
+        "checklistResumo": "",
+        "notasResumo": "",
+        "matchStatus": "sem_match",
+        "revisarMatch": true,
+        "matchConfianca": "nenhuma",
+        "matchHits": [],
+        "sourceFolder": "UPS"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "UPS",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "UPS"
     },
     {
       "id": "p_od_00efc3c410",
       "nome": "VOA",
       "cliente": "VOA",
       "objetivo": "Importado da pasta OneDrive (sem match confiável no Planner).",
-      "etapa": "Descoberta",
+      "etapa": "Qualificação",
       "status": "Em análise",
       "prioridade": "Média",
-      "responsavel": "Guilherme Netto",
+      "responsavel": "",
       "ops": {
         "tasks": [],
         "bom": [],
@@ -7232,7 +7859,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "Importado da pasta OneDrive (sem match confiável no Planner).",
+        "need": "",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -7277,25 +7904,33 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/VOA",
         "plannerTaskId": "",
+        "plannerTaskIds": [],
         "artefatos": [
           "proposta",
           "pricing"
-        ]
+        ],
+        "fileCount": 8,
+        "checklistResumo": "",
+        "notasResumo": "",
+        "matchStatus": "sem_match",
+        "revisarMatch": true,
+        "matchConfianca": "nenhuma",
+        "matchHits": [],
+        "sourceFolder": "VOA"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "VOA",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "VOA"
     },
     {
       "id": "p_od_f0cab9d2f9",
       "nome": "K1",
       "cliente": "K1",
       "objetivo": "Importado da pasta OneDrive (sem match confiável no Planner).",
-      "etapa": "Descoberta",
+      "etapa": "Qualificação",
       "status": "Em análise",
       "prioridade": "Média",
-      "responsavel": "Guilherme Netto",
+      "responsavel": "",
       "ops": {
         "tasks": [],
         "bom": [],
@@ -7380,7 +8015,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "Importado da pasta OneDrive (sem match confiável no Planner).",
+        "need": "",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -7425,26 +8060,34 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/K1",
         "plannerTaskId": "",
+        "plannerTaskIds": [],
         "artefatos": [
           "proposta",
           "pricing",
           "cotação"
-        ]
+        ],
+        "fileCount": 6,
+        "checklistResumo": "",
+        "notasResumo": "",
+        "matchStatus": "sem_match",
+        "revisarMatch": true,
+        "matchConfianca": "nenhuma",
+        "matchHits": [],
+        "sourceFolder": "K1"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "K1",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "K1"
     },
     {
       "id": "p_od_efd53342e1",
       "nome": "HORCH",
       "cliente": "HORCH",
       "objetivo": "Importado da pasta OneDrive (sem match confiável no Planner).",
-      "etapa": "Descoberta",
+      "etapa": "Qualificação",
       "status": "Em análise",
       "prioridade": "Média",
-      "responsavel": "Guilherme Netto",
+      "responsavel": "",
       "ops": {
         "tasks": [],
         "bom": [],
@@ -7529,7 +8172,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "Importado da pasta OneDrive (sem match confiável no Planner).",
+        "need": "",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -7574,25 +8217,33 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/HORCH",
         "plannerTaskId": "",
+        "plannerTaskIds": [],
         "artefatos": [
           "proposta",
           "pricing"
-        ]
+        ],
+        "fileCount": 4,
+        "checklistResumo": "",
+        "notasResumo": "",
+        "matchStatus": "sem_match",
+        "revisarMatch": true,
+        "matchConfianca": "nenhuma",
+        "matchHits": [],
+        "sourceFolder": "HORCH"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "HORCH",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "HORCH"
     },
     {
       "id": "p_od_8cef04f3e2",
       "nome": "VIVAVETORIAL",
       "cliente": "VIVAVETORIAL",
       "objetivo": "Importado da pasta OneDrive (sem match confiável no Planner).",
-      "etapa": "Descoberta",
+      "etapa": "Qualificação",
       "status": "Em análise",
       "prioridade": "Média",
-      "responsavel": "Guilherme Netto",
+      "responsavel": "",
       "ops": {
         "tasks": [],
         "bom": [],
@@ -7666,7 +8317,7 @@
           ]
         ],
         "checks": {},
-        "lastProgress": "Importado em 16/09/2026 · pasta com 1 arquivos · artefatos: pricing",
+        "lastProgress": "Importado em 16/09/2026 · pasta com 1 arquivo · artefatos: pricing",
         "blocker": "",
         "nextGate": "",
         "workDate": "",
@@ -7677,7 +8328,7 @@
         "requester": "",
         "crm": "",
         "address": "",
-        "need": "Importado da pasta OneDrive (sem match confiável no Planner).",
+        "need": "",
         "customerTerm": "",
         "success": "",
         "terminal": "PENDING VALIDATION",
@@ -7722,14 +8373,22 @@
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/VIVAVETORIAL",
         "plannerTaskId": "",
+        "plannerTaskIds": [],
         "artefatos": [
           "pricing"
-        ]
+        ],
+        "fileCount": 1,
+        "checklistResumo": "",
+        "notasResumo": "",
+        "matchStatus": "sem_match",
+        "revisarMatch": true,
+        "matchConfianca": "nenhuma",
+        "matchHits": [],
+        "sourceFolder": "VIVAVETORIAL"
       },
-      "createdAt": "2026-09-16T15:09:35Z",
-      "updatedAt": "2026-09-16T15:09:35Z",
-      "_sourcePasta": "VIVAVETORIAL",
-      "_importBatch": "onedrive-planner-2026-09-16"
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "_sourcePasta": "VIVAVETORIAL"
     }
   ],
   "projetoAtivoId": "p_od_6224920db2",
@@ -7739,6 +8398,9 @@
     "fontePastas": "/Users/Guilherme.Romio-Netto/Documents/OneDrive_1_16-09-2026",
     "fontePlanner": "GERENCIAMENTO - PRÉ-VENDA",
     "totalProjetos": 52,
-    "nota": "Match fuzzy; RUFF sem match Planner forçado. Ops operacionais detalhados (BoM/pricing Nilko completo) só no seed clássico — esta carteira traz metadados + pasta + notas."
+    "matched": 44,
+    "uncertain": 8,
+    "unmatched": 8,
+    "nota": "Matching fuzzy OneDrive×Planner exige validação humana. RUFF×DMA descartado. Ops detalhados da Nilko são enriquecidos em runtime."
   }
 }

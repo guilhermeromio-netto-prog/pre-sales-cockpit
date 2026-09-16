@@ -8,12 +8,27 @@ window.PSC = window.PSC || {};
   }
 
   function enrichNilkoIfPresent(projetos) {
-    const nilko = projetos.find((p) => /nilko/i.test(p.nome + ' ' + (p.cliente || '') + ' ' + (p._sourcePasta || '')));
+    const nilko = projetos.find((p) => {
+      const hay = [p.nome, p.cliente, p._sourcePasta, p.ops && p.ops.pastaOneDrive, p.ops && p.ops.sourceFolder]
+        .filter(Boolean)
+        .join(' ');
+      return /nilko/i.test(hay);
+    });
     if (nilko && PSC.defaults.createNilkoOps) {
+      const prev = nilko.ops || {};
       nilko.ops = Object.assign(PSC.defaults.createNilkoOps(), {
-        pastaOneDrive: (nilko.ops && nilko.ops.pastaOneDrive) || '',
-        plannerTaskId: (nilko.ops && nilko.ops.plannerTaskId) || '',
-        artefatos: (nilko.ops && nilko.ops.artefatos) || []
+        pastaOneDrive: prev.pastaOneDrive || '',
+        plannerTaskId: prev.plannerTaskId || '',
+        plannerTaskIds: Array.isArray(prev.plannerTaskIds) ? prev.plannerTaskIds : [],
+        artefatos: Array.isArray(prev.artefatos) ? prev.artefatos : [],
+        fileCount: prev.fileCount || 0,
+        checklistResumo: prev.checklistResumo || '',
+        notasResumo: prev.notasResumo || '',
+        matchStatus: prev.matchStatus || 'match',
+        revisarMatch: !!prev.revisarMatch,
+        matchConfianca: prev.matchConfianca || 'media',
+        matchHits: Array.isArray(prev.matchHits) ? prev.matchHits : [],
+        sourceFolder: prev.sourceFolder || ''
       });
       nilko.cliente = 'Nilko Tecnologia Ltda.';
       nilko.nome = 'Nilko — Starlink Mobile';
@@ -114,7 +129,18 @@ window.PSC = window.PSC || {};
       if (st.ui.filtroStatus && p.status !== st.ui.filtroStatus) return false;
       if (st.ui.filtroPrioridade && p.prioridade !== st.ui.filtroPrioridade) return false;
       if (!q) return true;
-      const hay = [p.nome, p.cliente, p.objetivo, p.responsavel, p.etapa, p.status]
+      const hay = [
+        p.nome,
+        p.cliente,
+        p.objetivo,
+        p.responsavel,
+        p.etapa,
+        p.status,
+        p._sourcePasta,
+        p.ops && p.ops.sourceFolder,
+        p.ops && p.ops.pastaOneDrive,
+        Array.isArray(p.ops && p.ops.artefatos) ? p.ops.artefatos.join(' ') : ''
+      ]
         .join(' ')
         .toLowerCase();
       return hay.includes(q);

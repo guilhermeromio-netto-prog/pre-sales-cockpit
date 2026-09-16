@@ -30,8 +30,27 @@ window.PSC = window.PSC || {};
       return;
     }
     root.innerHTML = list
-      .map(
-        (p) => `<article class="project-card" data-open="${esc(p.id)}">
+      .map((p) => {
+        const ops = p.ops || {};
+        const pasta = ops.sourceFolder || ops.pastaOneDrive || p._sourcePasta || '';
+        const arts = Array.isArray(ops.artefatos) ? ops.artefatos : [];
+        const files = ops.fileCount || 0;
+        const review = !!ops.revisarMatch || ops.matchStatus === 'sem_match' || ops.matchStatus === 'incerto';
+        const reviewLabel =
+          ops.matchStatus === 'sem_match'
+            ? 'Revisar match · sem Planner'
+            : ops.matchStatus === 'incerto'
+              ? 'Revisar match · incerto'
+              : 'Revisar match';
+        const indicators = [
+          pasta ? `<span class="chip chip-folder" title="${esc(ops.pastaOneDrive || pasta)}">📁 ${esc(pasta)}</span>` : '',
+          files ? `<span class="chip">${files} arq.</span>` : '',
+          arts.length ? `<span class="chip chip-arts">${esc(arts.slice(0, 4).join(' · '))}${arts.length > 4 ? '…' : ''}</span>` : '',
+          review ? `<span class="chip chip-warn">${esc(reviewLabel)}</span>` : ''
+        ]
+          .filter(Boolean)
+          .join('');
+        return `<article class="project-card${review ? ' needs-review' : ''}" data-open="${esc(p.id)}">
         <div class="pc-top">
           <div>
             <h3>${esc(p.nome)}</h3>
@@ -45,14 +64,15 @@ window.PSC = window.PSC || {};
           <span><b>Status</b> ${esc(p.status)}</span>
           <span><b>Resp.</b> ${esc(p.responsavel || '—')}</span>
         </div>
+        ${indicators ? `<div class="pc-indicators">${indicators}</div>` : ''}
         <div class="pc-actions">
           <button type="button" class="btn-open" data-open="${esc(p.id)}">Abrir</button>
           <button type="button" class="btn-ghost" data-edit="${esc(p.id)}">Editar</button>
           <button type="button" class="btn-danger-ghost" data-del="${esc(p.id)}">Excluir</button>
         </div>
         <small class="muted">Atualizado: ${esc(formatDate(p.updatedAt))}</small>
-      </article>`
-      )
+      </article>`;
+      })
       .join('');
 
     root.querySelectorAll('[data-open]').forEach((el) => {

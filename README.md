@@ -31,17 +31,21 @@ python3 -m http.server 8080
 index.html
 styles.css
 js/
-  ui.js          — helpers (esc, money, navegação)
-  storage.js     — storageService (único ponto de localStorage)
-  state.js       — fonte única: state.projetos (+ projetoAtivoId)
-  defaults.js    — payload operacional vazio + seed Nilko
-  projects.js    — CRUD, filtros, backup/restore/reset
-  finance.js     — frete e pricing
-  ops.js         — abas operacionais ligadas ao projeto ativo
-  dashboard.js   — portfólio / modal de metadados
-  app.js         — bootstrap
+  ui.js            — helpers (esc, money, navegação)
+  storage.js       — storageService (único ponto de localStorage)
+  state.js         — fonte única: state.projetos (+ projetoAtivoId)
+  defaults.js      — payload operacional vazio + seed Nilko
+  carteira-seed.js — seed estático da carteira cruzada (PSC.CARTEIRA_SEED)
+  projects.js      — CRUD, filtros, backup/restore/reset/import carteira
+  finance.js       — frete e pricing
+  ops.js           — abas operacionais ligadas ao projeto ativo
+  dashboard.js     — portfólio / modal de metadados
+  app.js           — bootstrap
+data/
+  carteira-cruzada-2026-09-16.json
 docs/
   SPEC-v1.0.md
+  mapa-projetos-cruzado.md
 ```
 
 - **Fonte única de verdade**: `state.projetos`. As views não mantêm cópias duplicadas do projeto.
@@ -55,7 +59,7 @@ Criar um segundo projeto e alternar entre ele e o seed Nilko **não** deve mistu
 
 ## Próximo passo
 
-- Importação de projetos via **CSV do Microsoft Planner** (fora do escopo deste MVP).
+- Validar manualmente os matches pasta ↔ Planner marcados para revisão e ajustar metadados no Cockpit.
 
 ## Importante
 
@@ -63,15 +67,30 @@ Ferramenta de apoio operacional. **Não** substitui o precificador oficial nem a
 
 ## Carteira cruzada (16/09/2026)
 
-O portfólio padrão agora nasce com **52 projetos** cruzados entre:
-- pastas em `Documents/OneDrive_1_16-09-2026`
-- export Planner `GERENCIAMENTO - PRÉ-VENDA`
+Fonte: cruzamento OneDrive × Planner gerado em **16/09/2026** (America/Sao_Paulo).
 
-Arquivos:
-- `data/carteira-cruzada-2026-09-16.json`
-- `js/carteira-seed.js`
+- Pastas OneDrive: `Documents/OneDrive_1_16-09-2026` (**52** pastas de projeto)
+- Planner: `GERENCIAMENTO - PRÉ-VENDA`
+- Relatório completo: `docs/mapa-projetos-cruzado.md`
+- Seed estático: `data/carteira-cruzada-2026-09-16.json` + `js/carteira-seed.js` (carregado antes de `projects.js` / `app.js`)
 
-No app, use **Importar carteira cruzada** para substituir o portfólio local por essa base (faça Backup JSON antes). O projeto Nilko mantém o ops operacional completo (BoM, pricing, cotações).
+### Como entra no app
 
-Se você já abriu o app antes e só vê a Nilko, clique em **Importar carteira cruzada** ou limpe o `localStorage` / use Reset.
+- **Usuário novo** (sem dados em `localStorage`): o seed da carteira cruzada é aplicado automaticamente (52 projetos).
+- **Usuário com dados locais**: use **Importar carteira cruzada** (com confirmação) para substituir o portfólio. Faça **Backup JSON** antes.
+- **Reset** também restaura essa carteira padrão (não só a Nilko isolada).
+
+### Matching e validação humana
+
+O cruzamento pasta ↔ tarefa é **fuzzy**. Alguns vínculos são incertos e **precisam de validação humana**.
+
+- Pastas sem match confiável entram como projetos marcados para revisão (chip **Revisar match**).
+- Falso positivo conhecido **RUFF CJ Distribuidora de Petroleo Lta ↔ DMA DISTRIBUIDORA SA** foi **descartado**: a pasta existe no portfólio, sem detalhes da tarefa errada.
+- Cards mostram pasta/artefatos; **não** exibem notas longas/sensíveis.
+
+### Nilko
+
+Há **um único** projeto Nilko. O payload operacional enriquecido (BoM, pricing, cotações) é mantido/mesclado em runtime — sem duplicar a pasta `1 NILKO`.
+
+Arquivos brutos do OneDrive **não** entram no repositório.
 
