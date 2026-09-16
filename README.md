@@ -103,3 +103,20 @@ O Cockpit trata **cliente ≠ projeto**. Um cliente (ex.: Grupo GPS) pode ter v�
 
 Ao sincronizar memórias diárias, atualizar **somente o card do projeto citado**, nunca fundir frentes diferentes no mesmo registro.
 
+## Papel do Cockpit
+
+Este app é um **visualizador consolidado** e um **simulador** da carteira de pré-vendas:
+
+- organizar Discovery → Solution → Cotação → Frete → Pricing → Approval → Proposta → Riscos → Gates;
+- copiar/colar e apresentar o projeto com visual consistente;
+- alimentar a Proposta Técnica-Comercial com o que já está nas abas;
+- atualizar a carteira a partir das **memórias diárias** (sem misturar projetos do mesmo cliente).
+
+### JSON da carteira (no repositório)
+
+- `data/carteira-cruzada-2026-09-16.json` — fonte usada pelo seed
+- `data/carteira-atualizada-diario-2026-09-16.json` — mesma carteira (cópia nomeada pós-diário)
+- `js/carteira-seed.js` — `PSC.CARTEIRA_SEED` carregado no browser
+
+Para refrescar dados locais: **Backup JSON** antes → **Importar carteira cruzada**.
+
