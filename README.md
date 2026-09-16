@@ -130,3 +130,7 @@ Este app é um **visualizador consolidado** e um **simulador** da carteira de pr
 
 Para refrescar dados locais: **Backup JSON** antes → **Importar carteira cruzada**.
 
+
+## Demo online
+
+https://guilhermeromio-netto-prog.github.io/pre-sales-cockpit/
