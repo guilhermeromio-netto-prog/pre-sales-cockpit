@@ -2,6 +2,16 @@
 
 Cockpit multi-projeto offline de pré-vendas (HTML/CSS/JS), com marca Magenta **T•PRESALES**. Interface em **pt-BR**.
 
+## Atualizar carteira (botão único)
+
+No Portfólio, use **Atualizar carteira**:
+
+1. Edite projetos no Cockpit e clique **Backup JSON** (baixa o arquivo).
+2. Quando quiser recarregar essas informações, clique **Atualizar carteira** e selecione esse JSON.
+3. O portfólio local é substituído pelo conteúdo do arquivo.
+
+**Reset (seed)** volta ao seed embutido (`js/carteira-seed.js` / `data/carteira-cruzada-*.json`), não ao último backup.
+
 ## Como abrir
 
 1. Clone ou baixe este repositório.

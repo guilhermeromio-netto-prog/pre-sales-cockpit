@@ -158,6 +158,19 @@ window.PSC = window.PSC || {};
     save();
   }
 
+  /** Atualiza o portfólio a partir de um JSON (Backup ou carteira com .projetos). */
+  function atualizarCarteiraDeJSON(text) {
+    const data = PSC.storageService.parseBackup(text);
+    const projetos = enrichNilkoIfPresent(data.projetos);
+    PSC.state.hydrate({
+      version: data.version || 1,
+      projetos: projetos,
+      projetoAtivoId: data.projetoAtivoId || null
+    });
+    save();
+    return PSC.state.getProjetos().length;
+  }
+
   function resetAll() {
     PSC.storageService.clear();
     PSC.state.hydrate({ projetos: [], projetoAtivoId: null });
@@ -177,6 +190,7 @@ window.PSC = window.PSC || {};
     filtered,
     backup,
     restore,
+    atualizarCarteiraDeJSON,
     resetAll
   };
 })(window.PSC);

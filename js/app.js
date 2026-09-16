@@ -62,42 +62,28 @@ window.PSC = window.PSC || {};
       PSC.ui.setSavedLabel();
     };
     q('#backup').onclick = () => PSC.projects.backup();
-    q('#restore').onclick = () => q('#restore-file').click();
-    q('#restore-file').onchange = (e) => {
+    // Botão único: escolher JSON (Backup baixado ou carteira) e atualizar o portfólio local.
+    q('#btn-atualizar-carteira').onclick = () => q('#carteira-file').click();
+    q('#carteira-file').onchange = (e) => {
       const file = e.target.files && e.target.files[0];
       if (!file) return;
       const reader = new FileReader();
       reader.onload = () => {
         try {
-          PSC.projects.restore(String(reader.result));
-          alert('Backup restaurado com sucesso.');
+          const n = PSC.projects.atualizarCarteiraDeJSON(String(reader.result));
+          alert('Carteira atualizada: ' + n + ' projetos.\nArquivo: ' + file.name);
           showPortfolio();
         } catch (err) {
-          alert('Falha ao restaurar: ' + (err.message || err));
+          alert('Falha ao atualizar carteira: ' + (err.message || err));
         }
         e.target.value = '';
       };
       reader.readAsText(file);
     };
-    const btnImport = q('#btn-import-carteira');
-    if (btnImport) {
-      btnImport.onclick = () => {
-        if (
-          !confirm(
-            'Substituir o portfólio atual pela carteira cruzada OneDrive × Planner (16/09/2026)? Faça backup antes se precisar.'
-          )
-        ) {
-          return;
-        }
-        const n = PSC.projects.importCarteiraCruzada();
-        alert('Carteira importada: ' + n + ' projetos.');
-        showPortfolio();
-      };
-    }
     q('#reset').onclick = () => {
       if (
         confirm(
-          'Restaurar o portfólio padrão (carteira cruzada OneDrive × Planner) e apagar todos os dados deste navegador?'
+          'Voltar ao seed embutido do app (carteira padrão) e apagar os dados deste navegador? Faça Backup JSON antes se precisar.'
         )
       ) {
         PSC.projects.resetAll();
