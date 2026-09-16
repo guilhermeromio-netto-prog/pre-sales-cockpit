@@ -6,167 +6,7 @@
       "nome": "ELECTROLUX",
       "cliente": "ELECTROLUX",
       "objetivo": "Reunião com o Marcelo da quecktel",
-      "etapa": "Negociação",
-      "status": "Em andamento",
-      "prioridade": "Média",
-      "responsavel": "Dyrjawoj, Henrique",
-      "ops": {
-        "tasks": [],
-        "bom": [],
-        "quotes": [],
-        "prices": [],
-        "rules": [
-          [
-            "Plano de dados",
-            true,
-            "Declarar se a franquia é individual ou pool, tratamento no limite, upgrade, top-up e momento de eficácia."
-          ],
-          [
-            "Plataforma",
-            true,
-            "Declarar se está incluída, opcional ou fora do escopo; listar somente funcionalidades confirmadas."
-          ],
-          [
-            "Suporte",
-            true,
-            "Definir janela, canais, níveis, responsabilidades e escalonamento."
-          ],
-          [
-            "SLA",
-            true,
-            "Usar apenas percentual, métrica, exclusões, apuração e créditos formalmente aplicáveis à oferta."
-          ],
-          [
-            "Garantia e RMA",
-            true,
-            "Distinguir garantia do fabricante, triagem, logística reversa, spare e substituição."
-          ],
-          [
-            "Faturamento",
-            true,
-            "Definir início do OTC e MRC, pro rata, vencimento e aceite."
-          ],
-          [
-            "Reajuste",
-            true,
-            "Incluir índice, periodicidade e marco conforme aprovação contratual."
-          ],
-          [
-            "Tributos",
-            true,
-            "Separar telecom, outsourcing e revenda; validar UF e impostos."
-          ],
-          [
-            "Rescisão e multa",
-            true,
-            "Usar somente cláusula validada."
-          ],
-          [
-            "Validade, vigência e prazo",
-            true,
-            "Separar validade da proposta, duração contratual e dependências."
-          ],
-          [
-            "Confidencialidade",
-            true,
-            "Manter redação padrão do template aprovado."
-          ],
-          [
-            "Limitações técnicas",
-            true,
-            "Desempenho depende de cobertura, visada e políticas do fornecedor."
-          ],
-          [
-            "Exclusões",
-            true,
-            "Listar itens não precificados."
-          ]
-        ],
-        "checks": {},
-        "lastProgress": "Importado em 16/09/2026 · pasta com 23 arquivos · artefatos: cotação, apresentação",
-        "blocker": "",
-        "nextGate": "",
-        "workDate": "",
-        "checkpoint": "",
-        "dayNotes": "",
-        "client": "ELECTROLUX",
-        "cnpj": "",
-        "requester": "",
-        "crm": "",
-        "address": "",
-        "need": "Reunião com o Marcelo da quecktel",
-        "customerTerm": "",
-        "success": "",
-        "terminal": "PENDING VALIDATION",
-        "mobility": "PENDING VALIDATION",
-        "plan": "50 GB individual",
-        "platform": "PENDING VALIDATION",
-        "install": "PENDING VALIDATION",
-        "support": "PENDING VALIDATION",
-        "fQty": 1,
-        "fGross": 0,
-        "fWeight": 0,
-        "fVolumes": 1,
-        "fExtraGross": 0,
-        "fExtraWeight": 0,
-        "fExtraVolumes": 0,
-        "fCarrier": 0,
-        "fFactor": 1.3,
-        "fEvidence": "",
-        "months": 24,
-        "years": 2,
-        "techRisk": "",
-        "commRisk": "",
-        "priceFile": "",
-        "priceVersion": "",
-        "submitted": "",
-        "gmOfficial": "",
-        "npv": "",
-        "dcf": "",
-        "tcvGross": "",
-        "tcvNet": "",
-        "oe": "",
-        "approver": "",
-        "decision": "PENDING VALIDATION",
-        "approvedDate": "",
-        "approvalEvidence": "",
-        "proposalNo": "",
-        "commercial": "CAPEX + SERVIÇO",
-        "validity": 30,
-        "leadTime": "",
-        "termination": "",
-        "riskNotes": "",
-        "pricingFilename": "",
-        "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/1ELECTROLUX",
-        "plannerTaskId": "EgIsHvy8N0-jENeFc6YHqJgAGLcb",
-        "plannerTaskIds": [
-          "EgIsHvy8N0-jENeFc6YHqJgAGLcb"
-        ],
-        "artefatos": [
-          "cotação",
-          "apresentação"
-        ],
-        "fileCount": 23,
-        "checklistResumo": "",
-        "notasResumo": "Reunião com o Marcelo da quecktel",
-        "matchStatus": "match",
-        "revisarMatch": false,
-        "matchConfianca": "media",
-        "matchHits": [
-          "electrolux"
-        ],
-        "sourceFolder": "1ELECTROLUX"
-      },
-      "createdAt": "2026-09-16T15:00:00.000Z",
-      "updatedAt": "2026-09-16T15:00:00.000Z",
-      "_sourcePasta": "1ELECTROLUX"
-    },
-    {
-      "id": "p_od_6224920db2",
-      "nome": "Nilko — Starlink Mobile",
-      "cliente": "Nilko Tecnologia Ltda.",
-      "objetivo": "PRECIFICAR - | Cadastro CRM – Nilko Tecnologia Razão Social: Nilko Tecnologia Ltda. CNPJ: 75.086.785/0001-66 Segmento: Fabricação de equipamentos para telecomu…",
-      "etapa": "Precificação",
+      "etapa": "Escopo",
       "status": "Em andamento",
       "prioridade": "Alta",
       "responsavel": "Dyrjawoj, Henrique",
@@ -243,12 +83,180 @@
           ]
         ],
         "checks": {},
-        "lastProgress": "Importado em 16/09/2026 · pasta com 5 arquivos · artefatos: proposta, pricing, cotação",
-        "blocker": "",
-        "nextGate": "",
-        "workDate": "",
+        "lastProgress": "11/09: alinhamento com Marcelo (Queclink) sobre Electrolux e próximos passos. 14/09: premissas (energia, geo, dados ~2MB, físico, integração MAT, desenvolvimento) estruturadas para validação com Elenice.",
+        "blocker": "Premissas técnicas e comerciais incompletas — impede fechar prazo e preço.",
+        "nextGate": "Enviar e-mail de validação de premissas à Elenice e executar encaminhamentos Queclink.",
+        "workDate": "2026-09-14",
         "checkpoint": "",
-        "dayNotes": "",
+        "dayNotes": "Atualizado a partir de Memórias 10/11/14-09-2026.",
+        "client": "ELECTROLUX",
+        "cnpj": "",
+        "requester": "",
+        "crm": "",
+        "address": "",
+        "need": "Reunião com o Marcelo da quecktel",
+        "customerTerm": "",
+        "success": "",
+        "terminal": "PENDING VALIDATION",
+        "mobility": "PENDING VALIDATION",
+        "plan": "50 GB individual",
+        "platform": "PENDING VALIDATION",
+        "install": "PENDING VALIDATION",
+        "support": "PENDING VALIDATION",
+        "fQty": 1,
+        "fGross": 0,
+        "fWeight": 0,
+        "fVolumes": 1,
+        "fExtraGross": 0,
+        "fExtraWeight": 0,
+        "fExtraVolumes": 0,
+        "fCarrier": 0,
+        "fFactor": 1.3,
+        "fEvidence": "",
+        "months": 24,
+        "years": 2,
+        "techRisk": "",
+        "commRisk": "",
+        "priceFile": "",
+        "priceVersion": "",
+        "submitted": "",
+        "gmOfficial": "",
+        "npv": "",
+        "dcf": "",
+        "tcvGross": "",
+        "tcvNet": "",
+        "oe": "",
+        "approver": "",
+        "decision": "PENDING VALIDATION",
+        "approvedDate": "",
+        "approvalEvidence": "",
+        "proposalNo": "",
+        "commercial": "CAPEX + SERVIÇO",
+        "validity": 30,
+        "leadTime": "",
+        "termination": "",
+        "riskNotes": "Sem premissas validadas não há proposta end-to-end confiável.",
+        "pricingFilename": "",
+        "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/1ELECTROLUX",
+        "plannerTaskId": "EgIsHvy8N0-jENeFc6YHqJgAGLcb",
+        "plannerTaskIds": [
+          "EgIsHvy8N0-jENeFc6YHqJgAGLcb"
+        ],
+        "artefatos": [
+          "cotação",
+          "apresentação"
+        ],
+        "fileCount": 23,
+        "checklistResumo": "",
+        "notasResumo": "Reunião com o Marcelo da quecktel",
+        "matchStatus": "match",
+        "revisarMatch": false,
+        "matchConfianca": "media",
+        "matchHits": [
+          "electrolux"
+        ],
+        "sourceFolder": "1ELECTROLUX",
+        "diarioSync": {
+          "fontes": [
+            "2026-09-10.md",
+            "2026-09-11.md",
+            "2026-09-14.md"
+          ],
+          "syncedAt": "2026-09-16T17:28:04Z"
+        }
+      },
+      "createdAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T17:28:04Z",
+      "_sourcePasta": "1ELECTROLUX"
+    },
+    {
+      "id": "p_od_6224920db2",
+      "nome": "Nilko — Starlink Mobile",
+      "cliente": "Nilko Tecnologia Ltda.",
+      "objetivo": "PRECIFICAR - | Cadastro CRM – Nilko Tecnologia Razão Social: Nilko Tecnologia Ltda. CNPJ: 75.086.785/0001-66 Segmento: Fabricação de equipamentos para telecomu…",
+      "etapa": "Qualificação",
+      "status": "Em andamento",
+      "prioridade": "Alta",
+      "responsavel": "Dyrjawoj, Henrique",
+      "ops": {
+        "tasks": [],
+        "bom": [],
+        "quotes": [],
+        "prices": [],
+        "rules": [
+          [
+            "Plano de dados",
+            true,
+            "Declarar se a franquia é individual ou pool, tratamento no limite, upgrade, top-up e momento de eficácia."
+          ],
+          [
+            "Plataforma",
+            true,
+            "Declarar se está incluída, opcional ou fora do escopo; listar somente funcionalidades confirmadas."
+          ],
+          [
+            "Suporte",
+            true,
+            "Definir janela, canais, níveis, responsabilidades e escalonamento."
+          ],
+          [
+            "SLA",
+            true,
+            "Usar apenas percentual, métrica, exclusões, apuração e créditos formalmente aplicáveis à oferta."
+          ],
+          [
+            "Garantia e RMA",
+            true,
+            "Distinguir garantia do fabricante, triagem, logística reversa, spare e substituição."
+          ],
+          [
+            "Faturamento",
+            true,
+            "Definir início do OTC e MRC, pro rata, vencimento e aceite."
+          ],
+          [
+            "Reajuste",
+            true,
+            "Incluir índice, periodicidade e marco conforme aprovação contratual."
+          ],
+          [
+            "Tributos",
+            true,
+            "Separar telecom, outsourcing e revenda; validar UF e impostos."
+          ],
+          [
+            "Rescisão e multa",
+            true,
+            "Usar somente cláusula validada."
+          ],
+          [
+            "Validade, vigência e prazo",
+            true,
+            "Separar validade da proposta, duração contratual e dependências."
+          ],
+          [
+            "Confidencialidade",
+            true,
+            "Manter redação padrão do template aprovado."
+          ],
+          [
+            "Limitações técnicas",
+            true,
+            "Desempenho depende de cobertura, visada e políticas do fornecedor."
+          ],
+          [
+            "Exclusões",
+            true,
+            "Listar itens não precificados."
+          ]
+        ],
+        "checks": {},
+        "lastProgress": "14/09: projeto entrou na fila com prazo 15/09; escopo ainda em validação. Antes: Starlink móvel em precificação.",
+        "blocker": "Escopo e entregável ainda não detalhados; prazo curto (15/09).",
+        "nextGate": "Revisar escopo, definir entregável e plano de execução até 15/09.",
+        "workDate": "2026-09-14",
+        "checkpoint": "",
+        "dayNotes": "Atualizado a partir de Memórias 10/11/14-09-2026.",
         "client": "Nilko Tecnologia Ltda.",
         "cnpj": "",
         "requester": "",
@@ -295,7 +303,7 @@
         "validity": 30,
         "leadTime": "",
         "termination": "",
-        "riskNotes": "",
+        "riskNotes": "Risco de atraso na análise por prazo curto e escopo incompleto.",
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/1 NILKO",
         "plannerTaskId": "p3SoXeVMbk-Me3jJhys76ZgAFORT",
@@ -316,10 +324,18 @@
         "matchHits": [
           "nilko"
         ],
-        "sourceFolder": "1 NILKO"
+        "sourceFolder": "1 NILKO",
+        "diarioSync": {
+          "fontes": [
+            "2026-09-10.md",
+            "2026-09-11.md",
+            "2026-09-14.md"
+          ],
+          "syncedAt": "2026-09-16T17:28:04Z"
+        }
       },
       "createdAt": "2026-09-16T15:00:00.000Z",
-      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T17:28:04Z",
       "_sourcePasta": "1 NILKO"
     },
     {
@@ -490,7 +506,7 @@
       "nome": "Minebea do Brasil - DIA 150MB - Manaus",
       "cliente": "Minebea do Brasil Manaus",
       "objetivo": "cotaçao link de internet 150MB para manaus | Proposta de DIA de 150 mb para o CEP 69.036-790 n. 490 Manaus prazo de 36 meses a de Satelite mando via fast track…",
-      "etapa": "Em execução",
+      "etapa": "Precificação",
       "status": "Em andamento",
       "prioridade": "Média",
       "responsavel": "Dyrjawoj, Henrique",
@@ -567,12 +583,12 @@
           ]
         ],
         "checks": {},
-        "lastProgress": "Importado em 16/09/2026 · pasta com 2 arquivos · artefatos: proposta, pricing",
-        "blocker": "",
-        "nextGate": "",
-        "workDate": "",
+        "lastProgress": "10/09: pricing DIA 150 Mbps Manaus / 36 meses concluído e enviado para aprovação.",
+        "blocker": "Aguardando aprovação do pricing.",
+        "nextGate": "Após aprovação, preparar/atualizar proposta comercial; tratar ajustes se o aprovador pedir revisão.",
+        "workDate": "2026-09-14",
         "checkpoint": "",
-        "dayNotes": "",
+        "dayNotes": "Atualizado a partir de Memórias 10/11/14-09-2026.",
         "client": "Minebea do Brasil Manaus",
         "cnpj": "",
         "requester": "",
@@ -641,10 +657,18 @@
           "minebea",
           "brasil"
         ],
-        "sourceFolder": "1 Minebea do Brasil Manaus"
+        "sourceFolder": "1 Minebea do Brasil Manaus",
+        "diarioSync": {
+          "fontes": [
+            "2026-09-10.md",
+            "2026-09-11.md",
+            "2026-09-14.md"
+          ],
+          "syncedAt": "2026-09-16T17:28:04Z"
+        }
       },
       "createdAt": "2026-09-16T15:00:00.000Z",
-      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T17:28:04Z",
       "_sourcePasta": "1 Minebea do Brasil Manaus"
     },
     {
@@ -652,7 +676,7 @@
       "nome": "02974668 TC - STIHL - DIA",
       "cliente": "STIHL",
       "objetivo": "",
-      "etapa": "Qualificação",
+      "etapa": "Precificação",
       "status": "Em andamento",
       "prioridade": "Média",
       "responsavel": "Dyrjawoj, Henrique",
@@ -729,12 +753,12 @@
           ]
         ],
         "checks": {},
-        "lastProgress": "Importado em 16/09/2026 · pasta com 1 arquivo · artefatos: cotação",
-        "blocker": "",
-        "nextGate": "",
-        "workDate": "",
+        "lastProgress": "10/09: requisitos WAN alinhados (DIA, Broadband, redundância, 4G/5G/LEO; 36/60 meses); processo de cotação direcionado.",
+        "blocker": "Aguardando retorno das cotações de conectividade.",
+        "nextGate": "Consolidar cenário técnico-comercial após preços; validar endereço, velocidade, SLA por site.",
+        "workDate": "2026-09-14",
         "checkpoint": "",
-        "dayNotes": "",
+        "dayNotes": "Atualizado a partir de Memórias 10/11/14-09-2026.",
         "client": "STIHL",
         "cnpj": "",
         "requester": "",
@@ -800,10 +824,18 @@
         "matchHits": [
           "stihl"
         ],
-        "sourceFolder": "1 STIHL"
+        "sourceFolder": "1 STIHL",
+        "diarioSync": {
+          "fontes": [
+            "2026-09-10.md",
+            "2026-09-11.md",
+            "2026-09-14.md"
+          ],
+          "syncedAt": "2026-09-16T17:28:04Z"
+        }
       },
       "createdAt": "2026-09-16T15:00:00.000Z",
-      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T17:28:04Z",
       "_sourcePasta": "1 STIHL"
     },
     {
@@ -1126,9 +1158,9 @@
       "nome": "TC - DIA - GRUPO GPS PARA AZUL LINHAS AREAS",
       "cliente": "GRUPO GPS",
       "objetivo": "Link + SDWAN",
-      "etapa": "Em execução",
-      "status": "Concluído",
-      "prioridade": "Média",
+      "etapa": "Descoberta",
+      "status": "Em andamento",
+      "prioridade": "Alta",
       "responsavel": "Donadio, Bruno",
       "ops": {
         "tasks": [],
@@ -1203,12 +1235,12 @@
           ]
         ],
         "checks": {},
-        "lastProgress": "Importado em 16/09/2026 · pasta com 66 arquivos · artefatos: proposta, pricing, cotação, bom/escopo, handover, apresentação",
-        "blocker": "",
-        "nextGate": "",
-        "workDate": "",
+        "lastProgress": "10/09: pendências técnicas da POC Trem de Carga acompanhadas. 11/09: reunião com cliente sobre PoC de locomotiva Grupo GPS → cliente final MRS; contexto discutido.",
+        "blocker": "Encaminhamentos da reunião ainda em acompanhamento; disponibilidade/specs de antena e infraestrutura.",
+        "nextGate": "Executar encaminhamentos da PoC GPS/MRS e registrar decisões/pendências.",
+        "workDate": "2026-09-14",
         "checkpoint": "",
-        "dayNotes": "",
+        "dayNotes": "Atualizado a partir de Memórias 10/11/14-09-2026. Nota: pasta OneDrive/Planner também referencia DIA GPS×Azul — validar se é a mesma frente ou oportunidade irmã.",
         "client": "GRUPO GPS",
         "cnpj": "",
         "requester": "",
@@ -1255,7 +1287,7 @@
         "validity": 30,
         "leadTime": "",
         "termination": "",
-        "riskNotes": "",
+        "riskNotes": "Confirmar se o card do Cockpit cobre PoC locomotiva MRS além do histórico Azul.",
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/GRUPO GPS",
         "plannerTaskId": "pEmSuuwX9kufAcynUMlcSJgAA1Gc",
@@ -1286,10 +1318,18 @@
           "grupo gps",
           "grupo"
         ],
-        "sourceFolder": "GRUPO GPS"
+        "sourceFolder": "GRUPO GPS",
+        "diarioSync": {
+          "fontes": [
+            "2026-09-10.md",
+            "2026-09-11.md",
+            "2026-09-14.md"
+          ],
+          "syncedAt": "2026-09-16T17:28:04Z"
+        }
       },
       "createdAt": "2026-09-16T15:00:00.000Z",
-      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T17:28:04Z",
       "_sourcePasta": "GRUPO GPS"
     },
     {
@@ -1458,10 +1498,10 @@
       "id": "p_od_9470273f85",
       "nome": "RFP Starlink RD Saúde - 17 CD's",
       "cliente": "RD SAUDE",
-      "objetivo": "",
-      "etapa": "Em execução",
-      "status": "Concluído",
-      "prioridade": "Média",
+      "objetivo": " [Diário 14/09] Gate: Pricing Approval Pending — proposta só após versão confirmada.",
+      "etapa": "Precificação",
+      "status": "Em risco",
+      "prioridade": "Crítica",
       "responsavel": "Dyrjawoj, Henrique",
       "ops": {
         "tasks": [],
@@ -1536,12 +1576,12 @@
           ]
         ],
         "checks": {},
-        "lastProgress": "Importado em 16/09/2026 · pasta com 38 arquivos · artefatos: proposta, pricing, bom/escopo, memória/notas",
-        "blocker": "",
-        "nextGate": "",
-        "workDate": "",
+        "lastProgress": "14/09: versão atual de pricing (vigência 12 meses) em Pricing Approval — Pending após reformulação de margem/vigência. Histórico V1–V4 preservado (margens 24%/14%/70% por versão).",
+        "blocker": "Confirmação formal da aprovação do pricing atual; risco de enviar proposta com margem/versão errada.",
+        "nextGate": "Confirmar aprovação da versão atual → atualizar proposta → enviar ao Arthur (meta 15/09 12h).",
+        "workDate": "2026-09-14",
         "checkpoint": "",
-        "dayNotes": "",
+        "dayNotes": "Atualizado a partir de Memórias 10/11/14-09-2026.",
         "client": "RD SAUDE",
         "cnpj": "",
         "requester": "",
@@ -1588,7 +1628,7 @@
         "validity": 30,
         "leadTime": "",
         "termination": "",
-        "riskNotes": "",
+        "riskNotes": "Não tratar percentuais 24/14/70 como margem final sem evidência da versão aprovada. Histórico de comparação com Vivo exige escopo DT claro.",
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/RD SAUDE",
         "plannerTaskId": "xAAua9Y-4E2M9zFvrVSY4pgAO9G9",
@@ -1611,10 +1651,18 @@
           "rd saude",
           "saude"
         ],
-        "sourceFolder": "RD SAUDE"
+        "sourceFolder": "RD SAUDE",
+        "diarioSync": {
+          "fontes": [
+            "2026-09-10.md",
+            "2026-09-11.md",
+            "2026-09-14.md"
+          ],
+          "syncedAt": "2026-09-16T17:28:04Z"
+        }
       },
       "createdAt": "2026-09-16T15:00:00.000Z",
-      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T17:28:04Z",
       "_sourcePasta": "RD SAUDE"
     },
     {
@@ -1786,9 +1834,9 @@
       "nome": "TC - STARLINKS - MOTIVA Motiva Infraestrutura de Mobilidade S.A.",
       "cliente": "MOTIVA",
       "objetivo": "Processo: RFQ-001/2026 – Solução de Conectividade Satelital Starlink | Solicitante: Concessionária Motiva Pantanal | Data: 12 de abril de 2026 | Responsáveis T…",
-      "etapa": "Em execução",
-      "status": "Concluído",
-      "prioridade": "Média",
+      "etapa": "Precificação",
+      "status": "Em andamento",
+      "prioridade": "Alta",
       "responsavel": "Romio Netto, Guilherme",
       "ops": {
         "tasks": [],
@@ -1863,12 +1911,12 @@
           ]
         ],
         "checks": {},
-        "lastProgress": "Importado em 16/09/2026 · pasta com 32 arquivos · artefatos: proposta, pricing, cotação, apresentação",
-        "blocker": "",
-        "nextGate": "",
-        "workDate": "",
+        "lastProgress": "10/09: proposta TC Starlink veicular avançada (~92 kits, Teltonika, plataforma); precificação era o próximo passo junto à frente TBG.",
+        "blocker": "Consistência TBG/MOTIVA e fechamento de preço/escopo CAPEX-OPEX.",
+        "nextGate": "Validar se precificador TBG cobre este cenário Motiva e alinhar documentos do cliente destinatário.",
+        "workDate": "2026-09-14",
         "checkpoint": "",
-        "dayNotes": "",
+        "dayNotes": "Atualizado a partir de Memórias 10/11/14-09-2026 (cruzado com TBG).",
         "client": "MOTIVA",
         "cnpj": "",
         "requester": "",
@@ -1939,10 +1987,18 @@
         "matchHits": [
           "motiva"
         ],
-        "sourceFolder": "1 MOTIVA"
+        "sourceFolder": "1 MOTIVA",
+        "diarioSync": {
+          "fontes": [
+            "2026-09-10.md",
+            "2026-09-11.md",
+            "2026-09-14.md"
+          ],
+          "syncedAt": "2026-09-16T17:28:04Z"
+        }
       },
       "createdAt": "2026-09-16T15:00:00.000Z",
-      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T17:28:04Z",
       "_sourcePasta": "1 MOTIVA"
     },
     {
@@ -2280,9 +2336,9 @@
       "nome": "OWENS - ILLINOIS - DIA",
       "cliente": "OWENS",
       "objetivo": "Olá, pessoal, Gostaria do apoio para elaboração de proposta comercial de links dedicados de internet (DIA) com as seguintes características: Velocidades: 100 M…",
-      "etapa": "Em execução",
-      "status": "Concluído",
-      "prioridade": "Média",
+      "etapa": "Proposta enviada",
+      "status": "Em análise",
+      "prioridade": "Baixa",
       "responsavel": "Romio Netto, Guilherme",
       "ops": {
         "tasks": [],
@@ -2357,12 +2413,12 @@
           ]
         ],
         "checks": {},
-        "lastProgress": "Importado em 16/09/2026 · pasta com 15 arquivos · artefatos: proposta, pricing, cotação, apresentação",
-        "blocker": "",
-        "nextGate": "",
-        "workDate": "",
+        "lastProgress": "10/09: assessment/operacionalização Itaquera revisado e compartilhado com Arthur (nova rodada).",
+        "blocker": "Sem bloqueio ativo; aguarda novos comentários comerciais/cliente.",
+        "nextGate": "Só incorporar comentários se forem recebidos; manter arquivo como versão de referência.",
+        "workDate": "2026-09-14",
         "checkpoint": "",
-        "dayNotes": "",
+        "dayNotes": "Atualizado a partir de Memórias 10/11/14-09-2026.",
         "client": "OWENS",
         "cnpj": "",
         "requester": "",
@@ -2432,10 +2488,18 @@
         "matchHits": [
           "owens"
         ],
-        "sourceFolder": "OWENS"
+        "sourceFolder": "OWENS",
+        "diarioSync": {
+          "fontes": [
+            "2026-09-10.md",
+            "2026-09-11.md",
+            "2026-09-14.md"
+          ],
+          "syncedAt": "2026-09-16T17:28:04Z"
+        }
       },
       "createdAt": "2026-09-16T15:00:00.000Z",
-      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T17:28:04Z",
       "_sourcePasta": "OWENS"
     },
     {
@@ -3584,9 +3648,9 @@
       "nome": "WABTEC",
       "cliente": "WABTEC",
       "objetivo": "03 antenas com 3 planos opção de 50G e 500G + Acessórios. | Razão Social: Wabtec Brasil Fabricacao e Manutencao de Equipamentos Ltda. | Logradouro: Avenida Gen…",
-      "etapa": "Em execução",
-      "status": "Concluído",
-      "prioridade": "Média",
+      "etapa": "Precificação",
+      "status": "Em andamento",
+      "prioridade": "Alta",
       "responsavel": "Romio Netto, Guilherme",
       "ops": {
         "tasks": [],
@@ -3661,12 +3725,12 @@
           ]
         ],
         "checks": {},
-        "lastProgress": "Importado em 16/09/2026 · pasta com 8 arquivos · artefatos: proposta, pricing, cotação",
-        "blocker": "",
-        "nextGate": "",
-        "workDate": "",
+        "lastProgress": "10/09: PTC Starlink finalizada (3 Mini + kit veicular + plataforma, 12 meses); pricing enviado para aprovação; material pronto para revisão/envio após OK.",
+        "blocker": "Aguardando aprovação formal do pricing.",
+        "nextGate": "Acompanhar aprovação → revisão final técnica/comercial → liberar envio.",
+        "workDate": "2026-09-14",
         "checkpoint": "",
-        "dayNotes": "",
+        "dayNotes": "Atualizado a partir de Memórias 10/11/14-09-2026.",
         "client": "WABTEC",
         "cnpj": "",
         "requester": "",
@@ -3736,10 +3800,18 @@
         "matchHits": [
           "wabtec"
         ],
-        "sourceFolder": "1 WABTEC"
+        "sourceFolder": "1 WABTEC",
+        "diarioSync": {
+          "fontes": [
+            "2026-09-10.md",
+            "2026-09-11.md",
+            "2026-09-14.md"
+          ],
+          "syncedAt": "2026-09-16T17:28:04Z"
+        }
       },
       "createdAt": "2026-09-16T15:00:00.000Z",
-      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T17:28:04Z",
       "_sourcePasta": "1 WABTEC"
     },
     {
@@ -5692,8 +5764,8 @@
       "nome": "DAHRUJ",
       "cliente": "DAHRUJ",
       "objetivo": "",
-      "etapa": "Em execução",
-      "status": "Concluído",
+      "etapa": "Qualificação",
+      "status": "Em andamento",
       "prioridade": "Média",
       "responsavel": "Romio Netto, Guilherme",
       "ops": {
@@ -5769,12 +5841,12 @@
           ]
         ],
         "checks": {},
-        "lastProgress": "Importado em 16/09/2026 · pasta com 3 arquivos · artefatos: proposta, pricing, cotação",
-        "blocker": "",
-        "nextGate": "",
-        "workDate": "",
+        "lastProgress": "10/09: demanda Aruba (gateways, AP Wi-Fi 6E/7, switches CX, licenças Central) sem LPU — retornada ao Arthur via RD/cotação.",
+        "blocker": "Sem LPU; SKUs, quantidades e duração de licenças incompletos.",
+        "nextGate": "Aguardar cotação válida (fornecedor/SKU/prazo) e só então precificar.",
+        "workDate": "2026-09-14",
         "checkpoint": "",
-        "dayNotes": "",
+        "dayNotes": "Atualizado a partir de Memórias 10/11/14-09-2026 (Daruhj/Aruba).",
         "client": "DAHRUJ",
         "cnpj": "",
         "requester": "",
@@ -5843,10 +5915,18 @@
         "matchHits": [
           "dahruj"
         ],
-        "sourceFolder": "DAHRUJ"
+        "sourceFolder": "DAHRUJ",
+        "diarioSync": {
+          "fontes": [
+            "2026-09-10.md",
+            "2026-09-11.md",
+            "2026-09-14.md"
+          ],
+          "syncedAt": "2026-09-16T17:28:04Z"
+        }
       },
       "createdAt": "2026-09-16T15:00:00.000Z",
-      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T17:28:04Z",
       "_sourcePasta": "DAHRUJ"
     },
     {
@@ -7300,9 +7380,9 @@
       "nome": "TBG",
       "cliente": "TBG",
       "objetivo": "Importado da pasta OneDrive (sem match confiável no Planner).",
-      "etapa": "Qualificação",
-      "status": "Em análise",
-      "prioridade": "Média",
+      "etapa": "Negociação",
+      "status": "Bloqueado",
+      "prioridade": "Alta",
       "responsavel": "",
       "ops": {
         "tasks": [],
@@ -7377,12 +7457,12 @@
           ]
         ],
         "checks": {},
-        "lastProgress": "Importado em 16/09/2026 · pasta com 14 arquivos · artefatos: proposta, pricing, cotação",
-        "blocker": "",
-        "nextGate": "",
-        "workDate": "",
+        "lastProgress": "10/09: proposta Starlink veicular avançada (TBG/MOTIVA). 11/09: precificador TBG concluído. 14/09: proposta contratual em análise jurídica (licitação); OK no RD.",
+        "blocker": "Parecer jurídico pendente. Preços Star2Go ainda citados como pendência em 11/09 para composição comercial.",
+        "nextGate": "Obter OK jurídico; incorporar preços Star2Go se ainda pendentes; seguir processo licitatório.",
+        "workDate": "2026-09-14",
         "checkpoint": "",
-        "dayNotes": "",
+        "dayNotes": "Atualizado a partir de Memórias 10/11/14-09-2026.",
         "client": "TBG",
         "cnpj": "",
         "requester": "",
@@ -7429,7 +7509,7 @@
         "validity": 30,
         "leadTime": "",
         "termination": "",
-        "riskNotes": "",
+        "riskNotes": "Bloqueio externo (jurídico) + dependência Star2Go.",
         "pricingFilename": "",
         "pastaOneDrive": "Documents/OneDrive_1_16-09-2026/1 TBG",
         "plannerTaskId": "",
@@ -7446,10 +7526,18 @@
         "revisarMatch": true,
         "matchConfianca": "nenhuma",
         "matchHits": [],
-        "sourceFolder": "1 TBG"
+        "sourceFolder": "1 TBG",
+        "diarioSync": {
+          "fontes": [
+            "2026-09-10.md",
+            "2026-09-11.md",
+            "2026-09-14.md"
+          ],
+          "syncedAt": "2026-09-16T17:28:04Z"
+        }
       },
       "createdAt": "2026-09-16T15:00:00.000Z",
-      "updatedAt": "2026-09-16T15:00:00.000Z",
+      "updatedAt": "2026-09-16T17:28:04Z",
       "_sourcePasta": "1 TBG"
     },
     {
@@ -8402,5 +8490,28 @@
     "uncertain": 8,
     "unmatched": 8,
     "nota": "Matching fuzzy OneDrive×Planner exige validação humana. RUFF×DMA descartado. Ops detalhados da Nilko são enriquecidos em runtime."
+  },
+  "_meta": {
+    "diarioSync": {
+      "at": "2026-09-16T17:28:04Z",
+      "fontes": [
+        "memorias-diarias/2026/09-setembro/2026-09-10.md",
+        "memorias-diarias/2026/09-setembro/2026-09-11.md",
+        "memorias-diarias/2026/09-setembro/2026-09-14.md"
+      ],
+      "projetosAtualizados": [
+        "ELECTROLUX",
+        "Nilko — Starlink Mobile",
+        "Minebea do Brasil - DIA 150MB - Manaus",
+        "02974668 TC - STIHL - DIA",
+        "TC - DIA - GRUPO GPS PARA AZUL LINHAS AREAS",
+        "RFP Starlink RD Saúde - 17 CD's",
+        "TC - STARLINKS - MOTIVA Motiva Infraestrutura de Mobilidade S.A.",
+        "OWENS - ILLINOIS - DIA",
+        "WABTEC",
+        "DAHRUJ",
+        "TBG"
+      ]
+    }
   }
 }
