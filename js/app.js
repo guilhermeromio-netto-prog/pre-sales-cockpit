@@ -79,10 +79,25 @@ window.PSC = window.PSC || {};
       };
       reader.readAsText(file);
     };
+    const btnImport = q('#btn-import-carteira');
+    if (btnImport) {
+      btnImport.onclick = () => {
+        if (
+          !confirm(
+            'Substituir o portfólio atual pela carteira cruzada OneDrive × Planner (16/09/2026)? Faça backup antes se precisar.'
+          )
+        ) {
+          return;
+        }
+        const n = PSC.projects.importCarteiraCruzada();
+        alert('Carteira importada: ' + n + ' projetos.');
+        showPortfolio();
+      };
+    }
     q('#reset').onclick = () => {
       if (
         confirm(
-          'Restaurar o portfólio padrão (seed Nilko) e apagar todos os dados deste navegador?'
+          'Restaurar o portfólio padrão (carteira cruzada OneDrive × Planner) e apagar todos os dados deste navegador?'
         )
       ) {
         PSC.projects.resetAll();

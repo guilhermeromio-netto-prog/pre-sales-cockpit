@@ -60,3 +60,18 @@ Criar um segundo projeto e alternar entre ele e o seed Nilko **não** deve mistu
 ## Importante
 
 Ferramenta de apoio operacional. **Não** substitui o precificador oficial nem aprovações de Pricing, Comercial, Fiscal, Jurídico, Produto ou Operações.
+
+## Carteira cruzada (16/09/2026)
+
+O portfólio padrão agora nasce com **52 projetos** cruzados entre:
+- pastas em `Documents/OneDrive_1_16-09-2026`
+- export Planner `GERENCIAMENTO - PRÉ-VENDA`
+
+Arquivos:
+- `data/carteira-cruzada-2026-09-16.json`
+- `js/carteira-seed.js`
+
+No app, use **Importar carteira cruzada** para substituir o portfólio local por essa base (faça Backup JSON antes). O projeto Nilko mantém o ops operacional completo (BoM, pricing, cotações).
+
+Se você já abriu o app antes e só vê a Nilko, clique em **Importar carteira cruzada** ou limpe o `localStorage` / use Reset.
+

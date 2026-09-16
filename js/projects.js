@@ -7,11 +7,54 @@ window.PSC = window.PSC || {};
     PSC.ui.setSavedLabel();
   }
 
+  function enrichNilkoIfPresent(projetos) {
+    const nilko = projetos.find((p) => /nilko/i.test(p.nome + ' ' + (p.cliente || '') + ' ' + (p._sourcePasta || '')));
+    if (nilko && PSC.defaults.createNilkoOps) {
+      nilko.ops = Object.assign(PSC.defaults.createNilkoOps(), {
+        pastaOneDrive: (nilko.ops && nilko.ops.pastaOneDrive) || '',
+        plannerTaskId: (nilko.ops && nilko.ops.plannerTaskId) || '',
+        artefatos: (nilko.ops && nilko.ops.artefatos) || []
+      });
+      nilko.cliente = 'Nilko Tecnologia Ltda.';
+      nilko.nome = 'Nilko — Starlink Mobile';
+      nilko.etapa = nilko.etapa || 'Precificação';
+      nilko.status = nilko.status === 'Concluído' ? 'Em andamento' : nilko.status;
+      nilko.prioridade = 'Alta';
+    }
+    return projetos;
+  }
+
+  function cloneCarteiraSeed() {
+    if (!PSC.CARTEIRA_SEED || !Array.isArray(PSC.CARTEIRA_SEED.projetos)) {
+      return [PSC.defaults.createNilkoSeedProject()];
+    }
+    const raw = JSON.parse(JSON.stringify(PSC.CARTEIRA_SEED));
+    const projetos = enrichNilkoIfPresent(raw.projetos);
+    return { projetos: projetos, projetoAtivoId: raw.projetoAtivoId || (projetos[0] && projetos[0].id) || null };
+  }
+
   function ensureSeed() {
     if (PSC.state.getProjetos().length === 0) {
-      PSC.state.setProjetos([PSC.defaults.createNilkoSeedProject()]);
+      const seed = cloneCarteiraSeed();
+      if (Array.isArray(seed)) {
+        PSC.state.setProjetos(seed);
+      } else {
+        PSC.state.hydrate(seed);
+      }
       save();
     }
+  }
+
+  /** Substitui o portfólio pela carteira cruzada OneDrive × Planner. */
+  function importCarteiraCruzada() {
+    const seed = cloneCarteiraSeed();
+    if (Array.isArray(seed)) {
+      PSC.state.hydrate({ projetos: seed, projetoAtivoId: seed[0] ? seed[0].id : null });
+    } else {
+      PSC.state.hydrate(seed);
+    }
+    save();
+    return PSC.state.getProjetos().length;
   }
 
   function create(meta) {
@@ -98,6 +141,7 @@ window.PSC = window.PSC || {};
   PSC.projects = {
     save,
     ensureSeed,
+    importCarteiraCruzada,
     create,
     updateMeta,
     remove,
