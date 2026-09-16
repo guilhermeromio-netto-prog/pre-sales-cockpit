@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>T•PRESALES | Pre-Sales Cockpit</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-mode="portfolio">
+<aside>
+  <div class="brand">
+    <div class="logo">T</div>
+    <div>
+      <b>•PRESALES</b>
+      <small>PRE-SALES COCKPIT</small>
+    </div>
+  </div>
+
+  <div id="nav-portfolio">
+    <nav>
+      <button class="active" data-target="portfolio">Portfólio</button>
+    </nav>
+  </div>
+
+  <div id="nav-project" hidden>
+    <button type="button" id="btn-back-portfolio" class="back-btn">← Portfólio</button>
+    <nav>
+      <button class="active" data-target="dashboard">Dashboard</button>
+      <button data-target="calendar">Calendário</button>
+      <button data-target="discovery">Discovery</button>
+      <button data-target="solution">Solution Design</button>
+      <button data-target="quotation">Cotação</button>
+      <button data-target="freight">Frete</button>
+      <button data-target="pricing">Pricing</button>
+      <button data-target="approval">Approval</button>
+      <button data-target="proposal">Proposta</button>
+      <button data-target="rules">Regras</button>
+      <button data-target="risks">Riscos</button>
+      <button data-target="gates">Gates</button>
+    </nav>
+  </div>
+
+  <div class="user">GN <span>Guilherme Netto<br><small>Presales Engineering</small></span></div>
+</aside>
+
+<header>
+  <div>
+    <h1 id="header-title">Portfólio de Pré-Vendas</h1>
+    <p id="header-sub">T•PRESALES | Multi-projeto offline</p>
+  </div>
+  <div class="toolbar">
+    <div id="portfolio-toolbar">
+      <button type="button" id="btn-new-project">+ Novo projeto</button>
+      <button type="button" id="backup">Backup JSON</button>
+      <button type="button" id="restore">Restaurar</button>
+      <input type="file" id="restore-file" accept="application/json,.json" hidden>
+      <button type="button" id="reset" class="red">Reset</button>
+    </div>
+    <div id="project-toolbar" hidden>
+      <button type="button" id="save">Salvar</button>
+      <button type="button" id="print">Imprimir/PDF</button>
+    </div>
+  </div>
+</header>
+
+<div class="strip">
+  <b>T•PRESALES</b>
+  <span>Offline · localStorage</span>
+  <span id="strip-project" hidden>Projeto ativo</span>
+  <span id="saved">Dados locais ativos</span>
+</div>
+
+<main>
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="view active">
+    <div class="hero">
+      <div>
+        <label>CARTEIRA</label>
+        <h2>Pre-Sales Cockpit</h2>
+        <p>Gerencie múltiplos projetos de pré-vendas com o mesmo cockpit operacional Magenta.</p>
+      </div>
+      <div class="ring"><b id="portfolio-count">0</b><small>visíveis</small></div>
+    </div>
+
+    <div class="kpis">
+      <article><small>Total</small><b id="dash-total">0</b><span>projetos</span></article>
+      <article><small>Ativos</small><b id="dash-ativos">0</b><span>fora de encerrado/perdido</span></article>
+      <article><small>Alta / Crítica</small><b id="dash-criticos">0</b><span>prioridade</span></article>
+      <article><small>Bloqueados</small><b id="dash-bloqueados">0</b><span>status</span></article>
+    </div>
+
+    <div class="filters card">
+      <div class="filter-grid">
+        <label>Busca<input type="search" id="search-projects" placeholder="Nome, cliente, objetivo, responsável…"></label>
+        <label>Etapa<select id="filtro-etapa"></select></label>
+        <label>Status<select id="filtro-status"></select></label>
+        <label>Prioridade<select id="filtro-prioridade"></select></label>
+      </div>
+    </div>
+
+    <div id="project-list" class="project-grid"></div>
+  </section>
+
+  <!-- PROJECT DASHBOARD -->
+  <section id="dashboard" class="view">
+    <div class="hero">
+      <div>
+        <label id="project-title">PROJETO</label>
+        <h2>Da memória à execução</h2>
+        <p id="project-subtitle">Estado operacional da oportunidade ativa.</p>
+      </div>
+      <div class="ring"><b id="progress">0%</b><small>readiness</small></div>
+    </div>
+    <div class="kpis">
+      <article id="kpi-cliente"><small>Cliente</small><b>—</b><span></span></article>
+      <article id="kpi-escopo"><small>Objetivo</small><b>—</b><span></span></article>
+      <article id="kpi-vigencia"><small>Vigência</small><b>—</b><span></span></article>
+      <article id="kpi-destino"><small>Destino</small><b>—</b><span></span></article>
+    </div>
+    <div class="grid2">
+      <article class="card">
+        <h3>Current Operational Truth</h3>
+        <label>Último progresso<textarea data-k="lastProgress"></textarea></label>
+        <label>Bloqueador<textarea data-k="blocker"></textarea></label>
+        <label>Próximo gate<textarea data-k="nextGate"></textarea></label>
+      </article>
+      <article class="card">
+        <h3>Attention Center</h3>
+        <div class="attention redline"><b>Deadline</b><span>Confirme datas no Calendário do projeto.</span></div>
+        <div class="attention redline"><b>Supplier</b><span>Estoque, custo e lead time pendentes.</span></div>
+        <div class="attention amber"><b>Pricing</b><span>Arquivo ainda precisa ser preenchido e aprovado.</span></div>
+        <div class="attention amber"><b>Proposal</b><span>Valores só podem vir da versão aprovada.</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="calendar" class="view">
+    <div class="heading">
+      <div><em>EXECUTION FOCUS</em><h2>Calendário e Today</h2><p>Plano operacional editável do projeto ativo.</p></div>
+      <button type="button" id="addTask">+ Atividade</button>
+    </div>
+    <div class="grid2">
+      <article class="card">
+        <label>Data de trabalho<input type="date" data-k="workDate"></label>
+        <div id="tasks"></div>
+      </article>
+      <article class="card">
+        <h3>Today</h3>
+        <div id="today"></div>
+        <label>Próximo checkpoint<input type="datetime-local" data-k="checkpoint"></label>
+        <label>Notas do dia<textarea data-k="dayNotes"></textarea></label>
+      </article>
+    </div>
+  </section>
+
+  <section id="discovery" class="view">
+    <div class="heading"><div><em>CUSTOMER & NEED</em><h2>Discovery</h2><p>Informações para CRM, desenho e proposta.</p></div></div>
+    <div class="grid3">
+      <article class="card">
+        <h3>Cadastro</h3>
+        <label>Razão social<input data-k="client"></label>
+        <label>CNPJ<input data-k="cnpj"></label>
+        <label>Solicitante<input data-k="requester"></label>
+        <label>ID CRM<input data-k="crm" placeholder="PENDING VALIDATION"></label>
+        <label>Endereço<textarea data-k="address"></textarea></label>
+      </article>
+      <article class="card">
+        <h3>Necessidade</h3>
+        <label>Resumo<textarea data-k="need"></textarea></label>
+        <label>Prazo do cliente<input data-k="customerTerm"></label>
+        <label>Critério de sucesso<textarea data-k="success"></textarea></label>
+      </article>
+      <article class="card">
+        <h3>Perguntas abertas</h3>
+        <div class="checks" data-check-group="discovery"></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="solution" class="view">
+    <div class="heading">
+      <div><em>SOLUTION DESIGN</em><h2>Arquitetura e BoM</h2><p>Defina as variáveis antes da cotação.</p></div>
+      <button type="button" id="addBom">+ Item</button>
+    </div>
+    <div class="grid3">
+      <article class="card">
+        <label>Terminal<select data-k="terminal"><option>PENDING VALIDATION</option><option>Starlink Mini</option><option>Starlink Standard</option><option>Starlink Performance</option></select></label>
+        <label>Mobilidade<select data-k="mobility"><option>PENDING VALIDATION</option><option>Uso parado</option><option>Uso em movimento</option><option>Ambos</option></select></label>
+      </article>
+      <article class="card">
+        <label>Plano<select data-k="plan"><option>50 GB individual</option><option>100 GB individual</option><option>500 GB individual</option><option>Pool</option><option>Sem plano</option></select></label>
+        <label>Plataforma<select data-k="platform"><option>PENDING VALIDATION</option><option>Incluída</option><option>Opcional</option><option>Fora do escopo</option></select></label>
+      </article>
+      <article class="card">
+        <label>Instalação<select data-k="install"><option>PENDING VALIDATION</option><option>Supply only</option><option>Configuração remota</option><option>Instalação em campo</option></select></label>
+        <label>Suporte<select data-k="support"><option>PENDING VALIDATION</option><option>8x5</option><option>24x7</option></select></label>
+      </article>
+    </div>
+    <article class="card table">
+      <table>
+        <thead><tr><th>Bloco</th><th>Item</th><th>Qtd.</th><th>Service</th><th>Charge</th><th>Status</th><th></th></tr></thead>
+        <tbody id="bom"></tbody>
+      </table>
+    </article>
+  </section>
+
+  <section id="quotation" class="view">
+    <div class="heading">
+      <div><em>SUPPLIER QUOTATION</em><h2>Cotações e evidências</h2><p>Nenhum custo é válido sem fonte, validade, estoque e prazo.</p></div>
+      <button type="button" id="addQuote">+ Cotação</button>
+    </div>
+    <div id="quotes"></div>
+    <article class="card"><h3>Checklist da cotação</h3><div class="checks" data-check-group="quotation"></div></article>
+  </section>
+
+  <section id="freight" class="view">
+    <div class="heading"><div><em>LOGISTICS</em><h2>Freight Wizard</h2><p>Gross, peso e volumes reais; fator aplicado uma única vez no valor final.</p></div></div>
+    <div class="grid2">
+      <article class="card">
+        <div class="grid2">
+          <label>Qtd. kits<input type="number" data-k="fQty"></label>
+          <label>Gross por kit<input type="number" data-k="fGross"></label>
+          <label>Peso por kit kg<input type="number" data-k="fWeight"></label>
+          <label>Volumes por kit<input type="number" data-k="fVolumes"></label>
+          <label>Gross adicionais<input type="number" data-k="fExtraGross"></label>
+          <label>Peso adicional<input type="number" data-k="fExtraWeight"></label>
+          <label>Volumes adicionais<input type="number" data-k="fExtraVolumes"></label>
+          <label>Frete final transportadora<input type="number" data-k="fCarrier"></label>
+          <label>Fator pricing<input type="number" step="0.01" data-k="fFactor"></label>
+        </div>
+        <label>Evidência<textarea data-k="fEvidence"></textarea></label>
+      </article>
+      <article class="card results">
+        <div><small>Valor declarado</small><b id="fDeclared"></b></div>
+        <div><small>Peso total</small><b id="fWeightTotal"></b></div>
+        <div><small>Volumes</small><b id="fVolumeTotal"></b></div>
+        <div class="magenta"><small>Unit Cost no pricing</small><b id="fPricing"></b></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="pricing" class="view">
+    <div class="heading">
+      <div><em>FINANCIAL MODEL</em><h2>Pricing Wizard</h2><p>Espelho para preenchimento do precificador oficial.</p></div>
+      <div><button type="button" id="addPrice">+ Linha</button><button type="button" id="csv">Exportar CSV</button></div>
+    </div>
+    <div class="kpis">
+      <article><small>OTC custo</small><b id="otcCost"></b></article>
+      <article><small>MRC custo</small><b id="mrcCost"></b></article>
+      <article><small>TCV apoio</small><b id="tcv"></b></article>
+      <article><small>GM apoio</small><b id="gm"></b></article>
+    </div>
+    <div class="grid2">
+      <article class="card">
+        <h3>Parâmetros</h3>
+        <div class="grid2">
+          <label>Contract (mon)<input type="number" data-k="months"></label>
+          <label>Duration (year)<input type="number" data-k="years"></label>
+          <label>Technical Risk %<input data-k="techRisk" placeholder="VALIDAR"></label>
+          <label>Commercial Risk %<input data-k="commRisk" placeholder="VALIDAR"></label>
+        </div>
+      </article>
+      <article class="card">
+        <h3>Arquivo financeiro</h3>
+        <div class="copybox" id="filename">—</div>
+        <button type="button" data-copy="#filename">Copiar nome</button>
+      </article>
+    </div>
+    <article class="card table">
+      <table>
+        <thead><tr><th>Bloco</th><th>Item</th><th>Service</th><th>Charge</th><th>Unit Cost</th><th>Qty</th><th>Recover</th><th>Tax</th><th>Margem %</th><th></th></tr></thead>
+        <tbody id="prices"></tbody>
+      </table>
+    </article>
+  </section>
+
+  <section id="approval" class="view">
+    <div class="heading"><div><em>PRICING APPROVAL</em><h2>Approval Center</h2><p>Envio para aprovação não significa pricing aprovado.</p></div></div>
+    <div class="grid3">
+      <article class="card">
+        <label>Arquivo submetido<input data-k="priceFile"></label>
+        <label>Versão<input data-k="priceVersion"></label>
+        <label>Data da submissão<input type="datetime-local" data-k="submitted"></label>
+      </article>
+      <article class="card">
+        <label>GM oficial<input data-k="gmOfficial"></label>
+        <label>NPV<input data-k="npv"></label>
+        <label>DCF<input data-k="dcf"></label>
+        <label>TCV Gross<input data-k="tcvGross"></label>
+        <label>TCV Net<input data-k="tcvNet"></label>
+        <label>OE<input data-k="oe"></label>
+      </article>
+      <article class="card">
+        <label>Aprovador<input data-k="approver"></label>
+        <label>Decisão<select data-k="decision"><option>PENDING VALIDATION</option><option>Aprovado</option><option>Aprovado com ressalvas</option><option>Reprovado</option></select></label>
+        <label>Data/hora<input type="datetime-local" data-k="approvedDate"></label>
+        <label>Evidência<textarea data-k="approvalEvidence"></textarea></label>
+      </article>
+    </div>
+  </section>
+
+  <section id="proposal" class="view">
+    <div class="heading">
+      <div><em>PROPOSAL DEVELOPMENT</em><h2>Proposal Builder</h2><p>Minuta vinculada ao projeto ativo.</p></div>
+      <button type="button" id="generate">Atualizar minuta</button>
+    </div>
+    <div class="grid2 proposal">
+      <article class="card">
+        <label>Número da proposta<input data-k="proposalNo"></label>
+        <label>Modelo comercial<select data-k="commercial"><option>CAPEX + SERVIÇO</option><option>OPEX / COMODATO</option><option>CAPEX e OPEX</option></select></label>
+        <label>Validade em dias<input type="number" data-k="validity"></label>
+        <label>Prazo de fornecimento<input data-k="leadTime" placeholder="PENDING VALIDATION"></label>
+        <label>Regra de rescisão<textarea data-k="termination" placeholder="Usar cláusula aprovada"></textarea></label>
+        <button type="button" id="copyProposal">Copiar minuta</button>
+      </article>
+      <article id="proposalText" class="paper"></article>
+    </div>
+  </section>
+
+  <section id="rules" class="view">
+    <div class="heading"><div><em>KNOWLEDGE & GUARDRAILS</em><h2>Regras de Negócio</h2><p>Mantenha apenas regras confirmadas para a oferta específica.</p></div></div>
+    <div id="ruleCards"></div>
+  </section>
+
+  <section id="risks" class="view">
+    <div class="heading"><div><em>ATTENTION CENTER</em><h2>Riscos e Gap Analysis</h2></div></div>
+    <div id="gaps" class="grid3"></div>
+    <article class="card"><h3>Riscos editáveis</h3><textarea data-k="riskNotes"></textarea></article>
+  </section>
+
+  <section id="gates" class="view">
+    <div class="heading"><div><em>RELEASE CONTROL</em><h2>Gates e Liberação</h2><p>A proposta somente é liberada após todos os controles críticos.</p></div></div>
+    <div id="gateCards" class="gategrid"></div>
+    <article class="card"><h3>Pricing x Proposta</h3><div class="checks" data-check-group="reconcile"></div></article>
+  </section>
+</main>
+
+<footer>Ferramenta offline de apoio. Não substitui aprovações de Pricing, Comercial, Fiscal, Jurídico, Produto ou Operações.</footer>
+
+<!-- Meta modal -->
+<div id="meta-modal" class="modal" hidden>
+  <div class="modal-backdrop" id="meta-modal-backdrop"></div>
+  <div class="modal-card">
+    <h2 id="meta-modal-title">Novo projeto</h2>
+    <form id="meta-form">
+      <label>Nome<input name="nome" required maxlength="120"></label>
+      <label>Cliente<input name="cliente" maxlength="120"></label>
+      <label>Objetivo<textarea name="objetivo" rows="3"></textarea></label>
+      <div class="grid3">
+        <label>Etapa<select name="etapa"></select></label>
+        <label>Status<select name="status"></select></label>
+        <label>Prioridade<select name="prioridade"></select></label>
+      </div>
+      <label>Responsável<input name="responsavel" maxlength="80"></label>
+      <div class="modal-actions">
+        <button type="button" id="meta-cancel" class="btn-ghost">Cancelar</button>
+        <button type="submit">Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="js/ui.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/state.js"></script>
+<script src="js/defaults.js"></script>
+<script src="js/projects.js"></script>
+<script src="js/finance.js"></script>
+<script src="js/ops.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

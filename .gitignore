@@ -1,0 +1,11 @@
+node_modules/
+.DS_Store
+.env
+.env.*
+*.local
+backup*.json
+*_Backup.json
+*_backup.json
+dist/
+.vscode/
+.idea/
