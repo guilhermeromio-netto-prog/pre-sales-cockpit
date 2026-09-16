@@ -66,3 +66,11 @@ Repo: https://github.com/guilhermeromio-netto-prog/pre-sales-cockpit
 
 No site público use **Atualizar carteira** com o JSON (também em `data/PreSales_Cockpit_Carteira_Completa.json` no repo) se o seed embutido estiver desatualizado.
 
+## Atualizar a carteira (Mac ou celular)
+
+1. **No site (recomendado no celular):** botão **Carregar carteira completa** — busca `data/PreSales_Cockpit_Carteira_Completa.json` no próprio GitHub Pages, sem arquivo local.
+2. **De arquivo:** **Atualizar de arquivo…** e escolha um Backup JSON ou a carteira completa no aparelho.
+3. **Download direto do JSON:** https://guilhermeromio-netto-prog.github.io/pre-sales-cockpit/data/PreSales_Cockpit_Carteira_Completa.json (salvar nos Arquivos e usar a opção 2).
+
+O seed embutido (Reset) é a carteira padrão do app; a carteira completa é o JSON versionado no repo.
+

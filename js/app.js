@@ -62,7 +62,28 @@ window.PSC = window.PSC || {};
       PSC.ui.setSavedLabel();
     };
     q('#backup').onclick = () => PSC.projects.backup();
-    // Botão único: escolher JSON (Backup baixado ou carteira) e atualizar o portfólio local.
+    // Carrega a carteira completa publicada junto com o site (sem arquivo no aparelho).
+    q('#btn-carregar-completa').onclick = async () => {
+      const url = 'data/PreSales_Cockpit_Carteira_Completa.json';
+      try {
+        const btn = q('#btn-carregar-completa');
+        btn.disabled = true;
+        btn.textContent = 'Carregando…';
+        const res = await fetch(url, { cache: 'no-store' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const text = await res.text();
+        const n = PSC.projects.atualizarCarteiraDeJSON(text);
+        alert('Carteira completa carregada: ' + n + ' projetos.');
+        showPortfolio();
+      } catch (err) {
+        alert('Falha ao carregar carteira do site: ' + (err.message || err));
+      } finally {
+        const btn = q('#btn-carregar-completa');
+        btn.disabled = false;
+        btn.textContent = 'Carregar carteira completa';
+      }
+    };
+    // Escolher JSON no aparelho (Backup baixado ou carteira) e atualizar o portfólio local.
     q('#btn-atualizar-carteira').onclick = () => q('#carteira-file').click();
     q('#carteira-file').onchange = (e) => {
       const file = e.target.files && e.target.files[0];
