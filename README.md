@@ -20,7 +20,7 @@ python3 -m http.server 8080
 - **Portfólio**: lista de projetos com busca e filtros (etapa, status, prioridade).
 - **CRUD**: criar, abrir, editar metadados e excluir (com confirmação).
 - **Cockpit operacional por projeto**: ao abrir um projeto, as abas Dashboard, Calendário, Discovery, Solution Design, Cotação, Frete, Pricing, Approval, Proposta, Regras, Riscos e Gates ficam vinculadas **somente** àquele projeto.
-- **Seed Nilko**: na primeira carga é criado o projeto amostra “Nilko — Starlink Mobile” com o conteúdo operacional do cockpit anterior (nada perdido).
+- **Seed carteira cruzada**: na primeira carga (sem `localStorage`) entram os **52** projetos OneDrive × Planner (16/09/2026); o ops enriquecido da **Nilko** é mesclado sem duplicar o projeto.
 - **Persistência**: auto-save via `localStorage` (chave `preSalesCockpitV1`).
 - **Backup / Restore** JSON do portfólio completo e **Reset** com confirmação.
 - Valores monetários em formato **pt-BR**; conteúdo do usuário escapado no HTML.
