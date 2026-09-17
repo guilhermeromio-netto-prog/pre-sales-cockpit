@@ -75,7 +75,7 @@ window.PSC = window.PSC || {};
       'Encerrado',
       'Perdido'
     ],
-    STATUS_OPTS: ['Em análise', 'Em andamento', 'Bloqueado', 'Concluído', 'Cancelado'],
+    STATUS_OPTS: ['Em análise', 'Em andamento', 'Bloqueado', 'Em risco', 'Concluído', 'Cancelado'],
     PRIORIDADES: ['Baixa', 'Média', 'Alta', 'Crítica']
   };
 })(window.PSC);

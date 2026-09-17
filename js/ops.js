@@ -57,6 +57,8 @@ window.PSC = window.PSC || {};
         PSC.finance.renderFinance();
         renderGaps();
         renderProposal();
+        renderProgress();
+        renderProjectCharts();
         updateHeader();
       };
     });
@@ -87,6 +89,7 @@ window.PSC = window.PSC || {};
         renderTasks();
         renderToday();
         renderProgress();
+        renderProjectCharts();
       };
     });
     renderToday();
@@ -225,6 +228,7 @@ window.PSC = window.PSC || {};
         dirty();
         renderProgress();
         renderGates();
+        renderProjectCharts();
       };
     });
   }
@@ -289,13 +293,110 @@ window.PSC = window.PSC || {};
   }
 
   function renderProgress() {
+    const p = PSC.state.getAtivo();
+    const { q } = PSC.ui;
+    if (!p || !q('#progress')) return;
+    const pct = PSC.charts.readinessPct(p);
+    q('#progress').textContent = pct + '%';
+    const ring = q('#progress') && q('#progress').closest('.ring');
+    if (ring) {
+      ring.style.borderColor = pct >= 70 ? '#16845b' : pct >= 40 ? '#df9700' : 'var(--m)';
+    }
+  }
+
+  function renderProjectCharts() {
+    const p = PSC.state.getAtivo();
     const ops = PSC.state.getOps();
     const { q } = PSC.ui;
-    if (!ops || !q('#progress')) return;
-    const all = Object.keys(ops.checks).filter((k) => !k.startsWith('gate'));
-    const done = all.filter((k) => ops.checks[k]).length;
-    const pct = all.length ? Math.round((done / all.length) * 100) : 0;
-    q('#progress').textContent = pct + '%';
+    if (!p || !ops || !q('#project-charts')) return;
+    const charts = PSC.charts;
+    const ready = charts.readinessPct(p);
+
+    const gates = charts.gateStates(ops);
+    const gateDone = gates.filter((g) => g.done).length;
+    charts.meters(
+      q('#chart-project-gates'),
+      [
+        { label: 'Readiness geral', value: ready },
+        { label: 'Gates concluídos', value: Math.round((gateDone / gates.length) * 100) }
+      ],
+      { empty: 'Sem gates' }
+    );
+
+    const hostGates = q('#chart-project-gate-list');
+    if (hostGates) {
+      hostGates.innerHTML = gates
+        .map(
+          (g) =>
+            `<span class="gate-pill ${g.done ? 'done' : 'open'}">${PSC.ui.esc(g.label)}</span>`
+        )
+        .join('');
+    }
+
+    const tasks = Array.isArray(ops.tasks) ? ops.tasks : [];
+    const tasksDone = tasks.filter((t) => t[3]).length;
+    const taskPct = tasks.length ? Math.round((tasksDone / tasks.length) * 100) : 0;
+    const quotes = Array.isArray(ops.quotes) ? ops.quotes : [];
+    const quoteOk = quotes.length ? quotes.filter((x) => x.evidence).length : 0;
+    const quotePct = quotes.length ? Math.round((quoteOk / quotes.length) * 100) : 0;
+    const prices = Array.isArray(ops.prices) ? pricesFilled(ops) : 0;
+    const bomN = Array.isArray(ops.bom) ? ops.bom.length : 0;
+
+    charts.hbars(
+      q('#chart-project-ops'),
+      [
+        { label: 'Tarefas', value: tasksDone, color: '#16845b' },
+        { label: 'Tarefas abertas', value: Math.max(0, tasks.length - tasksDone), color: '#df9700' },
+        { label: 'Cotações ok', value: quoteOk, color: '#e20074' },
+        { label: 'Itens BoM', value: bomN, color: '#182239' },
+        { label: 'Linhas pricing', value: prices, color: '#5b6abf' }
+      ].filter((x) => x.value > 0 || x.label === 'Tarefas'),
+      { title: 'Operacional', labelW: 100, barMax: 120, empty: 'Sem dados operacionais' }
+    );
+
+    const gaps = [
+      ['Cadastro / endereço', !!(ops.address || ops.client || p.cliente)],
+      ['Modelo terminal', ops.terminal && ops.terminal !== 'PENDING VALIDATION'],
+      ['Mobilidade', ops.mobility && ops.mobility !== 'PENDING VALIDATION'],
+      ['Plataforma', ops.platform && ops.platform !== 'PENDING VALIDATION'],
+      ['Cotações c/ evidência', quotes.length > 0 && quotes.every((x) => x.evidence)],
+      ['Frete calculado', +ops.fCarrier > 0],
+      ['Pricing aprovado', ops.decision === 'Aprovado' && !!ops.approvalEvidence]
+    ];
+    charts.stack(
+      q('#chart-project-gaps'),
+      [
+        { label: 'OK', value: gaps.filter((g) => g[1]).length, color: '#16845b' },
+        { label: 'Pendente', value: gaps.filter((g) => !g[1]).length, color: '#c92736' }
+      ],
+      { title: 'Gaps' }
+    );
+
+    const gapList = q('#chart-project-gap-list');
+    if (gapList) {
+      gapList.innerHTML = gaps
+        .map(
+          (g) =>
+            `<li class="${g[1] ? 'ok' : 'pend'}"><span class="dot"></span>${PSC.ui.esc(g[0])}</li>`
+        )
+        .join('');
+    }
+
+    // mini KPI strip
+    const set = (id, v) => {
+      const el = q(id);
+      if (el) el.textContent = v;
+    };
+    set('#pd-ready', ready + '%');
+    set('#pd-gates', gateDone + '/' + gates.length);
+    set('#pd-tasks', tasksDone + '/' + (tasks.length || 0));
+    set('#pd-quotes', quoteOk + '/' + (quotes.length || 0));
+    set('#pd-task-pct', taskPct + '%');
+    set('#pd-quote-pct', quotePct + '%');
+  }
+
+  function pricesFilled(ops) {
+    return (ops.prices || []).filter((v) => +v[4] > 0).length;
   }
 
   function updateHeader() {
@@ -330,6 +431,7 @@ window.PSC = window.PSC || {};
     renderGates();
     renderProposal();
     renderProgress();
+    renderProjectCharts();
     updateHeader();
   }
 
@@ -404,6 +506,7 @@ window.PSC = window.PSC || {};
     wireProjectActions,
     renderProposal,
     renderGaps,
-    renderProgress
+    renderProgress,
+    renderProjectCharts
   };
 })(window.PSC);

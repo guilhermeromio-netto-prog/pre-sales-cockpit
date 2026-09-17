@@ -18,12 +18,27 @@ window.PSC = window.PSC || {};
     return 'prio-media';
   }
 
+  function statusClass(s) {
+    if (s === 'Bloqueado') return 'st-bloqueado';
+    if (s === 'Em risco') return 'st-risco';
+    if (s === 'Concluído') return 'st-concluido';
+    if (s === 'Cancelado') return 'st-cancelado';
+    if (s === 'Em andamento') return 'st-andamento';
+    return 'st-analise';
+  }
+
+  function trunc(s, n) {
+    const t = String(s || '').trim();
+    if (!t) return '';
+    return t.length > n ? t.slice(0, n - 1) + '…' : t;
+  }
+
   function renderList() {
     const { q, esc } = PSC.ui;
     const list = PSC.projects.filtered();
     const root = q('#project-list');
     if (!root) return;
-    q('#portfolio-count').textContent = `${list.length} projeto${list.length === 1 ? 'o' : 's'}`;
+    q('#portfolio-count').textContent = `${list.length}`;
     if (!list.length) {
       root.innerHTML =
         '<div class="empty-state"><h3>Nenhum projeto encontrado</h3><p>Ajuste os filtros ou crie um novo projeto.</p></div>';
@@ -38,39 +53,54 @@ window.PSC = window.PSC || {};
         const review = !!ops.revisarMatch || ops.matchStatus === 'sem_match' || ops.matchStatus === 'incerto';
         const reviewLabel =
           ops.matchStatus === 'sem_match'
-            ? 'Revisar match · sem Planner'
+            ? 'Revisar · sem Planner'
             : ops.matchStatus === 'incerto'
-              ? 'Revisar match · incerto'
+              ? 'Revisar · incerto'
               : 'Revisar match';
+        const ready = PSC.charts.readinessPct(p);
+        const readyClass = ready >= 70 ? 'ready-hi' : ready >= 40 ? 'ready-mid' : 'ready-lo';
+        const blocker = trunc(ops.blocker, 72);
+        const nextGate = trunc(ops.nextGate, 72);
         const indicators = [
-          pasta ? `<span class="chip chip-folder" title="${esc(ops.pastaOneDrive || pasta)}">📁 ${esc(pasta)}</span>` : '',
+          pasta ? `<span class="chip chip-folder" title="${esc(ops.pastaOneDrive || pasta)}">📁 ${esc(trunc(pasta, 28))}</span>` : '',
           files ? `<span class="chip">${files} arq.</span>` : '',
-          arts.length ? `<span class="chip chip-arts">${esc(arts.slice(0, 4).join(' · '))}${arts.length > 4 ? '…' : ''}</span>` : '',
+          arts.length
+            ? `<span class="chip chip-arts">${esc(trunc(arts.slice(0, 3).join(' · '), 36))}</span>`
+            : '',
           review ? `<span class="chip chip-warn">${esc(reviewLabel)}</span>` : ''
         ]
           .filter(Boolean)
           .join('');
-        return `<article class="project-card${review ? ' needs-review' : ''}" data-open="${esc(p.id)}">
+        return `<article class="project-card compact${review ? ' needs-review' : ''}" data-open="${esc(p.id)}">
         <div class="pc-top">
-          <div>
+          <div class="pc-title">
             <h3>${esc(p.nome)}</h3>
             <p class="muted">${esc(p.cliente || 'Sem cliente')}</p>
           </div>
-          <span class="badge ${priorityClass(p.prioridade)}">${esc(p.prioridade)}</span>
+          <div class="pc-badges">
+            <span class="badge ${statusClass(p.status)}">${esc(p.status)}</span>
+            <span class="badge ${priorityClass(p.prioridade)}">${esc(p.prioridade)}</span>
+          </div>
         </div>
-        <p class="pc-obj">${esc(p.objetivo || 'Sem objetivo definido')}</p>
-        <div class="pc-meta">
+        <div class="pc-ready ${readyClass}">
+          <div class="pc-ready-top"><span>Readiness</span><b>${ready}%</b></div>
+          <div class="pc-ready-track"><div class="pc-ready-fill" style="width:${ready}%"></div></div>
+        </div>
+        <div class="pc-meta dense">
           <span><b>Etapa</b> ${esc(p.etapa)}</span>
-          <span><b>Status</b> ${esc(p.status)}</span>
-          <span><b>Resp.</b> ${esc(p.responsavel || '—')}</span>
+          <span><b>Resp.</b> ${esc(trunc(p.responsavel || '—', 24))}</span>
+        </div>
+        <div class="pc-ops">
+          <div class="pc-ops-row"><b>Próx. gate</b><span title="${esc(ops.nextGate || '')}">${esc(nextGate || '—')}</span></div>
+          <div class="pc-ops-row ${blocker ? 'has-blocker' : ''}"><b>Bloqueador</b><span title="${esc(ops.blocker || '')}">${esc(blocker || '—')}</span></div>
         </div>
         ${indicators ? `<div class="pc-indicators">${indicators}</div>` : ''}
         <div class="pc-actions">
           <button type="button" class="btn-open" data-open="${esc(p.id)}">Abrir</button>
           <button type="button" class="btn-ghost" data-edit="${esc(p.id)}">Editar</button>
           <button type="button" class="btn-danger-ghost" data-del="${esc(p.id)}">Excluir</button>
+          <small class="muted pc-updated">${esc(formatDate(p.updatedAt))}</small>
         </div>
-        <small class="muted">Atualizado: ${esc(formatDate(p.updatedAt))}</small>
       </article>`;
       })
       .join('');
@@ -96,6 +126,7 @@ window.PSC = window.PSC || {};
           PSC.projects.remove(p.id);
           renderList();
           renderKpis();
+          renderPortfolioCharts();
         }
       };
     });
@@ -104,13 +135,69 @@ window.PSC = window.PSC || {};
   function renderKpis() {
     const { q } = PSC.ui;
     const all = PSC.state.getProjetos();
-    const ativos = all.filter((p) => !['Encerrado', 'Perdido'].includes(p.etapa) && p.status !== 'Cancelado');
+    const charts = PSC.charts;
+    const ativos = all.filter((p) => charts.isAtivo(p));
     const criticos = all.filter((p) => p.prioridade === 'Crítica' || p.prioridade === 'Alta');
-    const bloqueados = all.filter((p) => p.status === 'Bloqueado');
+    const bloqueados = all.filter((p) => charts.isBloqueadoLike(p));
+    const avgReady = all.length
+      ? Math.round(all.reduce((s, p) => s + charts.readinessPct(p), 0) / all.length)
+      : 0;
     if (q('#dash-total')) q('#dash-total').textContent = String(all.length);
     if (q('#dash-ativos')) q('#dash-ativos').textContent = String(ativos.length);
     if (q('#dash-criticos')) q('#dash-criticos').textContent = String(criticos.length);
     if (q('#dash-bloqueados')) q('#dash-bloqueados').textContent = String(bloqueados.length);
+    if (q('#dash-readiness')) q('#dash-readiness').textContent = avgReady + '%';
+  }
+
+  function renderPortfolioCharts() {
+    const { q } = PSC.ui;
+    const charts = PSC.charts;
+    const all = PSC.state.getProjetos();
+    if (!q('#portfolio-charts')) return;
+
+    const byStatus = charts.countBy(all, (p) => p.status).map((x) => ({
+      ...x,
+      color: charts.statusColor(x.label)
+    }));
+    charts.donut(q('#chart-status'), byStatus, { title: 'Por status', centerLabel: 'projetos' });
+
+    const byEtapa = charts.sortEtapa(charts.countBy(all, (p) => p.etapa));
+    charts.hbars(q('#chart-etapa'), byEtapa, { title: 'Por etapa', labelW: 112, barMax: 140 });
+
+    const bloqueados = all.filter((p) => charts.isBloqueadoLike(p)).length;
+    const ativosLivres = all.filter((p) => charts.isAtivo(p) && !charts.isBloqueadoLike(p)).length;
+    const encerrados = all.filter((p) => !charts.isAtivo(p)).length;
+    charts.stack(
+      q('#chart-blocked'),
+      [
+        { label: 'Ativos', value: ativosLivres, color: '#16845b' },
+        { label: 'Bloqueados / risco', value: bloqueados, color: '#c92736' },
+        { label: 'Encerrados / perdidos', value: encerrados, color: '#94a3b8' }
+      ],
+      { title: 'Bloqueados vs ativos' }
+    );
+
+    charts.hbars(q('#chart-readiness'), charts.readinessBuckets(all), {
+      title: 'Readiness',
+      labelW: 72,
+      barMax: 150
+    });
+
+    const byPrio = ['Crítica', 'Alta', 'Média', 'Baixa']
+      .map((label) => ({
+        label,
+        value: all.filter((p) => p.prioridade === label).length,
+        color:
+          label === 'Crítica'
+            ? '#c92736'
+            : label === 'Alta'
+              ? '#df9700'
+              : label === 'Baixa'
+                ? '#16845b'
+                : '#5b6abf'
+      }))
+      .filter((x) => x.value > 0);
+    charts.donut(q('#chart-prioridade'), byPrio, { title: 'Prioridade', centerLabel: 'prio' });
   }
 
   function fillFilterSelects() {
@@ -146,7 +233,7 @@ window.PSC = window.PSC || {};
   }
 
   function openMetaModal(id) {
-    const { q, ETAPAS, STATUS_OPTS, PRIORIDADES, esc } = PSC.ui;
+    const { q, ETAPAS, STATUS_OPTS, PRIORIDADES } = PSC.ui;
     const modal = q('#meta-modal');
     const form = q('#meta-form');
     if (!modal || !form) return;
@@ -192,12 +279,14 @@ window.PSC = window.PSC || {};
     closeMetaModal();
     renderList();
     renderKpis();
+    renderPortfolioCharts();
   }
 
   function renderPortfolio() {
     fillFilterSelects();
     wireFilters();
     renderKpis();
+    renderPortfolioCharts();
     renderList();
   }
 
@@ -205,6 +294,7 @@ window.PSC = window.PSC || {};
     renderPortfolio,
     renderList,
     renderKpis,
+    renderPortfolioCharts,
     openMetaModal,
     closeMetaModal,
     submitMeta

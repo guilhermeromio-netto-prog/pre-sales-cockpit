@@ -74,23 +74,47 @@
 <main>
   <!-- PORTFOLIO -->
   <section id="portfolio" class="view active">
-    <div class="hero">
+    <div class="hero hero-compact">
       <div>
         <label>CARTEIRA</label>
         <h2>Pre-Sales Cockpit</h2>
-        <p>Gerencie múltiplos projetos de pré-vendas com o mesmo cockpit operacional Magenta.</p>
+        <p>Visão rápida do status, etapa, bloqueios e readiness da carteira.</p>
       </div>
-      <div class="ring"><b id="portfolio-count">0</b><small>visíveis</small></div>
+      <div class="ring ring-sm"><b id="portfolio-count">0</b><small>visíveis</small></div>
     </div>
 
-    <div class="kpis">
+    <div class="kpis kpis-5">
       <article><small>Total</small><b id="dash-total">0</b><span>projetos</span></article>
       <article><small>Ativos</small><b id="dash-ativos">0</b><span>fora de encerrado/perdido</span></article>
       <article><small>Alta / Crítica</small><b id="dash-criticos">0</b><span>prioridade</span></article>
-      <article><small>Bloqueados</small><b id="dash-bloqueados">0</b><span>status</span></article>
+      <article><small>Bloqueados / risco</small><b id="dash-bloqueados">0</b><span>status</span></article>
+      <article><small>Readiness médio</small><b id="dash-readiness">0%</b><span>carteira</span></article>
     </div>
 
-    <div class="filters card">
+    <div class="charts-grid" id="portfolio-charts">
+      <article class="card chart-card">
+        <h3>Por status</h3>
+        <div id="chart-status" class="chart-host"></div>
+      </article>
+      <article class="card chart-card">
+        <h3>Por etapa</h3>
+        <div id="chart-etapa" class="chart-host"></div>
+      </article>
+      <article class="card chart-card">
+        <h3>Bloqueados vs ativos</h3>
+        <div id="chart-blocked" class="chart-host"></div>
+      </article>
+      <article class="card chart-card">
+        <h3>Readiness (visão geral)</h3>
+        <div id="chart-readiness" class="chart-host"></div>
+      </article>
+      <article class="card chart-card">
+        <h3>Por prioridade</h3>
+        <div id="chart-prioridade" class="chart-host"></div>
+      </article>
+    </div>
+
+    <div class="filters card compact-filters">
       <div class="filter-grid">
         <label>Busca<input type="search" id="search-projects" placeholder="Nome, cliente, objetivo, responsável…"></label>
         <label>Etapa<select id="filtro-etapa"></select></label>
@@ -118,6 +142,31 @@
       <article id="kpi-vigencia"><small>Vigência</small><b>—</b><span></span></article>
       <article id="kpi-destino"><small>Destino</small><b>—</b><span></span></article>
     </div>
+
+    <div class="kpis kpis-project-mini">
+      <article><small>Readiness</small><b id="pd-ready">0%</b><span>campos reais</span></article>
+      <article><small>Gates</small><b id="pd-gates">0/8</b><span>concluídos</span></article>
+      <article><small>Tarefas</small><b id="pd-tasks">0/0</b><span id="pd-task-pct">0%</span></article>
+      <article><small>Cotações</small><b id="pd-quotes">0/0</b><span id="pd-quote-pct">0%</span></article>
+    </div>
+
+    <div class="charts-grid project-charts" id="project-charts">
+      <article class="card chart-card">
+        <h3>Readiness e gates</h3>
+        <div id="chart-project-gates" class="chart-host"></div>
+        <div id="chart-project-gate-list" class="gate-pills"></div>
+      </article>
+      <article class="card chart-card">
+        <h3>Operacional</h3>
+        <div id="chart-project-ops" class="chart-host"></div>
+      </article>
+      <article class="card chart-card">
+        <h3>Gaps</h3>
+        <div id="chart-project-gaps" class="chart-host"></div>
+        <ul id="chart-project-gap-list" class="gap-mini"></ul>
+      </article>
+    </div>
+
     <div class="grid2">
       <article class="card">
         <h3>Current Operational Truth</h3>
@@ -368,6 +417,7 @@
 <script src="js/carteira-seed.js"></script>
 <script src="js/projects.js"></script>
 <script src="js/finance.js"></script>
+<script src="js/charts.js"></script>
 <script src="js/ops.js"></script>
 <script src="js/dashboard.js"></script>
 <script src="js/app.js"></script>
