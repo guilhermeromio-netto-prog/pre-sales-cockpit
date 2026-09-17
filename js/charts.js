@@ -48,7 +48,8 @@ window.PSC = window.PSC || {};
 
   /** Readiness 0–100 from checks when present; otherwise from real ops/meta fields. */
   function readinessPct(p) {
-    const ops = (p && p.ops) || {};
+    if (!p) return 0;
+    const ops = p.ops || {};
     const checks = ops.checks || {};
     const keys = Object.keys(checks).filter((k) => !String(k).startsWith('gate'));
     if (keys.length) {
@@ -268,10 +269,12 @@ window.PSC = window.PSC || {};
   }
 
   function isAtivo(p) {
+    if (!p) return false;
     return !['Encerrado', 'Perdido'].includes(p.etapa) && p.status !== 'Cancelado';
   }
 
   function isBloqueadoLike(p) {
+    if (!p) return false;
     return p.status === 'Bloqueado' || p.status === 'Em risco';
   }
 

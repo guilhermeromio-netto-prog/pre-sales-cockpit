@@ -2,6 +2,27 @@
 window.PSC = window.PSC || {};
 
 (function (PSC) {
+  /** Fallback if js/charts.js failed to load (cache/rede no celular). */
+  function chartsApi() {
+    if (PSC.charts) return PSC.charts;
+    return {
+      isAtivo: (p) =>
+        !!p && !['Encerrado', 'Perdido'].includes(p.etapa) && p.status !== 'Cancelado',
+      isBloqueadoLike: (p) =>
+        !!p && (p.status === 'Bloqueado' || p.status === 'Em risco'),
+      readinessPct: () => 0,
+      countBy: () => [],
+      sortEtapa: (items) => items || [],
+      hbars: () => {},
+      donut: () => {},
+      stack: () => {},
+      meters: () => {},
+      readinessBuckets: () => [],
+      statusColor: () => '#475569',
+      gateStates: () => []
+    };
+  }
+
   function formatDate(iso) {
     if (!iso) return '—';
     try {
@@ -57,7 +78,7 @@ window.PSC = window.PSC || {};
             : ops.matchStatus === 'incerto'
               ? 'Revisar · incerto'
               : 'Revisar match';
-        const ready = PSC.charts.readinessPct(p);
+        const ready = chartsApi().readinessPct(p);
         const readyClass = ready >= 70 ? 'ready-hi' : ready >= 40 ? 'ready-mid' : 'ready-lo';
         const blocker = trunc(ops.blocker, 72);
         const nextGate = trunc(ops.nextGate, 72);
@@ -135,7 +156,7 @@ window.PSC = window.PSC || {};
   function renderKpis() {
     const { q } = PSC.ui;
     const all = PSC.state.getProjetos();
-    const charts = PSC.charts;
+    const charts = chartsApi();
     const ativos = all.filter((p) => charts.isAtivo(p));
     const criticos = all.filter((p) => p.prioridade === 'Crítica' || p.prioridade === 'Alta');
     const bloqueados = all.filter((p) => charts.isBloqueadoLike(p));
@@ -151,7 +172,7 @@ window.PSC = window.PSC || {};
 
   function renderPortfolioCharts() {
     const { q } = PSC.ui;
-    const charts = PSC.charts;
+    const charts = chartsApi();
     const all = PSC.state.getProjetos();
     if (!q('#portfolio-charts')) return;
 

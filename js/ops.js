@@ -296,7 +296,7 @@ window.PSC = window.PSC || {};
     const p = PSC.state.getAtivo();
     const { q } = PSC.ui;
     if (!p || !q('#progress')) return;
-    const pct = PSC.charts.readinessPct(p);
+    const pct = (PSC.charts && PSC.charts.readinessPct(p)) || 0;
     q('#progress').textContent = pct + '%';
     const ring = q('#progress') && q('#progress').closest('.ring');
     if (ring) {
@@ -310,6 +310,7 @@ window.PSC = window.PSC || {};
     const { q } = PSC.ui;
     if (!p || !ops || !q('#project-charts')) return;
     const charts = PSC.charts;
+    if (!charts) return;
     const ready = charts.readinessPct(p);
 
     const gates = charts.gateStates(ops);

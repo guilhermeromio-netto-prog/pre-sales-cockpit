@@ -73,8 +73,12 @@ window.PSC = window.PSC || {};
         if (!res.ok) throw new Error('HTTP ' + res.status);
         const text = await res.text();
         const n = PSC.projects.atualizarCarteiraDeJSON(text);
+        try {
+          showPortfolio();
+        } catch (renderErr) {
+          console.error(renderErr);
+        }
         alert('Carteira completa carregada: ' + n + ' projetos.');
-        showPortfolio();
       } catch (err) {
         alert('Falha ao carregar carteira do site: ' + (err.message || err));
       } finally {
@@ -92,8 +96,12 @@ window.PSC = window.PSC || {};
       reader.onload = () => {
         try {
           const n = PSC.projects.atualizarCarteiraDeJSON(String(reader.result));
+          try {
+            showPortfolio();
+          } catch (renderErr) {
+            console.error(renderErr);
+          }
           alert('Carteira atualizada: ' + n + ' projetos.\nArquivo: ' + file.name);
-          showPortfolio();
         } catch (err) {
           alert('Falha ao atualizar carteira: ' + (err.message || err));
         }
