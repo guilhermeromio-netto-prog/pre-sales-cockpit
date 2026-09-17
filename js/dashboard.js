@@ -240,8 +240,8 @@ window.PSC = window.PSC || {};
     const st = PSC.state.getState();
     const bind = (sel, key) => {
       const el = q(sel);
-      if (!el || el.dataset.wired) return;
-      el.dataset.wired = '1';
+      if (!el || (el.dataset && el.dataset.wired)) return;
+      if (el.dataset) el.dataset.wired = '1';
       el.oninput = () => {
         st.ui[key] = el.value;
         renderList();
