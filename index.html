@@ -12,7 +12,7 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="styles.css?v=20260918b">
+  <link rel="stylesheet" href="styles.css?v=20260918c">
 </head>
 <body data-mode="portfolio">
 <aside>
@@ -54,28 +54,33 @@
 <header>
   <div>
     <h1 id="header-title">Portfólio de Pré-Vendas</h1>
-    <p id="header-sub">T•PRESALES | Multi-projeto offline</p>
+    <p id="header-sub">T•PRESALES · Multi-projeto</p>
   </div>
   <div class="toolbar">
     <div id="portfolio-toolbar">
-      <button type="button" id="btn-new-project">+ Novo projeto</button>
-      <button type="button" id="backup">Backup JSON</button>
-      <button type="button" id="btn-sync-export" title="Baixa um JSON datado para enviar no chat do Desenvolvedor De Sistema / assistente e atualizar a carteira oficial do site (GitHub Pages)">Exportar p/ sincronizar</button>
-      <button type="button" id="btn-carregar-completa" class="primary-ish" title="Baixa a carteira completa hospedada no site (ideal no celular)">Carregar carteira completa</button>
-      <button type="button" id="btn-atualizar-carteira" title="Escolhe um JSON no aparelho (Backup ou carteira) e substitui o portfólio local">Atualizar de arquivo…</button>
+      <button type="button" id="btn-new-project" class="btn-primary">+ Novo projeto</button>
+      <button type="button" id="btn-sync-export" class="primary-ish" title="Baixa um JSON datado para enviar no chat do Desenvolvedor De Sistema / assistente e atualizar a carteira oficial do site (GitHub Pages)">Sincronizar</button>
+      <details class="mais-menu" id="mais-menu">
+        <summary class="btn-mais" id="btn-mais">Mais ▾</summary>
+        <div class="mais-menu-panel" role="menu">
+          <button type="button" id="btn-carregar-completa" class="btn-menu-item" title="Baixa a carteira completa hospedada no site (ideal no celular)">Carregar carteira completa</button>
+          <button type="button" id="btn-atualizar-carteira" class="btn-menu-item" title="Escolhe um JSON no aparelho (Backup ou carteira) e substitui o portfólio local">Atualizar de arquivo…</button>
+          <button type="button" id="backup" class="btn-menu-item">Backup JSON</button>
+          <button type="button" id="reset" class="btn-menu-item red" title="Volta ao seed embutido do app">Reset (seed)</button>
+        </div>
+      </details>
       <input type="file" id="carteira-file" accept="application/json,.json" hidden>
-      <button type="button" id="reset" class="red" title="Volta ao seed embutido do app">Reset (seed)</button>
     </div>
     <div id="project-toolbar" hidden>
-      <button type="button" id="save">Salvar</button>
-      <button type="button" id="print">Imprimir/PDF</button>
+      <button type="button" id="save" class="btn-primary">Salvar</button>
+      <button type="button" id="print" class="btn-secondary">Imprimir/PDF</button>
     </div>
   </div>
 </header>
 
 <div class="strip">
   <b>T•PRESALES</b>
-  <span class="strip-ver">v1.2.1</span>
+  <span class="strip-ver">v1.2.2</span>
   <span>Offline · localStorage</span>
   <span id="strip-status">Carteira local</span>
   <span id="strip-project" hidden>Projeto ativo</span>
@@ -99,7 +104,7 @@
   <section id="portfolio" class="view active">
     <div class="hero hero-compact">
       <div>
-        <label>CARTEIRA · v1.2.1</label>
+        <label>CARTEIRA</label>
         <h2>Pre-Sales Cockpit</h2>
         <p>Visão rápida do status, etapa, bloqueios e readiness da carteira.</p>
       </div>
@@ -145,7 +150,7 @@
         <label class="sticky-search-label">Busca
           <input type="search" id="search-projects" placeholder="Nome, cliente, objetivo, responsável…">
         </label>
-        <button type="button" id="btn-carregar-sticky" class="primary-ish sticky-load" title="Baixa a carteira completa hospedada no site">Carregar carteira</button>
+        <button type="button" id="btn-carregar-sticky" class="btn-secondary sticky-load" title="Baixa a carteira completa hospedada no site">Carregar</button>
       </div>
       <div class="triage-chips" id="triage-chips" role="toolbar" aria-label="Filtros rápidos">
         <button type="button" class="triage-chip active" data-chip="todos">Todos</button>
@@ -447,7 +452,7 @@
   </div>
 </div>
 
-<footer>T•PRESALES Pre-Sales Cockpit <b>v1.2.1</b> · Ferramenta offline de apoio. Não substitui aprovações de Pricing, Comercial, Fiscal, Jurídico, Produto ou Operações.</footer>
+<footer>T•PRESALES Pre-Sales Cockpit <b>v1.2.2</b> · Ferramenta offline de apoio. Não substitui aprovações de Pricing, Comercial, Fiscal, Jurídico, Produto ou Operações.</footer>
 
 <!-- Meta modal -->
 <div id="meta-modal" class="modal" hidden>
@@ -472,16 +477,16 @@
   </div>
 </div>
 
-<script src="js/ui.js?v=20260918b"></script>
-<script src="js/storage.js?v=20260918b"></script>
-<script src="js/state.js?v=20260918b"></script>
-<script src="js/defaults.js?v=20260918b"></script>
-<script src="js/carteira-seed.js?v=20260918b"></script>
-<script src="js/projects.js?v=20260918b"></script>
-<script src="js/finance.js?v=20260918b"></script>
-<script src="js/charts.js?v=20260918b"></script>
-<script src="js/ops.js?v=20260918b"></script>
-<script src="js/dashboard.js?v=20260918b"></script>
-<script src="js/app.js?v=20260918b"></script>
+<script src="js/ui.js?v=20260918c"></script>
+<script src="js/storage.js?v=20260918c"></script>
+<script src="js/state.js?v=20260918c"></script>
+<script src="js/defaults.js?v=20260918c"></script>
+<script src="js/carteira-seed.js?v=20260918c"></script>
+<script src="js/projects.js?v=20260918c"></script>
+<script src="js/finance.js?v=20260918c"></script>
+<script src="js/charts.js?v=20260918c"></script>
+<script src="js/ops.js?v=20260918c"></script>
+<script src="js/dashboard.js?v=20260918c"></script>
+<script src="js/app.js?v=20260918c"></script>
 </body>
 </html>

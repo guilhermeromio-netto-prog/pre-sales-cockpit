@@ -36,6 +36,11 @@ window.PSC = window.PSC || {};
     window.scrollTo(0, 0);
   }
 
+  function closeMaisMenu() {
+    const mais = q('#mais-menu');
+    if (mais) mais.open = false;
+  }
+
   function setAppMode(mode) {
     document.body.dataset.mode = mode;
     const portfolioNav = q('#nav-portfolio');
@@ -52,6 +57,7 @@ window.PSC = window.PSC || {};
     if (stripProject) stripProject.hidden = mode !== 'project';
     const sit = q('#situation-strip');
     if (sit) sit.hidden = mode !== 'project';
+    if (mode !== 'portfolio') closeMaisMenu();
   }
 
   PSC.ui = {
@@ -63,6 +69,7 @@ window.PSC = window.PSC || {};
     setSavedLabel,
     showView,
     setAppMode,
+    closeMaisMenu,
     ETAPAS: [
       'Prospecção',
       'Qualificação',

@@ -14,7 +14,7 @@ window.PSC = window.PSC || {};
     const data = PSC.storageService.load();
     if (data && Array.isArray(data.projetos) && data.projetos.length) {
       PSC.state.hydrate(data);
-      setStripStatus('Carteira v1.2.1 · ' + data.projetos.length + ' projetos');
+      setStripStatus(data.projetos.length + ' projetos');
     } else {
       PSC.state.hydrate({ projetos: [], projetoAtivoId: null });
       // Não chama ensureSeed aqui: maybeAutoLoadCarteira busca a carteira completa
@@ -28,7 +28,7 @@ window.PSC = window.PSC || {};
     PSC.ui.showView('portfolio');
     PSC.dashboard.renderPortfolio();
     PSC.ui.q('#header-title').textContent = 'Portfólio de Pré-Vendas';
-    PSC.ui.q('#header-sub').textContent = 'T•PRESALES | Multi-projeto offline · v1.2.1';
+    PSC.ui.q('#header-sub').textContent = 'T•PRESALES · Multi-projeto';
   }
 
   function openProject(id) {
@@ -84,7 +84,7 @@ window.PSC = window.PSC || {};
       } catch (renderErr) {
         console.error(renderErr);
       }
-      setStripStatus('Carteira v1.2.1 · ' + n + ' projetos');
+      setStripStatus(n + ' projetos');
       if (!silent) alert('Carteira completa carregada: ' + n + ' projetos.');
       return n;
     } catch (err) {
@@ -102,7 +102,7 @@ window.PSC = window.PSC || {};
 
   async function maybeAutoLoadCarteira() {
     if (PSC.state.getProjetos().length > 0) {
-      setStripStatus('Carteira v1.2.1 · ' + PSC.state.getProjetos().length + ' projetos');
+      setStripStatus(PSC.state.getProjetos().length + ' projetos');
       return;
     }
     let skip = false;
@@ -112,7 +112,7 @@ window.PSC = window.PSC || {};
     if (skip) {
       PSC.projects.ensureSeed();
       showPortfolio();
-      setStripStatus('Carteira v1.2.1 · ' + PSC.state.getProjetos().length + ' projetos (seed)');
+      setStripStatus(PSC.state.getProjetos().length + ' projetos (seed)');
       return;
     }
     try {
@@ -122,8 +122,33 @@ window.PSC = window.PSC || {};
       PSC.projects.ensureSeed();
       showPortfolio();
       setStripStatus(
-        'Carteira v1.2.1 · ' + PSC.state.getProjetos().length + ' projetos (seed local)'
+        PSC.state.getProjetos().length + ' projetos (seed local)'
       );
+    }
+  }
+
+
+  function wireMaisMenu() {
+    const { q } = PSC.ui;
+    const mais = q('#mais-menu');
+    if (!mais) return;
+    document.addEventListener('click', (e) => {
+      if (!mais.open) return;
+      if (mais.contains(e.target)) return;
+      mais.open = false;
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mais.open) mais.open = false;
+    });
+    // Close after choosing an action inside the panel
+    const panel = mais.querySelector('.mais-menu-panel');
+    if (panel) {
+      panel.addEventListener('click', (e) => {
+        if (e.target.closest('button')) {
+          // defer so click handlers still run
+          setTimeout(() => { mais.open = false; }, 0);
+        }
+      });
     }
   }
 
@@ -160,7 +185,7 @@ window.PSC = window.PSC || {};
           } catch (renderErr) {
             console.error(renderErr);
           }
-          setStripStatus('Carteira v1.2.1 · ' + n + ' projetos');
+          setStripStatus(n + ' projetos');
           alert('Carteira atualizada: ' + n + ' projetos.\nArquivo: ' + file.name);
         } catch (err) {
           alert('Falha ao atualizar carteira: ' + (err.message || err));
@@ -181,11 +206,12 @@ window.PSC = window.PSC || {};
         PSC.projects.resetAll();
         showPortfolio();
         setStripStatus(
-          'Carteira v1.2.1 · ' + PSC.state.getProjetos().length + ' projetos (seed)'
+          PSC.state.getProjetos().length + ' projetos (seed)'
         );
       }
     };
     q('#print').onclick = () => print();
+    wireMaisMenu();
     PSC.ops.wireProjectActions();
   }
 
@@ -288,7 +314,7 @@ window.PSC = window.PSC || {};
     wirePwaInstall();
     if (PSC.state.getAtivo()) {
       openProject(PSC.state.getAtivo().id);
-      setStripStatus('Carteira v1.2.1 · ' + PSC.state.getProjetos().length + ' projetos');
+      setStripStatus(PSC.state.getProjetos().length + ' projetos');
     } else {
       showPortfolio();
       maybeAutoLoadCarteira();
