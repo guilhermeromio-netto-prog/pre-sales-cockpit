@@ -2,9 +2,17 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#e20074">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Pre-Sales Cockpit">
+  <meta name="description" content="Pre-Sales Cockpit T•PRESALES — portfólio, readiness, gates e carteira offline.">
   <title>T•PRESALES | Pre-Sales Cockpit</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css?v=20260918a">
 </head>
 <body data-mode="portfolio">
 <aside>
@@ -66,7 +74,7 @@
 
 <div class="strip">
   <b>T•PRESALES</b>
-  <span class="strip-ver">v1.1</span>
+  <span class="strip-ver">v1.2</span>
   <span>Offline · localStorage</span>
   <span id="strip-status">Carteira local</span>
   <span id="strip-project" hidden>Projeto ativo</span>
@@ -90,7 +98,7 @@
   <section id="portfolio" class="view active">
     <div class="hero hero-compact">
       <div>
-        <label>CARTEIRA · v1.1</label>
+        <label>CARTEIRA · v1.2</label>
         <h2>Pre-Sales Cockpit</h2>
         <p>Visão rápida do status, etapa, bloqueios e readiness da carteira.</p>
       </div>
@@ -428,7 +436,17 @@
   </section>
 </main>
 
-<footer>T•PRESALES Pre-Sales Cockpit <b>v1.1</b> · Ferramenta offline de apoio. Não substitui aprovações de Pricing, Comercial, Fiscal, Jurídico, Produto ou Operações.</footer>
+
+<!-- PWA install hints -->
+<div id="pwa-install-bar" class="pwa-install-bar" hidden>
+  <span id="pwa-install-msg">Instalar app</span>
+  <div class="pwa-install-actions">
+    <button type="button" id="pwa-install-btn" class="pwa-install-btn" hidden>Instalar</button>
+    <button type="button" id="pwa-install-dismiss" class="pwa-install-dismiss" aria-label="Fechar">×</button>
+  </div>
+</div>
+
+<footer>T•PRESALES Pre-Sales Cockpit <b>v1.2</b> · Ferramenta offline de apoio. Não substitui aprovações de Pricing, Comercial, Fiscal, Jurídico, Produto ou Operações.</footer>
 
 <!-- Meta modal -->
 <div id="meta-modal" class="modal" hidden>
@@ -453,16 +471,16 @@
   </div>
 </div>
 
-<script src="js/ui.js?v=20260917c"></script>
-<script src="js/storage.js?v=20260917c"></script>
-<script src="js/state.js?v=20260917c"></script>
-<script src="js/defaults.js?v=20260917c"></script>
-<script src="js/carteira-seed.js?v=20260917c"></script>
-<script src="js/projects.js?v=20260917c"></script>
-<script src="js/finance.js?v=20260917c"></script>
-<script src="js/charts.js?v=20260917c"></script>
-<script src="js/ops.js?v=20260917c"></script>
-<script src="js/dashboard.js?v=20260917c"></script>
-<script src="js/app.js?v=20260917c"></script>
+<script src="js/ui.js?v=20260918a"></script>
+<script src="js/storage.js?v=20260918a"></script>
+<script src="js/state.js?v=20260918a"></script>
+<script src="js/defaults.js?v=20260918a"></script>
+<script src="js/carteira-seed.js?v=20260918a"></script>
+<script src="js/projects.js?v=20260918a"></script>
+<script src="js/finance.js?v=20260918a"></script>
+<script src="js/charts.js?v=20260918a"></script>
+<script src="js/ops.js?v=20260918a"></script>
+<script src="js/dashboard.js?v=20260918a"></script>
+<script src="js/app.js?v=20260918a"></script>
 </body>
 </html>

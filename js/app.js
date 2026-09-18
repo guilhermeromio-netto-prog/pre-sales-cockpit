@@ -14,7 +14,7 @@ window.PSC = window.PSC || {};
     const data = PSC.storageService.load();
     if (data && Array.isArray(data.projetos) && data.projetos.length) {
       PSC.state.hydrate(data);
-      setStripStatus('Carteira v1.1 · ' + data.projetos.length + ' projetos');
+      setStripStatus('Carteira v1.2 · ' + data.projetos.length + ' projetos');
     } else {
       PSC.state.hydrate({ projetos: [], projetoAtivoId: null });
       // Não chama ensureSeed aqui: maybeAutoLoadCarteira busca a carteira completa
@@ -28,7 +28,7 @@ window.PSC = window.PSC || {};
     PSC.ui.showView('portfolio');
     PSC.dashboard.renderPortfolio();
     PSC.ui.q('#header-title').textContent = 'Portfólio de Pré-Vendas';
-    PSC.ui.q('#header-sub').textContent = 'T•PRESALES | Multi-projeto offline · v1.1';
+    PSC.ui.q('#header-sub').textContent = 'T•PRESALES | Multi-projeto offline · v1.2';
   }
 
   function openProject(id) {
@@ -84,7 +84,7 @@ window.PSC = window.PSC || {};
       } catch (renderErr) {
         console.error(renderErr);
       }
-      setStripStatus('Carteira v1.1 · ' + n + ' projetos');
+      setStripStatus('Carteira v1.2 · ' + n + ' projetos');
       if (!silent) alert('Carteira completa carregada: ' + n + ' projetos.');
       return n;
     } catch (err) {
@@ -102,7 +102,7 @@ window.PSC = window.PSC || {};
 
   async function maybeAutoLoadCarteira() {
     if (PSC.state.getProjetos().length > 0) {
-      setStripStatus('Carteira v1.1 · ' + PSC.state.getProjetos().length + ' projetos');
+      setStripStatus('Carteira v1.2 · ' + PSC.state.getProjetos().length + ' projetos');
       return;
     }
     let skip = false;
@@ -112,7 +112,7 @@ window.PSC = window.PSC || {};
     if (skip) {
       PSC.projects.ensureSeed();
       showPortfolio();
-      setStripStatus('Carteira v1.1 · ' + PSC.state.getProjetos().length + ' projetos (seed)');
+      setStripStatus('Carteira v1.2 · ' + PSC.state.getProjetos().length + ' projetos (seed)');
       return;
     }
     try {
@@ -122,7 +122,7 @@ window.PSC = window.PSC || {};
       PSC.projects.ensureSeed();
       showPortfolio();
       setStripStatus(
-        'Carteira v1.1 · ' + PSC.state.getProjetos().length + ' projetos (seed local)'
+        'Carteira v1.2 · ' + PSC.state.getProjetos().length + ' projetos (seed local)'
       );
     }
   }
@@ -159,7 +159,7 @@ window.PSC = window.PSC || {};
           } catch (renderErr) {
             console.error(renderErr);
           }
-          setStripStatus('Carteira v1.1 · ' + n + ' projetos');
+          setStripStatus('Carteira v1.2 · ' + n + ' projetos');
           alert('Carteira atualizada: ' + n + ' projetos.\nArquivo: ' + file.name);
         } catch (err) {
           alert('Falha ao atualizar carteira: ' + (err.message || err));
@@ -180,7 +180,7 @@ window.PSC = window.PSC || {};
         PSC.projects.resetAll();
         showPortfolio();
         setStripStatus(
-          'Carteira v1.1 · ' + PSC.state.getProjetos().length + ' projetos (seed)'
+          'Carteira v1.2 · ' + PSC.state.getProjetos().length + ' projetos (seed)'
         );
       }
     };
@@ -188,13 +188,106 @@ window.PSC = window.PSC || {};
     PSC.ops.wireProjectActions();
   }
 
+  function registerServiceWorker() {
+    if (!('serviceWorker' in navigator)) return;
+    const isSecure =
+      location.protocol === 'https:' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '127.0.0.1';
+    if (!isSecure) return;
+    navigator.serviceWorker.register('sw.js').catch((err) => {
+      console.warn('SW register failed', err);
+    });
+  }
+
+  function wirePwaInstall() {
+    const bar = PSC.ui.q('#pwa-install-bar');
+    const msg = PSC.ui.q('#pwa-install-msg');
+    const btn = PSC.ui.q('#pwa-install-btn');
+    const dismiss = PSC.ui.q('#pwa-install-dismiss');
+    if (!bar) return;
+
+    const IOS_KEY = 'pscIosInstallDismissed';
+    const ANDROID_KEY = 'pscAndroidInstallDismissed';
+    let deferredPrompt = null;
+
+    function hide() {
+      bar.hidden = true;
+    }
+
+    function show(text, showBtn) {
+      if (msg) msg.textContent = text;
+      if (btn) btn.hidden = !showBtn;
+      bar.hidden = false;
+    }
+
+    if (dismiss) {
+      dismiss.onclick = () => {
+        hide();
+        try {
+          if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            localStorage.setItem(IOS_KEY, '1');
+          } else {
+            localStorage.setItem(ANDROID_KEY, '1');
+          }
+        } catch (_) {}
+      };
+    }
+
+    // iOS Safari tip (no beforeinstallprompt)
+    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const isStandalone =
+      window.matchMedia('(display-mode: standalone)').matches ||
+      window.navigator.standalone === true;
+    if (isIOS && !isStandalone) {
+      let skipped = false;
+      try {
+        skipped = localStorage.getItem(IOS_KEY) === '1';
+      } catch (_) {}
+      if (!skipped) {
+        show('No iPhone: Compartilhar → Adicionar à Tela de Início', false);
+      }
+    }
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      let skipped = false;
+      try {
+        skipped = localStorage.getItem(ANDROID_KEY) === '1';
+      } catch (_) {}
+      if (!skipped && !isStandalone) {
+        show('Instalar app na tela inicial', true);
+      }
+    });
+
+    if (btn) {
+      btn.onclick = async () => {
+        if (!deferredPrompt) return;
+        deferredPrompt.prompt();
+        try {
+          await deferredPrompt.userChoice;
+        } catch (_) {}
+        deferredPrompt = null;
+        hide();
+      };
+    }
+
+    window.addEventListener('appinstalled', () => {
+      deferredPrompt = null;
+      hide();
+    });
+  }
+
   function init() {
     loadOrSeed();
     wireNav();
     wireGlobal();
+    registerServiceWorker();
+    wirePwaInstall();
     if (PSC.state.getAtivo()) {
       openProject(PSC.state.getAtivo().id);
-      setStripStatus('Carteira v1.1 · ' + PSC.state.getProjetos().length + ' projetos');
+      setStripStatus('Carteira v1.2 · ' + PSC.state.getProjetos().length + ' projetos');
     } else {
       showPortfolio();
       maybeAutoLoadCarteira();
