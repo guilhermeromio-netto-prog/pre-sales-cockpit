@@ -66,9 +66,23 @@
 
 <div class="strip">
   <b>T•PRESALES</b>
+  <span class="strip-ver">v1.1</span>
   <span>Offline · localStorage</span>
+  <span id="strip-status">Carteira local</span>
   <span id="strip-project" hidden>Projeto ativo</span>
   <span id="saved">Dados locais ativos</span>
+</div>
+
+<div id="situation-strip" class="situation-strip" hidden>
+  <span id="sit-status">—</span>
+  <span class="sit-sep">·</span>
+  <span id="sit-etapa">—</span>
+  <span class="sit-sep">·</span>
+  <span id="sit-ready">0%</span>
+  <span class="sit-sep">·</span>
+  <span id="sit-gate" class="sit-truncate">—</span>
+  <span class="sit-sep">·</span>
+  <span id="sit-blocker" class="sit-truncate sit-blocker">—</span>
 </div>
 
 <main>
@@ -76,7 +90,7 @@
   <section id="portfolio" class="view active">
     <div class="hero hero-compact">
       <div>
-        <label>CARTEIRA</label>
+        <label>CARTEIRA · v1.1</label>
         <h2>Pre-Sales Cockpit</h2>
         <p>Visão rápida do status, etapa, bloqueios e readiness da carteira.</p>
       </div>
@@ -91,35 +105,64 @@
       <article><small>Readiness médio</small><b id="dash-readiness">0%</b><span>carteira</span></article>
     </div>
 
-    <div class="charts-grid" id="portfolio-charts">
-      <article class="card chart-card">
-        <h3>Por status</h3>
-        <div id="chart-status" class="chart-host"></div>
-      </article>
-      <article class="card chart-card">
-        <h3>Por etapa</h3>
-        <div id="chart-etapa" class="chart-host"></div>
-      </article>
-      <article class="card chart-card">
-        <h3>Bloqueados vs ativos</h3>
-        <div id="chart-blocked" class="chart-host"></div>
-      </article>
-      <article class="card chart-card">
-        <h3>Readiness (visão geral)</h3>
-        <div id="chart-readiness" class="chart-host"></div>
-      </article>
-      <article class="card chart-card">
-        <h3>Por prioridade</h3>
-        <div id="chart-prioridade" class="chart-host"></div>
-      </article>
+    <div class="charts-wrap" id="charts-wrap">
+      <button type="button" id="btn-toggle-charts" class="btn-toggle-charts" aria-expanded="true">Ocultar gráficos</button>
+      <div class="charts-grid" id="portfolio-charts">
+        <article class="card chart-card">
+          <h3>Por status</h3>
+          <div id="chart-status" class="chart-host"></div>
+        </article>
+        <article class="card chart-card">
+          <h3>Por etapa</h3>
+          <div id="chart-etapa" class="chart-host"></div>
+        </article>
+        <article class="card chart-card">
+          <h3>Bloqueados vs ativos</h3>
+          <div id="chart-blocked" class="chart-host"></div>
+        </article>
+        <article class="card chart-card">
+          <h3>Readiness (visão geral)</h3>
+          <div id="chart-readiness" class="chart-host"></div>
+        </article>
+        <article class="card chart-card">
+          <h3>Por prioridade</h3>
+          <div id="chart-prioridade" class="chart-host"></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="portfolio-sticky" id="portfolio-sticky">
+      <div class="sticky-row sticky-search">
+        <label class="sticky-search-label">Busca
+          <input type="search" id="search-projects" placeholder="Nome, cliente, objetivo, responsável…">
+        </label>
+        <button type="button" id="btn-carregar-sticky" class="primary-ish sticky-load" title="Baixa a carteira completa hospedada no site">Carregar carteira</button>
+      </div>
+      <div class="triage-chips" id="triage-chips" role="toolbar" aria-label="Filtros rápidos">
+        <button type="button" class="triage-chip active" data-chip="todos">Todos</button>
+        <button type="button" class="triage-chip" data-chip="bloqueados">Bloqueados / risco</button>
+        <button type="button" class="triage-chip" data-chip="alta">Alta·Crítica</button>
+        <button type="button" class="triage-chip" data-chip="ready50">Readiness &lt; 50%</button>
+        <button type="button" class="triage-chip" data-chip="blocker">Com bloqueador</button>
+      </div>
     </div>
 
     <div class="filters card compact-filters">
-      <div class="filter-grid">
-        <label>Busca<input type="search" id="search-projects" placeholder="Nome, cliente, objetivo, responsável…"></label>
+      <div class="filter-grid filter-grid-ext">
         <label>Etapa<select id="filtro-etapa"></select></label>
         <label>Status<select id="filtro-status"></select></label>
         <label>Prioridade<select id="filtro-prioridade"></select></label>
+        <label>Ordenar<select id="filtro-ordenar">
+          <option value="prioridade">Prioridade</option>
+          <option value="readiness">Readiness (menor primeiro)</option>
+          <option value="etapa">Etapa</option>
+          <option value="nome">Nome</option>
+          <option value="atualizado">Atualizado</option>
+        </select></label>
+        <div class="view-toggle" role="group" aria-label="Modo de lista">
+          <button type="button" id="view-cards" class="view-btn active" data-view="cards">Cards</button>
+          <button type="button" id="view-table" class="view-btn" data-view="table">Tabela</button>
+        </div>
       </div>
     </div>
 
@@ -385,7 +428,7 @@
   </section>
 </main>
 
-<footer>Ferramenta offline de apoio. Não substitui aprovações de Pricing, Comercial, Fiscal, Jurídico, Produto ou Operações.</footer>
+<footer>T•PRESALES Pre-Sales Cockpit <b>v1.1</b> · Ferramenta offline de apoio. Não substitui aprovações de Pricing, Comercial, Fiscal, Jurídico, Produto ou Operações.</footer>
 
 <!-- Meta modal -->
 <div id="meta-modal" class="modal" hidden>
@@ -410,16 +453,16 @@
   </div>
 </div>
 
-<script src="js/ui.js?v=20260917b"></script>
-<script src="js/storage.js?v=20260917b"></script>
-<script src="js/state.js?v=20260917b"></script>
-<script src="js/defaults.js?v=20260917b"></script>
-<script src="js/carteira-seed.js?v=20260917b"></script>
-<script src="js/projects.js?v=20260917b"></script>
-<script src="js/finance.js?v=20260917b"></script>
-<script src="js/charts.js?v=20260917b"></script>
-<script src="js/ops.js?v=20260917b"></script>
-<script src="js/dashboard.js?v=20260917b"></script>
-<script src="js/app.js?v=20260917b"></script>
+<script src="js/ui.js?v=20260917c"></script>
+<script src="js/storage.js?v=20260917c"></script>
+<script src="js/state.js?v=20260917c"></script>
+<script src="js/defaults.js?v=20260917c"></script>
+<script src="js/carteira-seed.js?v=20260917c"></script>
+<script src="js/projects.js?v=20260917c"></script>
+<script src="js/finance.js?v=20260917c"></script>
+<script src="js/charts.js?v=20260917c"></script>
+<script src="js/ops.js?v=20260917c"></script>
+<script src="js/dashboard.js?v=20260917c"></script>
+<script src="js/app.js?v=20260917c"></script>
 </body>
 </html>

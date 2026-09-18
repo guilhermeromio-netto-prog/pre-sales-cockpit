@@ -272,3 +272,117 @@ footer{text-align:center;color:var(--muted);padding:24px;font-size:11px}
   .strip{padding:0 12px;gap:12px;height:auto;min-height:44px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
   .toolbar button{padding:8px 10px;font-size:12px}
 }
+
+/* —— v1.1 usability —— */
+.strip-ver{font-weight:800;color:var(--m);letter-spacing:.04em}
+.primary-ish{background:#9d004f}
+.primary-ish:hover{filter:brightness(1.08)}
+
+.situation-strip{
+  position:sticky;top:0;z-index:15;
+  display:flex;align-items:center;gap:8px;flex-wrap:nowrap;
+  background:#18181f;color:#fff;
+  padding:8px 30px;font-size:12px;font-weight:600;
+  border-bottom:2px solid var(--m);
+  overflow:hidden;
+}
+.situation-strip[hidden]{display:none!important}
+.sit-sep{color:#888894;font-weight:400}
+.sit-truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:28ch}
+.sit-blocker.has-blocker{color:#ffb4b4}
+#sit-ready{color:#ff69b4}
+#sit-status{background:#2a2a31;padding:3px 8px;border-radius:999px}
+
+.charts-wrap{margin:0 0 12px}
+.btn-toggle-charts{
+  display:none;
+  width:100%;
+  margin-bottom:8px;
+  background:#fff;color:var(--navy);
+  border:1px solid var(--line);
+  font-size:13px;padding:10px 12px;
+}
+.charts-collapsed #portfolio-charts{display:none}
+
+.portfolio-sticky{
+  position:sticky;top:0;z-index:12;
+  background:rgba(245,245,248,.96);
+  backdrop-filter:blur(8px);
+  padding:8px 0 6px;
+  margin:0 0 8px;
+  border-bottom:1px solid transparent;
+}
+.sticky-row{display:flex;gap:8px;align-items:flex-end;margin-bottom:8px}
+.sticky-search-label{flex:1;margin:0;font-size:12px;font-weight:700;color:#565866}
+.sticky-search-label input{margin-top:3px;padding:8px}
+.sticky-load{flex-shrink:0;white-space:nowrap;padding:10px 12px;font-size:12px}
+
+.triage-chips{display:flex;flex-wrap:wrap;gap:6px}
+.triage-chip{
+  background:#fff;color:#333;border:1px solid var(--line);
+  padding:7px 11px;border-radius:999px;font-size:12px;font-weight:700;
+}
+.triage-chip.active{
+  background:var(--m);color:#fff;border-color:var(--m);
+}
+.triage-chip:hover{border-color:var(--m)}
+
+.filter-grid-ext{
+  grid-template-columns:1fr 1fr 1fr 1fr auto;
+  align-items:end;
+}
+.view-toggle{display:flex;gap:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;height:fit-content;margin-top:18px}
+.view-btn{
+  background:#fff;color:#333;border:0;border-radius:0;
+  padding:8px 12px;font-size:12px;font-weight:700;
+}
+.view-btn.active{background:var(--m);color:#fff}
+.view-btn + .view-btn{border-left:1px solid var(--line)}
+
+.project-table-host{display:block}
+.project-table-wrap{overflow:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:10px;background:#fff}
+.project-table{width:100%;min-width:720px;border-collapse:collapse;font-size:12px}
+.project-table th{background:var(--navy);color:#fff;padding:8px 10px;position:sticky;top:0;z-index:1;white-space:nowrap}
+.project-table td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
+.project-table .td-name{min-width:140px}
+.project-table .td-name b{display:block;color:var(--navy)}
+.project-table .td-name small{display:block;margin-top:2px}
+.project-table .td-ready{font-weight:800;color:var(--navy);white-space:nowrap}
+.project-table .td-blocker{color:#991b1b;font-weight:600}
+.btn-table-open{padding:6px 10px;font-size:11px}
+
+.empty-first-run{padding:36px 20px}
+.empty-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:16px 0 8px}
+.empty-help{max-width:420px;margin:8px auto 0;line-height:1.4}
+
+@media(max-width:1100px){
+  .filter-grid-ext{grid-template-columns:1fr 1fr 1fr}
+  .view-toggle{margin-top:0;grid-column:1/-1;justify-self:start}
+}
+@media(max-width:700px){
+  .btn-toggle-charts{display:block}
+  .portfolio-sticky{
+    top:0;
+    margin:0 -12px 10px;
+    padding:8px 12px 10px;
+    border-bottom:1px solid var(--line);
+    box-shadow:0 4px 12px #19223912;
+  }
+  body[data-mode=project] .situation-strip{
+    top:0;
+    padding:8px 12px;
+    font-size:11px;
+    gap:6px;
+  }
+  .sit-truncate{max-width:18ch}
+  .sticky-row{flex-wrap:wrap}
+  .sticky-load{width:100%}
+  .filter-grid-ext{grid-template-columns:1fr 1fr}
+  .triage-chips{gap:5px}
+  .triage-chip{padding:6px 9px;font-size:11px}
+  .project-table{min-width:640px}
+}
+@media(min-width:701px){
+  .btn-toggle-charts{display:none}
+  .charts-collapsed #portfolio-charts{display:grid} /* desktop stays usable even if flag set */
+}

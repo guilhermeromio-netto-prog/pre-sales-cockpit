@@ -2,6 +2,11 @@
 window.PSC = window.PSC || {};
 
 (function (PSC) {
+  const CHIP_KEY = 'pscTriageChip';
+  const VIEW_KEY = 'pscListView';
+  const SORT_KEY = 'pscSortBy';
+  const CHARTS_COLLAPSE_KEY = 'pscChartsCollapsed';
+
   /** Fallback if js/charts.js failed to load (cache/rede no celular). */
   function chartsApi() {
     if (PSC.charts) return PSC.charts;
@@ -54,45 +59,124 @@ window.PSC = window.PSC || {};
     return t.length > n ? t.slice(0, n - 1) + '…' : t;
   }
 
-  function renderList() {
-    const { q, esc } = PSC.ui;
-    const list = PSC.projects.filtered();
-    const root = q('#project-list');
+  function getListView() {
+    const st = PSC.state.getState();
+    return st.ui.listView || 'cards';
+  }
+
+  function setListView(view) {
+    const st = PSC.state.getState();
+    st.ui.listView = view === 'table' ? 'table' : 'cards';
+    try {
+      localStorage.setItem(VIEW_KEY, st.ui.listView);
+    } catch (_) {}
+  }
+
+  function restorePrefs() {
+    const st = PSC.state.getState();
+    try {
+      const chip = sessionStorage.getItem(CHIP_KEY);
+      if (chip) st.ui.triageChip = chip;
+    } catch (_) {}
+    try {
+      const view = localStorage.getItem(VIEW_KEY);
+      if (view === 'cards' || view === 'table') st.ui.listView = view;
+    } catch (_) {}
+    try {
+      const sort = sessionStorage.getItem(SORT_KEY);
+      if (sort) st.ui.sortBy = sort;
+    } catch (_) {}
+  }
+
+  function bindListActions(root) {
     if (!root) return;
-    q('#portfolio-count').textContent = `${list.length}`;
-    if (!list.length) {
-      root.innerHTML =
-        '<div class="empty-state"><h3>Nenhum projeto encontrado</h3><p>Ajuste os filtros ou crie um novo projeto.</p></div>';
-      return;
+    root.querySelectorAll('[data-open]').forEach((el) => {
+      el.onclick = (e) => {
+        e.stopPropagation();
+        PSC.app.openProject(el.dataset.open);
+      };
+    });
+    root.querySelectorAll('[data-edit]').forEach((el) => {
+      el.onclick = (e) => {
+        e.stopPropagation();
+        PSC.dashboard.openMetaModal(el.dataset.edit);
+      };
+    });
+    root.querySelectorAll('[data-del]').forEach((el) => {
+      el.onclick = (e) => {
+        e.stopPropagation();
+        const p = PSC.state.getProjetoById(el.dataset.del);
+        if (!p) return;
+        if (confirm(`Excluir o projeto "${p.nome}"? Esta ação não pode ser desfeita neste navegador.`)) {
+          PSC.projects.remove(p.id);
+          renderList();
+          renderKpis();
+          renderPortfolioCharts();
+        }
+      };
+    });
+  }
+
+  function emptyStateHtml(hasAnyProjects) {
+    if (!hasAnyProjects) {
+      return `<div class="empty-state empty-first-run">
+        <h3>Nenhum projeto na carteira</h3>
+        <p>Carregue a carteira completa publicada no site ou importe um JSON de backup.</p>
+        <div class="empty-actions">
+          <button type="button" class="btn-open" id="btn-empty-carregar">Carregar carteira completa</button>
+          <button type="button" class="btn-ghost" id="btn-empty-file">Atualizar de arquivo…</button>
+        </div>
+        <p class="muted empty-help">No celular, use <b>Carregar carteira completa</b> para baixar os projetos hospedados no GitHub Pages.</p>
+      </div>`;
     }
-    root.innerHTML = list
-      .map((p) => {
-        const ops = p.ops || {};
-        const pasta = ops.sourceFolder || ops.pastaOneDrive || p._sourcePasta || '';
-        const arts = Array.isArray(ops.artefatos) ? ops.artefatos : [];
-        const files = ops.fileCount || 0;
-        const review = !!ops.revisarMatch || ops.matchStatus === 'sem_match' || ops.matchStatus === 'incerto';
-        const reviewLabel =
-          ops.matchStatus === 'sem_match'
-            ? 'Revisar · sem Planner'
-            : ops.matchStatus === 'incerto'
-              ? 'Revisar · incerto'
-              : 'Revisar match';
-        const ready = chartsApi().readinessPct(p);
-        const readyClass = ready >= 70 ? 'ready-hi' : ready >= 40 ? 'ready-mid' : 'ready-lo';
-        const blocker = trunc(ops.blocker, 72);
-        const nextGate = trunc(ops.nextGate, 72);
-        const indicators = [
-          pasta ? `<span class="chip chip-folder" title="${esc(ops.pastaOneDrive || pasta)}">📁 ${esc(trunc(pasta, 28))}</span>` : '',
-          files ? `<span class="chip">${files} arq.</span>` : '',
-          arts.length
-            ? `<span class="chip chip-arts">${esc(trunc(arts.slice(0, 3).join(' · '), 36))}</span>`
-            : '',
-          review ? `<span class="chip chip-warn">${esc(reviewLabel)}</span>` : ''
-        ]
-          .filter(Boolean)
-          .join('');
-        return `<article class="project-card compact${review ? ' needs-review' : ''}" data-open="${esc(p.id)}">
+    return `<div class="empty-state"><h3>Nenhum projeto encontrado</h3><p>Ajuste os filtros, chips de triagem ou a busca.</p></div>`;
+  }
+
+  function wireEmptyActions(root) {
+    const loadBtn = root.querySelector('#btn-empty-carregar');
+    if (loadBtn) {
+      loadBtn.onclick = () => {
+        const main = PSC.ui.q('#btn-carregar-completa');
+        if (main) main.click();
+      };
+    }
+    const fileBtn = root.querySelector('#btn-empty-file');
+    if (fileBtn) {
+      fileBtn.onclick = () => {
+        const main = PSC.ui.q('#btn-atualizar-carteira');
+        if (main) main.click();
+      };
+    }
+  }
+
+  function cardHtml(p) {
+    const { esc } = PSC.ui;
+    const ops = p.ops || {};
+    const pasta = ops.sourceFolder || ops.pastaOneDrive || p._sourcePasta || '';
+    const arts = Array.isArray(ops.artefatos) ? ops.artefatos : [];
+    const files = ops.fileCount || 0;
+    const review = !!ops.revisarMatch || ops.matchStatus === 'sem_match' || ops.matchStatus === 'incerto';
+    const reviewLabel =
+      ops.matchStatus === 'sem_match'
+        ? 'Revisar · sem Planner'
+        : ops.matchStatus === 'incerto'
+          ? 'Revisar · incerto'
+          : 'Revisar match';
+    const ready = chartsApi().readinessPct(p);
+    const readyClass = ready >= 70 ? 'ready-hi' : ready >= 40 ? 'ready-mid' : 'ready-lo';
+    const blocker = trunc(ops.blocker, 72);
+    const nextGate = trunc(ops.nextGate, 72);
+    const indicators = [
+      pasta ? `<span class="chip chip-folder" title="${esc(ops.pastaOneDrive || pasta)}">📁 ${esc(trunc(pasta, 28))}</span>` : '',
+      files ? `<span class="chip">${files} arq.</span>` : '',
+      arts.length
+        ? `<span class="chip chip-arts">${esc(trunc(arts.slice(0, 3).join(' · '), 36))}</span>`
+        : '',
+      review ? `<span class="chip chip-warn">${esc(reviewLabel)}</span>` : ''
+    ]
+      .filter(Boolean)
+      .join('');
+    return `<article class="project-card compact${review ? ' needs-review' : ''}" data-open="${esc(p.id)}">
         <div class="pc-top">
           <div class="pc-title">
             <h3>${esc(p.nome)}</h3>
@@ -123,34 +207,70 @@ window.PSC = window.PSC || {};
           <small class="muted pc-updated">${esc(formatDate(p.updatedAt))}</small>
         </div>
       </article>`;
+  }
+
+  function tableHtml(list) {
+    const { esc } = PSC.ui;
+    const rows = list
+      .map((p) => {
+        const ops = p.ops || {};
+        const ready = chartsApi().readinessPct(p);
+        const blocker = trunc(ops.blocker, 40);
+        const nextGate = trunc(ops.nextGate, 40);
+        const label = trunc(p.cliente || p.nome, 28);
+        const name = trunc(p.nome, 36);
+        return `<tr>
+          <td class="td-name"><b title="${esc(p.nome)}">${esc(name)}</b><small class="muted">${esc(label)}</small></td>
+          <td><span class="badge ${statusClass(p.status)}">${esc(p.status)}</span></td>
+          <td>${esc(trunc(p.etapa, 18))}</td>
+          <td class="td-ready">${ready}%</td>
+          <td title="${esc(ops.nextGate || '')}">${esc(nextGate || '—')}</td>
+          <td class="${blocker ? 'td-blocker' : ''}" title="${esc(ops.blocker || '')}">${esc(blocker || '—')}</td>
+          <td><button type="button" class="btn-open btn-table-open" data-open="${esc(p.id)}">Abrir</button></td>
+        </tr>`;
       })
       .join('');
+    return `<div class="project-table-wrap">
+      <table class="project-table">
+        <thead>
+          <tr>
+            <th>Cliente / Nome</th>
+            <th>Status</th>
+            <th>Etapa</th>
+            <th>Ready%</th>
+            <th>Próximo gate</th>
+            <th>Bloqueador</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+  }
 
-    root.querySelectorAll('[data-open]').forEach((el) => {
-      el.onclick = (e) => {
-        e.stopPropagation();
-        PSC.app.openProject(el.dataset.open);
-      };
-    });
-    root.querySelectorAll('[data-edit]').forEach((el) => {
-      el.onclick = (e) => {
-        e.stopPropagation();
-        PSC.dashboard.openMetaModal(el.dataset.edit);
-      };
-    });
-    root.querySelectorAll('[data-del]').forEach((el) => {
-      el.onclick = (e) => {
-        e.stopPropagation();
-        const p = PSC.state.getProjetoById(el.dataset.del);
-        if (!p) return;
-        if (confirm(`Excluir o projeto "${p.nome}"? Esta ação não pode ser desfeita neste navegador.`)) {
-          PSC.projects.remove(p.id);
-          renderList();
-          renderKpis();
-          renderPortfolioCharts();
-        }
-      };
-    });
+  function renderList() {
+    const { q } = PSC.ui;
+    const list = PSC.projects.filtered();
+    const root = q('#project-list');
+    if (!root) return;
+    if (q('#portfolio-count')) q('#portfolio-count').textContent = `${list.length}`;
+    const allCount = PSC.state.getProjetos().length;
+    const view = getListView();
+    root.classList.toggle('project-grid', view === 'cards');
+    root.classList.toggle('project-table-host', view === 'table');
+
+    if (!list.length) {
+      root.innerHTML = emptyStateHtml(allCount > 0);
+      wireEmptyActions(root);
+      return;
+    }
+
+    if (view === 'table') {
+      root.innerHTML = tableHtml(list);
+    } else {
+      root.innerHTML = list.map(cardHtml).join('');
+    }
+    bindListActions(root);
   }
 
   function renderKpis() {
@@ -235,8 +355,70 @@ window.PSC = window.PSC || {};
     fill('#filtro-prioridade', PRIORIDADES, 'Todas as prioridades');
   }
 
-  function wireFilters() {
+  function syncChipButtons() {
+    const { qa } = PSC.ui;
+    const chip = PSC.state.getState().ui.triageChip || 'todos';
+    qa('.triage-chip').forEach((b) => {
+      b.classList.toggle('active', b.dataset.chip === chip);
+    });
+  }
+
+  function syncViewButtons() {
     const { q } = PSC.ui;
+    const view = getListView();
+    const cards = q('#view-cards');
+    const table = q('#view-table');
+    if (cards) cards.classList.toggle('active', view === 'cards');
+    if (table) table.classList.toggle('active', view === 'table');
+  }
+
+  function syncSortSelect() {
+    const { q } = PSC.ui;
+    const el = q('#filtro-ordenar');
+    const sort = PSC.state.getState().ui.sortBy || 'prioridade';
+    if (el && el.value !== sort) el.value = sort;
+  }
+
+  function isNarrow() {
+    return window.matchMedia && window.matchMedia('(max-width: 700px)').matches;
+  }
+
+  function applyChartsCollapsed(collapsed) {
+    const { q } = PSC.ui;
+    const wrap = q('#charts-wrap');
+    const btn = q('#btn-toggle-charts');
+    if (!wrap || !btn) return;
+    wrap.classList.toggle('charts-collapsed', collapsed);
+    btn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+    btn.textContent = collapsed ? 'Mostrar gráficos' : 'Ocultar gráficos';
+  }
+
+  function initChartsCollapse() {
+    const { q } = PSC.ui;
+    const btn = q('#btn-toggle-charts');
+    if (!btn || btn.dataset.wired) return;
+    btn.dataset.wired = '1';
+    let collapsed = false;
+    try {
+      const saved = localStorage.getItem(CHARTS_COLLAPSE_KEY);
+      if (saved === '1') collapsed = true;
+      else if (saved === '0') collapsed = false;
+      else collapsed = isNarrow();
+    } catch (_) {
+      collapsed = isNarrow();
+    }
+    applyChartsCollapsed(collapsed);
+    btn.onclick = () => {
+      const next = !q('#charts-wrap').classList.contains('charts-collapsed');
+      applyChartsCollapsed(next);
+      try {
+        localStorage.setItem(CHARTS_COLLAPSE_KEY, next ? '1' : '0');
+      } catch (_) {}
+    };
+  }
+
+  function wireFilters() {
+    const { q, qa } = PSC.ui;
     const st = PSC.state.getState();
     const bind = (sel, key) => {
       const el = q(sel);
@@ -251,6 +433,56 @@ window.PSC = window.PSC || {};
     bind('#filtro-etapa', 'filtroEtapa');
     bind('#filtro-status', 'filtroStatus');
     bind('#filtro-prioridade', 'filtroPrioridade');
+
+    const sortEl = q('#filtro-ordenar');
+    if (sortEl && !sortEl.dataset.wired) {
+      sortEl.dataset.wired = '1';
+      sortEl.onchange = () => {
+        st.ui.sortBy = sortEl.value || 'prioridade';
+        try {
+          sessionStorage.setItem(SORT_KEY, st.ui.sortBy);
+        } catch (_) {}
+        renderList();
+      };
+    }
+
+    qa('.triage-chip').forEach((b) => {
+      if (b.dataset.wired) return;
+      b.dataset.wired = '1';
+      b.onclick = () => {
+        st.ui.triageChip = b.dataset.chip || 'todos';
+        try {
+          sessionStorage.setItem(CHIP_KEY, st.ui.triageChip);
+        } catch (_) {}
+        syncChipButtons();
+        renderList();
+      };
+    });
+
+    const setView = (view) => {
+      setListView(view);
+      syncViewButtons();
+      renderList();
+    };
+    const cardsBtn = q('#view-cards');
+    const tableBtn = q('#view-table');
+    if (cardsBtn && !cardsBtn.dataset.wired) {
+      cardsBtn.dataset.wired = '1';
+      cardsBtn.onclick = () => setView('cards');
+    }
+    if (tableBtn && !tableBtn.dataset.wired) {
+      tableBtn.dataset.wired = '1';
+      tableBtn.onclick = () => setView('table');
+    }
+
+    const stickyLoad = q('#btn-carregar-sticky');
+    if (stickyLoad && !stickyLoad.dataset.wired) {
+      stickyLoad.dataset.wired = '1';
+      stickyLoad.onclick = () => {
+        const main = q('#btn-carregar-completa');
+        if (main) main.click();
+      };
+    }
   }
 
   function openMetaModal(id) {
@@ -304,8 +536,13 @@ window.PSC = window.PSC || {};
   }
 
   function renderPortfolio() {
+    restorePrefs();
     fillFilterSelects();
     wireFilters();
+    initChartsCollapse();
+    syncChipButtons();
+    syncViewButtons();
+    syncSortSelect();
     renderKpis();
     renderPortfolioCharts();
     renderList();

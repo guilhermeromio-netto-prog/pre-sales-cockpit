@@ -10,7 +10,10 @@ window.PSC = window.PSC || {};
       search: '',
       filtroEtapa: '',
       filtroStatus: '',
-      filtroPrioridade: ''
+      filtroPrioridade: '',
+      triageChip: 'todos',
+      sortBy: 'prioridade',
+      listView: 'cards'
     }
   };
 

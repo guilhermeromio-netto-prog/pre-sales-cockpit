@@ -400,6 +400,38 @@ window.PSC = window.PSC || {};
     return (ops.prices || []).filter((v) => +v[4] > 0).length;
   }
 
+  function updateSituationStrip() {
+    const p = PSC.state.getAtivo();
+    const { q } = PSC.ui;
+    const sit = q('#situation-strip');
+    if (!sit) return;
+    if (!p) {
+      sit.hidden = true;
+      return;
+    }
+    sit.hidden = document.body.dataset.mode !== 'project';
+    const ops = p.ops || {};
+    const ready = PSC.charts ? PSC.charts.readinessPct(p) : 0;
+    const trunc = (s, n) => {
+      const t = String(s || '').trim();
+      if (!t) return '—';
+      return t.length > n ? t.slice(0, n - 1) + '…' : t;
+    };
+    if (q('#sit-status')) q('#sit-status').textContent = p.status || '—';
+    if (q('#sit-etapa')) q('#sit-etapa').textContent = p.etapa || '—';
+    if (q('#sit-ready')) q('#sit-ready').textContent = ready + '%';
+    if (q('#sit-gate')) {
+      q('#sit-gate').textContent = trunc(ops.nextGate, 48);
+      q('#sit-gate').title = ops.nextGate || '';
+    }
+    if (q('#sit-blocker')) {
+      const b = trunc(ops.blocker, 48);
+      q('#sit-blocker').textContent = b;
+      q('#sit-blocker').title = ops.blocker || '';
+      q('#sit-blocker').classList.toggle('has-blocker', !!(ops.blocker && String(ops.blocker).trim()));
+    }
+  }
+
   function updateHeader() {
     const p = PSC.state.getAtivo();
     const { q, esc } = PSC.ui;
@@ -415,6 +447,7 @@ window.PSC = window.PSC || {};
     if (q('#kpi-destino'))
       q('#kpi-destino').innerHTML = `<small>Destino</small><b>${esc((p.ops.address || '—').split(',').slice(-2).join(',').trim() || '—')}</b><span>${esc((p.ops.address || '').slice(0, 40))}</span>`;
     if (q('#filename')) q('#filename').textContent = p.ops.pricingFilename || '—';
+    updateSituationStrip();
   }
 
   function mountProject() {
@@ -434,6 +467,7 @@ window.PSC = window.PSC || {};
     renderProgress();
     renderProjectCharts();
     updateHeader();
+    updateSituationStrip();
   }
 
   function wireProjectActions() {
@@ -504,6 +538,7 @@ window.PSC = window.PSC || {};
 
   PSC.ops = {
     mountProject,
+    updateSituationStrip,
     wireProjectActions,
     renderProposal,
     renderGaps,

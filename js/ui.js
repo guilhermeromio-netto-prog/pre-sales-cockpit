@@ -50,6 +50,8 @@ window.PSC = window.PSC || {};
     if (portfolioTools) portfolioTools.hidden = mode !== 'portfolio';
     const stripProject = q('#strip-project');
     if (stripProject) stripProject.hidden = mode !== 'project';
+    const sit = q('#situation-strip');
+    if (sit) sit.hidden = mode !== 'project';
   }
 
   PSC.ui = {

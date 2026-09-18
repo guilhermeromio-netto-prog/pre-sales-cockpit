@@ -121,13 +121,70 @@ window.PSC = window.PSC || {};
     save();
   }
 
+  function chartsHelper() {
+    if (PSC.charts) return PSC.charts;
+    return {
+      isBloqueadoLike: (p) =>
+        !!p && (p.status === 'Bloqueado' || p.status === 'Em risco'),
+      readinessPct: () => 0
+    };
+  }
+
+  function matchesTriage(p, chip) {
+    const charts = chartsHelper();
+    if (!chip || chip === 'todos') return true;
+    if (chip === 'bloqueados') return charts.isBloqueadoLike(p);
+    if (chip === 'alta') return p.prioridade === 'Alta' || p.prioridade === 'Crítica';
+    if (chip === 'ready50') return charts.readinessPct(p) < 50;
+    if (chip === 'blocker') {
+      const b = p.ops && String(p.ops.blocker || '').trim();
+      return !!b;
+    }
+    return true;
+  }
+
+  const PRIO_RANK = { Crítica: 0, Alta: 1, Média: 2, Media: 2, Baixa: 3 };
+
+  function sortedList(list, sortBy) {
+    const charts = chartsHelper();
+    const etapaRank = (PSC.ui && PSC.ui.ETAPAS) || [];
+    const key = sortBy || 'prioridade';
+    const arr = list.slice();
+    arr.sort((a, b) => {
+      if (key === 'readiness') {
+        return charts.readinessPct(a) - charts.readinessPct(b) || (a.nome || '').localeCompare(b.nome || '', 'pt-BR');
+      }
+      if (key === 'etapa') {
+        const ia = etapaRank.indexOf(a.etapa);
+        const ib = etapaRank.indexOf(b.etapa);
+        return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib) || (a.nome || '').localeCompare(b.nome || '', 'pt-BR');
+      }
+      if (key === 'nome') {
+        return (a.nome || '').localeCompare(b.nome || '', 'pt-BR');
+      }
+      if (key === 'atualizado') {
+        const ta = a.updatedAt ? Date.parse(a.updatedAt) : 0;
+        const tb = b.updatedAt ? Date.parse(b.updatedAt) : 0;
+        return tb - ta || (a.nome || '').localeCompare(b.nome || '', 'pt-BR');
+      }
+      // default: prioridade then readiness ascending
+      const pa = PRIO_RANK[a.prioridade] != null ? PRIO_RANK[a.prioridade] : 9;
+      const pb = PRIO_RANK[b.prioridade] != null ? PRIO_RANK[b.prioridade] : 9;
+      if (pa !== pb) return pa - pb;
+      return charts.readinessPct(a) - charts.readinessPct(b) || (a.nome || '').localeCompare(b.nome || '', 'pt-BR');
+    });
+    return arr;
+  }
+
   function filtered() {
     const st = PSC.state.getState();
     const q = (st.ui.search || '').trim().toLowerCase();
-    return PSC.state.getProjetos().filter((p) => {
+    const chip = st.ui.triageChip || 'todos';
+    const list = PSC.state.getProjetos().filter((p) => {
       if (st.ui.filtroEtapa && p.etapa !== st.ui.filtroEtapa) return false;
       if (st.ui.filtroStatus && p.status !== st.ui.filtroStatus) return false;
       if (st.ui.filtroPrioridade && p.prioridade !== st.ui.filtroPrioridade) return false;
+      if (!matchesTriage(p, chip)) return false;
       if (!q) return true;
       const hay = [
         p.nome,
@@ -145,6 +202,7 @@ window.PSC = window.PSC || {};
         .toLowerCase();
       return hay.includes(q);
     });
+    return sortedList(list, st.ui.sortBy || 'prioridade');
   }
 
   function backup() {
