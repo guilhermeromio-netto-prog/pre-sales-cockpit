@@ -12,7 +12,7 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="styles.css?v=20260918e">
+  <link rel="stylesheet" href="styles.css?v=20260918f">
 </head>
 <body data-mode="portfolio">
 <aside>
@@ -81,7 +81,7 @@
 
 <div class="strip">
   <b>T•PRESALES</b>
-  <span class="strip-ver">v1.2.3</span>
+  <span class="strip-ver">v1.3 · Diretoria</span>
   <span>Offline · localStorage</span>
   <span id="strip-status">Carteira local</span>
   <span id="strip-project" hidden>Projeto ativo</span>
@@ -103,25 +103,34 @@
 <main>
   <!-- PORTFOLIO -->
   <section id="portfolio" class="view active">
-    <div class="hero hero-compact">
+    <div class="hero hero-compact hero-diretoria">
       <div>
-        <label>CARTEIRA</label>
-        <h2>Pre-Sales Cockpit</h2>
-        <p>Visão rápida do status, etapa, bloqueios e readiness da carteira.</p>
+        <label>T•PRESALES · PRO</label>
+        <h2>Visão Diretoria</h2>
+        <p>Command center de pré-vendas — saúde do pipeline, decisões do dia e funil dos ativos.</p>
       </div>
       <div class="ring ring-sm"><b id="portfolio-count">0</b><small>visíveis</small></div>
     </div>
 
-    <div class="kpis kpis-5">
-      <article><small>Total</small><b id="dash-total">0</b><span>projetos</span></article>
-      <article><small>Ativos</small><b id="dash-ativos">0</b><span>fora de encerrado/perdido</span></article>
-      <article><small>Alta / Crítica</small><b id="dash-criticos">0</b><span>prioridade</span></article>
-      <article><small>Bloqueados / risco</small><b id="dash-bloqueados">0</b><span>status</span></article>
-      <article><small>Readiness médio</small><b id="dash-readiness">0%</b><span>carteira</span></article>
-    </div>
+    <section id="diretoria-panel" class="diretoria-panel" aria-label="Painel Diretoria">
+      <div id="dir-kpis" class="dir-kpis" role="toolbar" aria-label="KPIs executivos"></div>
+      <p id="dir-pulse" class="dir-pulse" aria-live="polite"></p>
+      <div class="dir-grid">
+        <div id="dir-attention" class="dir-attention card"></div>
+        <div id="dir-funnel" class="dir-funnel card"></div>
+      </div>
+      <!-- legacy KPI hosts (hidden, kept for sync) -->
+      <div class="dir-legacy-kpis" hidden aria-hidden="true">
+        <b id="dash-total">0</b>
+        <b id="dash-ativos">0</b>
+        <b id="dash-criticos">0</b>
+        <b id="dash-bloqueados">0</b>
+        <b id="dash-readiness">0%</b>
+      </div>
+    </section>
 
-    <div class="charts-wrap" id="charts-wrap">
-      <button type="button" id="btn-toggle-charts" class="btn-toggle-charts" aria-expanded="true">Ocultar gráficos</button>
+    <div class="charts-wrap charts-collapsed" id="charts-wrap">
+      <button type="button" id="btn-toggle-charts" class="btn-toggle-charts" aria-expanded="false">Gráficos detalhados</button>
       <div class="charts-grid" id="portfolio-charts">
         <article class="card chart-card">
           <h3>Por status</h3>
@@ -453,7 +462,7 @@
   </div>
 </div>
 
-<footer>T•PRESALES Pre-Sales Cockpit <b>v1.2.3</b> · Ferramenta offline de apoio. Não substitui aprovações de Pricing, Comercial, Fiscal, Jurídico, Produto ou Operações.</footer>
+<footer>T•PRESALES Pre-Sales Cockpit <b>v1.3 · Diretoria</b> · Ferramenta offline de apoio. Não substitui aprovações de Pricing, Comercial, Fiscal, Jurídico, Produto ou Operações.</footer>
 
 <!-- Meta modal -->
 <div id="meta-modal" class="modal" hidden>
@@ -478,16 +487,17 @@
   </div>
 </div>
 
-<script src="js/ui.js?v=20260918e"></script>
-<script src="js/storage.js?v=20260918e"></script>
-<script src="js/state.js?v=20260918e"></script>
-<script src="js/defaults.js?v=20260918e"></script>
-<script src="js/carteira-seed.js?v=20260918e"></script>
-<script src="js/projects.js?v=20260918e"></script>
-<script src="js/finance.js?v=20260918e"></script>
-<script src="js/charts.js?v=20260918e"></script>
-<script src="js/ops.js?v=20260918e"></script>
-<script src="js/dashboard.js?v=20260918e"></script>
-<script src="js/app.js?v=20260918e"></script>
+<script src="js/ui.js?v=20260918f"></script>
+<script src="js/storage.js?v=20260918f"></script>
+<script src="js/state.js?v=20260918f"></script>
+<script src="js/defaults.js?v=20260918f"></script>
+<script src="js/carteira-seed.js?v=20260918f"></script>
+<script src="js/projects.js?v=20260918f"></script>
+<script src="js/finance.js?v=20260918f"></script>
+<script src="js/charts.js?v=20260918f"></script>
+<script src="js/ops.js?v=20260918f"></script>
+<script src="js/diretoria.js?v=20260918f"></script>
+<script src="js/dashboard.js?v=20260918f"></script>
+<script src="js/app.js?v=20260918f"></script>
 </body>
 </html>

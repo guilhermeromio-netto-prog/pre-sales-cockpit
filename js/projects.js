@@ -124,21 +124,50 @@ window.PSC = window.PSC || {};
   function chartsHelper() {
     if (PSC.charts) return PSC.charts;
     return {
+      isAtivo: (p) =>
+        !!p && !['Encerrado', 'Perdido'].includes(p.etapa) && p.status !== 'Cancelado',
       isBloqueadoLike: (p) =>
         !!p && (p.status === 'Bloqueado' || p.status === 'Em risco'),
       readinessPct: () => 0
     };
   }
 
+  function dirApi() {
+    return PSC.diretoria || null;
+  }
+
   function matchesTriage(p, chip) {
     const charts = chartsHelper();
+    const dir = dirApi();
     if (!chip || chip === 'todos') return true;
+    if (chip === 'pipeline') return charts.isAtivo(p);
+    if (chip === 'atencao') {
+      if (dir && (dir.isAtencao || dir.isAtenção)) {
+        return (dir.isAtencao || dir.isAtenção)(p, charts);
+      }
+      if (!charts.isAtivo(p)) return false;
+      if (charts.isBloqueadoLike(p)) return true;
+      const b = p.ops && String(p.ops.blocker || '').trim();
+      return (p.prioridade === 'Crítica' || p.prioridade === 'Alta') && !!b;
+    }
     if (chip === 'bloqueados') return charts.isBloqueadoLike(p);
     if (chip === 'alta') return p.prioridade === 'Alta' || p.prioridade === 'Crítica';
     if (chip === 'ready50') return charts.readinessPct(p) < 50;
+    if (chip === 'gates') {
+      if (!charts.isAtivo(p)) return false;
+      if (dir && dir.hasRealNextGate) return dir.hasRealNextGate(p);
+      const g = p.ops && String(p.ops.nextGate || '').trim();
+      return g.length > 2;
+    }
+    if (chip === 'stale') {
+      if (!charts.isAtivo(p)) return false;
+      if (dir && dir.isStale) return dir.isStale(p);
+      return !(p.ops && String(p.ops.lastProgress || '').trim());
+    }
     if (chip === 'blocker') {
+      if (dir && dir.hasRealBlocker) return dir.hasRealBlocker(p);
       const b = p.ops && String(p.ops.blocker || '').trim();
-      return !!b;
+      return !!b && b.length > 2;
     }
     return true;
   }

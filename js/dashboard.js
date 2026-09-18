@@ -390,7 +390,7 @@ window.PSC = window.PSC || {};
     if (!wrap || !btn) return;
     wrap.classList.toggle('charts-collapsed', collapsed);
     btn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
-    btn.textContent = collapsed ? 'Mostrar gráficos' : 'Ocultar gráficos';
+    btn.textContent = collapsed ? 'Gráficos detalhados' : 'Ocultar gráficos detalhados';
   }
 
   function initChartsCollapse() {
@@ -398,15 +398,13 @@ window.PSC = window.PSC || {};
     const btn = q('#btn-toggle-charts');
     if (!btn || btn.dataset.wired) return;
     btn.dataset.wired = '1';
-    let collapsed = false;
+    // Pro: colapsado por padrão (desktop e mobile) — menos ruído na Visão Diretoria
+    let collapsed = true;
     try {
       const saved = localStorage.getItem(CHARTS_COLLAPSE_KEY);
       if (saved === '1') collapsed = true;
       else if (saved === '0') collapsed = false;
-      else collapsed = isNarrow();
-    } catch (_) {
-      collapsed = isNarrow();
-    }
+    } catch (_) {}
     applyChartsCollapsed(collapsed);
     btn.onclick = () => {
       const next = !q('#charts-wrap').classList.contains('charts-collapsed');
@@ -456,6 +454,7 @@ window.PSC = window.PSC || {};
         } catch (_) {}
         syncChipButtons();
         renderList();
+        renderDiretoria();
       };
     });
 
@@ -531,8 +530,36 @@ window.PSC = window.PSC || {};
     }
     closeMetaModal();
     renderList();
+    renderDiretoria();
     renderKpis();
     renderPortfolioCharts();
+  }
+
+  function applyTriageChip(chip) {
+    const st = PSC.state.getState();
+    st.ui.triageChip = chip || 'todos';
+    try {
+      sessionStorage.setItem(CHIP_KEY, st.ui.triageChip);
+    } catch (_) {}
+    syncChipButtons();
+    renderList();
+    if (PSC.diretoria && PSC.diretoria.render) {
+      PSC.diretoria.render(PSC.state.getProjetos());
+    }
+    const list = PSC.ui.q('#project-list');
+    if (list && list.scrollIntoView) {
+      try {
+        list.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } catch (_) {
+        list.scrollIntoView();
+      }
+    }
+  }
+
+  function renderDiretoria() {
+    if (PSC.diretoria && PSC.diretoria.render) {
+      PSC.diretoria.render(PSC.state.getProjetos());
+    }
   }
 
   function renderPortfolio() {
@@ -543,6 +570,7 @@ window.PSC = window.PSC || {};
     syncChipButtons();
     syncViewButtons();
     syncSortSelect();
+    renderDiretoria();
     renderKpis();
     renderPortfolioCharts();
     renderList();
@@ -553,6 +581,8 @@ window.PSC = window.PSC || {};
     renderList,
     renderKpis,
     renderPortfolioCharts,
+    renderDiretoria,
+    applyTriageChip,
     openMetaModal,
     closeMetaModal,
     submitMeta

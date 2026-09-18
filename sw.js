@@ -1,7 +1,7 @@
-/* Pre-Sales Cockpit service worker — psc-v1.2.3 */
+/* Pre-Sales Cockpit service worker — psc-v1.3.0-pro */
 'use strict';
 
-const CACHE_NAME = 'psc-v1.2.3';
+const CACHE_NAME = 'psc-v1.3.0-pro';
 const SHELL = [
   './',
   './index.html',
@@ -21,6 +21,7 @@ const SHELL = [
   './js/finance.js',
   './js/charts.js',
   './js/ops.js',
+  './js/diretoria.js',
   './js/dashboard.js',
   './js/app.js',
   './data/PreSales_Cockpit_Carteira_Completa.json'
