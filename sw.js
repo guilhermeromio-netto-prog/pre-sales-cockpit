@@ -1,7 +1,7 @@
-/* Pre-Sales Cockpit service worker — psc-v1.2.2 */
+/* Pre-Sales Cockpit service worker — psc-v1.2.3 */
 'use strict';
 
-const CACHE_NAME = 'psc-v1.2.2';
+const CACHE_NAME = 'psc-v1.2.3';
 const SHELL = [
   './',
   './index.html',

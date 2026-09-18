@@ -155,6 +155,8 @@ window.PSC = window.PSC || {};
   function wireGlobal() {
     const { q } = PSC.ui;
     q('#btn-back-portfolio').onclick = () => showPortfolio();
+    const backH = q('#btn-back-portfolio-header');
+    if (backH) backH.onclick = () => showPortfolio();
     q('#btn-new-project').onclick = () => PSC.dashboard.openMetaModal(null);
     q('#meta-form').onsubmit = (e) => PSC.dashboard.submitMeta(e);
     q('#meta-cancel').onclick = () => PSC.dashboard.closeMetaModal();

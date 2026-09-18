@@ -49,6 +49,8 @@ window.PSC = window.PSC || {};
     if (projectNav) projectNav.hidden = mode !== 'project';
     const back = q('#btn-back-portfolio');
     if (back) back.hidden = mode !== 'project';
+    const backH = q('#btn-back-portfolio-header');
+    if (backH) backH.hidden = mode !== 'project';
     const projectTools = q('#project-toolbar');
     if (projectTools) projectTools.hidden = mode !== 'project';
     const portfolioTools = q('#portfolio-toolbar');

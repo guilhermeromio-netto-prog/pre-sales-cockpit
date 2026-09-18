@@ -8,8 +8,6 @@ aside .brand b{font-size:19px;display:block}
 aside .brand small{display:block;color:#888894;letter-spacing:1.2px;font-size:9px;margin-top:2px}
 nav button{display:block;width:100%;border:0;background:none;color:#aaa;text-align:left;padding:10px 13px;margin:2px 0;border-radius:8px;cursor:pointer}
 nav button.active,nav button:hover{background:#2a2a31;color:#fff;border-left:3px solid var(--m)}
-.back-btn{width:100%;border:1px solid #3a3a44;background:#1a1a22;color:#fff;padding:10px 12px;border-radius:8px;margin:12px 0 8px;cursor:pointer;font-weight:700}
-.back-btn:hover{border-color:var(--m)}
 .user{position:absolute;bottom:22px;left:20px;right:20px;border-top:1px solid #33333a;padding-top:17px;color:#fff}
 .user span{display:inline-block;margin-left:10px;font-size:11px}
 .user small{color:#888}
@@ -159,7 +157,7 @@ footer{text-align:center;color:var(--muted);padding:24px;font-size:11px}
 @media(max-width:1000px){
   body{padding-left:72px}
   aside{width:72px;padding:18px 10px}
-  aside .brand b,aside .brand small,.user span,.back-btn{display:none}
+  aside .brand b,aside .brand small,.user span{display:none}
   nav button{font-size:0;text-align:center}
   nav button:after{content:'•';font-size:18px}
   .user{left:20px}
@@ -464,3 +462,29 @@ footer{text-align:center;color:var(--muted);padding:24px;font-size:11px}
 @media(display-mode:standalone){
   .pwa-install-bar{display:none!important}
 }
+
+
+/* Back to all projects */
+.back-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;border:1px solid #3a3a44;background:#1a1a22;color:#fff;padding:10px 12px;border-radius:8px;margin:12px 0 8px;cursor:pointer;font-weight:700}
+.back-btn:hover,.back-btn:focus-visible{border-color:var(--m);outline:none}
+.back-ico{font-size:16px;line-height:1}
+.back-txt{flex:1;text-align:left}
+.header-lead{display:flex;flex-direction:column;gap:6px;min-width:0}
+.back-btn-header{
+  align-self:flex-start;border:1px solid var(--line);background:#fff;color:var(--navy);
+  padding:8px 12px;border-radius:8px;font-weight:700;cursor:pointer;font-size:13px;
+}
+.back-btn-header:hover{border-color:var(--m);color:var(--m)}
+body[data-mode="portfolio"] .back-btn-header{display:none!important}
+@media(max-width:1000px){
+  .back-btn{padding:12px 8px;margin:8px 0}
+  .back-btn .back-txt{display:none}
+  .back-btn .back-ico{font-size:20px;font-weight:800}
+  .back-btn{min-height:44px}
+}
+@media(max-width:700px){
+  /* On phone, header back is the clear path */
+  .back-btn-header{display:inline-flex!important}
+  body[data-mode="portfolio"] .back-btn-header{display:none!important}
+}
+
