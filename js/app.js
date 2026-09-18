@@ -14,7 +14,7 @@ window.PSC = window.PSC || {};
     const data = PSC.storageService.load();
     if (data && Array.isArray(data.projetos) && data.projetos.length) {
       PSC.state.hydrate(data);
-      setStripStatus('Carteira v1.2 · ' + data.projetos.length + ' projetos');
+      setStripStatus('Carteira v1.2.1 · ' + data.projetos.length + ' projetos');
     } else {
       PSC.state.hydrate({ projetos: [], projetoAtivoId: null });
       // Não chama ensureSeed aqui: maybeAutoLoadCarteira busca a carteira completa
@@ -28,7 +28,7 @@ window.PSC = window.PSC || {};
     PSC.ui.showView('portfolio');
     PSC.dashboard.renderPortfolio();
     PSC.ui.q('#header-title').textContent = 'Portfólio de Pré-Vendas';
-    PSC.ui.q('#header-sub').textContent = 'T•PRESALES | Multi-projeto offline · v1.2';
+    PSC.ui.q('#header-sub').textContent = 'T•PRESALES | Multi-projeto offline · v1.2.1';
   }
 
   function openProject(id) {
@@ -84,7 +84,7 @@ window.PSC = window.PSC || {};
       } catch (renderErr) {
         console.error(renderErr);
       }
-      setStripStatus('Carteira v1.2 · ' + n + ' projetos');
+      setStripStatus('Carteira v1.2.1 · ' + n + ' projetos');
       if (!silent) alert('Carteira completa carregada: ' + n + ' projetos.');
       return n;
     } catch (err) {
@@ -102,7 +102,7 @@ window.PSC = window.PSC || {};
 
   async function maybeAutoLoadCarteira() {
     if (PSC.state.getProjetos().length > 0) {
-      setStripStatus('Carteira v1.2 · ' + PSC.state.getProjetos().length + ' projetos');
+      setStripStatus('Carteira v1.2.1 · ' + PSC.state.getProjetos().length + ' projetos');
       return;
     }
     let skip = false;
@@ -112,7 +112,7 @@ window.PSC = window.PSC || {};
     if (skip) {
       PSC.projects.ensureSeed();
       showPortfolio();
-      setStripStatus('Carteira v1.2 · ' + PSC.state.getProjetos().length + ' projetos (seed)');
+      setStripStatus('Carteira v1.2.1 · ' + PSC.state.getProjetos().length + ' projetos (seed)');
       return;
     }
     try {
@@ -122,7 +122,7 @@ window.PSC = window.PSC || {};
       PSC.projects.ensureSeed();
       showPortfolio();
       setStripStatus(
-        'Carteira v1.2 · ' + PSC.state.getProjetos().length + ' projetos (seed local)'
+        'Carteira v1.2.1 · ' + PSC.state.getProjetos().length + ' projetos (seed local)'
       );
     }
   }
@@ -140,6 +140,7 @@ window.PSC = window.PSC || {};
       PSC.ui.setSavedLabel();
     };
     q('#backup').onclick = () => PSC.projects.backup();
+    q('#btn-sync-export').onclick = () => PSC.projects.exportForSync();
     q('#btn-carregar-completa').onclick = () => {
       carregarCarteiraCompleta({ silent: false }).catch(() => {});
     };
@@ -159,7 +160,7 @@ window.PSC = window.PSC || {};
           } catch (renderErr) {
             console.error(renderErr);
           }
-          setStripStatus('Carteira v1.2 · ' + n + ' projetos');
+          setStripStatus('Carteira v1.2.1 · ' + n + ' projetos');
           alert('Carteira atualizada: ' + n + ' projetos.\nArquivo: ' + file.name);
         } catch (err) {
           alert('Falha ao atualizar carteira: ' + (err.message || err));
@@ -180,7 +181,7 @@ window.PSC = window.PSC || {};
         PSC.projects.resetAll();
         showPortfolio();
         setStripStatus(
-          'Carteira v1.2 · ' + PSC.state.getProjetos().length + ' projetos (seed)'
+          'Carteira v1.2.1 · ' + PSC.state.getProjetos().length + ' projetos (seed)'
         );
       }
     };
@@ -287,7 +288,7 @@ window.PSC = window.PSC || {};
     wirePwaInstall();
     if (PSC.state.getAtivo()) {
       openProject(PSC.state.getAtivo().id);
-      setStripStatus('Carteira v1.2 · ' + PSC.state.getProjetos().length + ' projetos');
+      setStripStatus('Carteira v1.2.1 · ' + PSC.state.getProjetos().length + ' projetos');
     } else {
       showPortfolio();
       maybeAutoLoadCarteira();

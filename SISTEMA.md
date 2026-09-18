@@ -39,9 +39,23 @@ SISTEMA.md          — este guia
 Dashboard · Calendário · Discovery · Solution Design · Cotação · Frete · Pricing · Approval · Proposta · Regras · Riscos · Gates
 
 ## Fluxo de dados (oficial)
-1. **Backup JSON** — baixa o estado atual do navegador.
-2. **Atualizar carteira** — escolhe um JSON (`PreSales_Cockpit_Carteira_Completa.json` ou um Backup) e substitui o portfólio local.
-3. **Reset (seed)** — volta ao seed embutido (`js/carteira-seed.js`), não ao último backup.
+1. **Backup JSON** — baixa o estado atual do navegador (cópia local).
+2. **Exportar p/ sincronizar** — baixa JSON datado para enviar ao assistente e atualizar a carteira oficial do site.
+3. **Atualizar carteira** — escolhe um JSON (`PreSales_Cockpit_Carteira_Completa.json` ou um Backup) e substitui o portfólio local.
+4. **Reset (seed)** — volta ao seed embutido (`js/carteira-seed.js`), não ao último backup.
+
+
+## Sincronizar edições do app → site
+
+As edições no Cockpit ficam só no `localStorage` do navegador. Para atualizar a **carteira oficial** do GitHub Pages:
+
+1. No portfólio, clique **Exportar p/ sincronizar** (baixa `PreSales_Cockpit_Sync_AAAA-MM-DD.json`).
+2. Envie esse arquivo no chat do **Desenvolvedor De Sistema** (assistente).
+3. O assistente valida `projetos[]`, grava em `data/PreSales_Cockpit_Carteira_Completa.json`, faz push em `main` (e espelha `gh-pages` se for a prática atual) e confirma o link do site + quantidade de projetos.
+
+**Backup JSON** continua disponível para cópia de segurança local (mesmo conteúdo base, nome fixo `PreSales_Cockpit_Backup.json`, sem o fluxo de sync).
+
+Detalhes operacionais para o assistente: `docs/SYNC-ASSISTENTE.md`.
 
 ## JSON canônico a manter atualizado
 Sempre sincronizar estes dois caminhos quando houver alteração de projeto:

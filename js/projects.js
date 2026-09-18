@@ -205,6 +205,41 @@ window.PSC = window.PSC || {};
     return sortedList(list, st.ui.sortBy || 'prioridade');
   }
 
+
+  function syncDateStamp() {
+    try {
+      return new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'America/Sao_Paulo',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+      }).format(new Date());
+    } catch (_) {
+      return new Date().toISOString().slice(0, 10);
+    }
+  }
+
+  /** Exporta JSON datado para o usuário enviar ao assistente atualizar a carteira oficial. */
+  function exportForSync() {
+    const base = PSC.state.persistable();
+    const payload = Object.assign({}, base, {
+      syncMeta: {
+        exportedAt: new Date().toISOString(),
+        purpose: 'sync-to-official-carteira',
+        source: 'Pre-Sales Cockpit'
+      }
+    });
+    const json = PSC.storageService.exportJSON(payload);
+    const name = 'PreSales_Cockpit_Sync_' + syncDateStamp() + '.json';
+    PSC.ui.dl(new Blob([json], { type: 'application/json' }), name);
+    alert(
+      '1) Arquivo baixado: ' +
+        name +
+        '\n2) Envie esse arquivo no chat do Desenvolvedor De Sistema (assistente).' +
+        '\n3) A carteira oficial do site (GitHub Pages) será atualizada a partir dele.'
+    );
+  }
+
   function backup() {
     const json = PSC.storageService.exportJSON(PSC.state.persistable());
     PSC.ui.dl(new Blob([json], { type: 'application/json' }), 'PreSales_Cockpit_Backup.json');
@@ -247,6 +282,7 @@ window.PSC = window.PSC || {};
     markDirty,
     filtered,
     backup,
+    exportForSync,
     restore,
     atualizarCarteiraDeJSON,
     resetAll
